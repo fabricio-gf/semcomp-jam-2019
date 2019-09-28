@@ -5491,6 +5491,31 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: testDialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: typingSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: testDialogue.sentences.Array.data[0]
+      value: "Saseasurfbaurnuasnrjanraljnrljanljrnasl\tdao"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: testDialogue.sentences.Array.data[1]
+      value: gsdtoehviunshnraluhvirmiurha
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: testDialogue.sentences.Array.data[2]
+      value: haiurhmlavruirdiuv
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89180186d6bfdbb47bc99b047d31cda8, type: 3}
 --- !u!1001 &7681487650695103639
