@@ -15,6 +15,15 @@ public class GameEvent : ScriptableObject
 
     public string identifier;
     public EventType type;
-    public Dialogue question;
-    public Answer[] answers;
+    public string question; //temp
+    //public Dialogue question;
+    public List<Answer> answers;
+
+    public GameEvent(string _identifier, EventType _type, string _question, List<Answer> _answers)
+    {
+        identifier = _identifier;
+        type = _type;
+        question = _question;
+        answers = _answers;
+    }
 }
