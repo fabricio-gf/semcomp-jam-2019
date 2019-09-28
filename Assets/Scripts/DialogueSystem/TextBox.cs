@@ -15,8 +15,6 @@ public class TextBox : MonoBehaviour
     bool skipDialogue = false;
     bool dialogueEnded = false;
 
-    public Dialogue testDialogue;
-
     private void Awake()
     {
         animator = transform.parent.GetComponent<Animator>();
@@ -25,20 +23,12 @@ public class TextBox : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartDialogue(testDialogue);
-        }
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (dialogueEnded) return;
             if (!isTyping)
             {
                 DisplayNextSentence();
-            }
-            else
-            {
-                skipDialogue = true;
             }
         }
     }
@@ -88,6 +78,11 @@ public class TextBox : MonoBehaviour
         {
             EndDialogue();
         }
+    }
+
+    public void SkipDialogue()
+    {
+        skipDialogue = true;
     }
 
     public void EndDialogue()
