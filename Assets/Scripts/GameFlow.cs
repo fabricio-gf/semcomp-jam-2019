@@ -15,7 +15,7 @@ public class GameFLow : MonoBehaviour
     public delegate void EventForceEnd();
     public event EventForceEnd OnEventForceEnd;
 
-    static public GameFLow Instance;
+    static public GameFLow Instance { get; private set; }
 
     public int turn { get; private set; } = 0;
 
@@ -24,6 +24,7 @@ public class GameFLow : MonoBehaviour
         if (Instance != null)
         {
             Destroy(this);
+            return;
         }
         else
         {

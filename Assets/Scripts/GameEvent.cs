@@ -17,4 +17,5 @@ public class GameEvent : ScriptableObject
     public EventType type;
     public Dialogue question;
     public Answer[] answers;
+
 }
