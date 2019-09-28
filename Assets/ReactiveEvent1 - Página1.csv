@@ -1,0 +1,6 @@
+Quote-Answer,Merchant Infl,Guard Infl,Commoner Infl,Noble Infl,Alchemists Infl,Clergy Infl,Merchant Pop,Guard Pop,Commoner Pop,Noble Pop,Alchemists Pop,Clergy Pop,Answer
+You are in the royal banquet. You are really bored and want to do something different. What will you do to liven things up?,,,,,,,,,,,,,
+Call the alchemists to create some strange lights and smokes. What could go wrong?,0,0,0,10,20,-10,0,0,0,0,0,0,
+"Call the castle guards to the party. They deserve it.",0,20,0,-10,0,0,0,0,0,0,0,0,
+Give the leftovers to the commoners. It is better than to give to the pigs... I think.,0,0,20,-10,0,0,0,0,0,0,0,0,
+Call the pope to praise our dear Lord and give us his blessings.,0,0,0,10,-10,20,0,0,0,0,0,0,

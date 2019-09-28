@@ -656,12 +656,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cd720119f099544a37e53e708202b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proactiveEventQuotes: {fileID: 0}
+  proactiveEventQuotes: {fileID: 4900000, guid: a6f222c654232ec448774ed62fbe5b6e,
+    type: 3}
   proactiveEventAnswers: {fileID: 4900000, guid: 55888c770813af84289507f04274d693,
     type: 3}
-  reactiveEvent: []
-  rivalEvent: []
-  crisisEvent: []
+  reactiveEvents:
+  - {fileID: 4900000, guid: d888adb13d821e84195ce77b75911455, type: 3}
+  - {fileID: 4900000, guid: 2af9770169427b043b1d8fe1c8c13261, type: 3}
+  - {fileID: 4900000, guid: 5566ca55070219543aa7e01be32fd87f, type: 3}
+  - {fileID: 4900000, guid: a66f2ace7a9a9224189a826d30556cd1, type: 3}
+  rivalEvents: []
+  crisisEvents: []
   LayoutGroup: {fileID: 0}
 --- !u!4 &397664351
 Transform:

@@ -26,6 +26,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 1
     answerText: Lower taxes.
@@ -36,6 +37,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 2
     answerText: Hold a holy mass.
@@ -46,6 +48,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 3
     answerText: Hold a ball at the castle.
@@ -56,6 +59,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 4
     answerText: Hold a guard parade.
@@ -66,6 +70,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 5
     answerText: Hold a science fair.
@@ -76,6 +81,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 6
     answerText: Build more houses for the commoners.
@@ -86,6 +92,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 7
     answerText: Increase patrol units.
@@ -96,6 +103,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 8
     answerText: Hold a public execution.
@@ -106,6 +114,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 9
     answerText: Open trade routes with neighbors.
@@ -116,6 +125,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 10
     answerText: Hold a trade fair.
@@ -126,6 +136,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 11
     answerText: Invest in crazy alchemy project.
@@ -136,6 +147,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 12
     answerText: Create a merchant's guild.
@@ -146,6 +158,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 13
     answerText: Build a new Cathedral.
@@ -156,6 +169,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 14
     answerText: Hold a carnival.
@@ -166,6 +180,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 15
     answerText: Buy better weapons and armors for guards.
@@ -176,6 +191,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 16
     answerText: Pay a minstrel to sing your praises.
@@ -186,6 +202,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 17
     answerText: Build a new pub.
@@ -196,6 +213,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 18
     answerText: Hold a joust tournament.
@@ -206,6 +224,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 19
     answerText: Send spies to other kingdoms.
@@ -216,6 +235,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 20
     answerText: Build a golden statue of yourself.
@@ -226,6 +246,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 21
     answerText: Name a llama as Viscount.
@@ -236,6 +257,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 22
     answerText: Decree free booze day.
@@ -246,6 +268,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 23
     answerText: Designate yourself as God-King.
@@ -256,6 +279,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 24
     answerText: Turn the kingdom into a secular state.
@@ -266,6 +290,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 25
     answerText: Build a school.
@@ -276,6 +301,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 26
     answerText: Build an infirmary.
@@ -286,6 +312,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
   - identifier: 27
     answerText: Distribute more lands to the Church.
@@ -296,4 +323,5 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    popChanges: []
     resolution: 
