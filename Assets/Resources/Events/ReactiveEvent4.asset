@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a79d6ef1be428441888aa68c1ccdf6e, type: 3}
+  m_Name: ReactiveEvent4
+  m_EditorClassIdentifier: 
+  identifier: ReactiveEvent4
+  type: 1
+  question: The royal blacksmith offered you the opportunity to forge a new weapon.
+    What weapon will you choose?
+  answers:
+  - identifier: 1
+    answerText: 'A sensible and versatile weapon for everyday use: a spear.'
+    statChanges:
+    - socialClass: 3
+      changeValue: 20
+    popChanges: []
+    resolution: 
+  - identifier: 2
+    answerText: 'The weapon that can kill and equally tend the fields: a scythe.'
+    statChanges:
+    - socialClass: 3
+      changeValue: 20
+    popChanges: []
+    resolution: 
+  - identifier: 3
+    answerText: A staff. I'll ask the alchemists later to get me a pretty stone that
+      fits.
+    statChanges:
+    - socialClass: 3
+      changeValue: 20
+    popChanges: []
+    resolution: 
+  - identifier: 4
+    answerText: 'The only real weapon for a king: a mighty sword.'
+    statChanges:
+    - socialClass: 3
+      changeValue: 20
+    popChanges: []
+    resolution: 
