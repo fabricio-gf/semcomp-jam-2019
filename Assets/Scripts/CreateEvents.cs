@@ -21,13 +21,15 @@ public class CreateEvents : MonoBehaviour
 
     [Space(20)]
     [SerializeField] TextAsset[] rivalEvents = null;
+    List<Answer> rivalAnswers = new List<Answer>();
 
     [Space(20)]
-    [SerializeField] TextAsset[] crisisEvents = null;
+    [SerializeField] TextAsset[] crisisEventQuestion = null;
+    [SerializeField] TextAsset[] crisisEventResultsTable = null;
+    [SerializeField] TextAsset[] crisisEventResolutions = null;
 
     [Space(20)]
 
-    [SerializeField] RectTransform LayoutGroup = null;
     StringBuilder sb = new StringBuilder();
 
     string[] lines;
@@ -36,7 +38,6 @@ public class CreateEvents : MonoBehaviour
     {
         if (deleteAll)
         {
-            print("DELETE");
             AssetDatabase.DeleteAsset("Assets/Resources/Events");
             
             AssetDatabase.CreateFolder("Assets/Resources", "Events");
@@ -63,11 +64,9 @@ public class CreateEvents : MonoBehaviour
         statChanges.Clear();
         proactiveAnswers.Clear();
 
-        int currentIndex = 1;
-        foreach (var l in lines)
+        for(int j = 1; j < lines.Length; j++)
         {
-            if (currentIndex >= lines.Length) break;
-            string[] lineContent = lines[currentIndex].Split(',');
+            string[] lineContent = lines[j].Split(';');
             statChanges.Clear();
             for (int i = 1; i < lineContent.Length; i++)
             {
@@ -76,28 +75,28 @@ public class CreateEvents : MonoBehaviour
                     statChanges.Add(new StatChange((Utilities.SocialClass)(i - 1), int.Parse(lineContent[i])));
                 }
             }
-            proactiveAnswers.Add(new Answer(currentIndex - 1, lineContent[0], statChanges, null, ""));
-            currentIndex++;
+            proactiveAnswers.Add(new Answer(j - 1, lineContent[0], statChanges, null, new Dialogue(new string[0])));
         }
 
         lines = proactiveEventQuotes.text.Split('\n');
+        Dialogue dialogue;
         GameEvent gameEvent;
-        currentIndex = 1;
-        foreach (var l in lines)
-        {
-            if (currentIndex >= lines.Length) break;
 
-            gameEvent = new GameEvent("ProactiveEvent" + currentIndex, GameEvent.EventType.PROACTIVE, l, proactiveAnswers);
+        for(int i = 1; i < lines.Length; i++)
+        {
+            dialogue = new Dialogue(lines[i].Split('$'));
+
+            gameEvent = new GameEvent("ProactiveEvent" + i, GameEvent.EventType.PROACTIVE, dialogue, proactiveAnswers);
             CreateAsset(typeof(GameEvent), gameEvent);
-            currentIndex++;
         }
     }
 
     private void GenerateReactiveEvents()
     {
         int eventIndex = 1;
+        Dialogue dialogue;
+
         //handle csv file
-        print(reactiveEvents.Length);
         foreach(TextAsset e in reactiveEvents)
         {
             //handle csv file
@@ -106,34 +105,31 @@ public class CreateEvents : MonoBehaviour
             popChanges.Clear();
             reactiveAnswers.Clear();
 
-            question = lines[1].Split(',')[0];
+            dialogue = new Dialogue(lines[1].Split(';')[0].Split('$'));
             
-            int currentIndex = 2;
-            foreach (var l in lines)
+            for(int i = 2; i < lines.Length; i++)
             {
-                if (currentIndex >= lines.Length) break;
-
-                string[] lineContent = lines[currentIndex].Split(',');
+                string[] lineContent = lines[i].Split(';');
                 statChanges.Clear();
-                for (int i = 1; i < lineContent.Length / 2; i++)
+                for (int j = 1; j < (lineContent.Length-1) / 2; j++)
                 {
-                    if (lineContent[i] != "0" && lineContent[i] != "" && !string.IsNullOrEmpty(lineContent[i]))
+                    if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
-                        statChanges.Add(new StatChange((Utilities.SocialClass)(i - 1), int.Parse(lineContent[i])));
+                        statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
                     }
                 }
-                for (int i = lineContent.Length / 2; i < lineContent.Length; i++)
+                popChanges.Clear();
+                for (int j = (lineContent.Length-1) / 2; j < lineContent.Length-1; j++)
                 {
-                    if (lineContent[i] != "0" && lineContent[i] != "\r" &&  !string.IsNullOrEmpty(lineContent[i]))
+                    if (lineContent[j] != "0" && lineContent[j] != "-" &&  !string.IsNullOrEmpty(lineContent[j]))
                     {
-                        popChanges.Add(new StatChange((Utilities.SocialClass)(i - lineContent.Length / 2), int.Parse(lineContent[i])));
+                        popChanges.Add(new StatChange((Utilities.SocialClass)(j - lineContent.Length / 2), int.Parse(lineContent[j])));
                     }
                 }
-                reactiveAnswers.Add(new Answer(currentIndex - 1, lineContent[0], statChanges, popChanges, ""));
-                currentIndex++;
+                reactiveAnswers.Add(new Answer(i - 1, lineContent[0], statChanges, popChanges, new Dialogue(lineContent[lineContent.Length-1].Split('$'))));
             }
 
-            GameEvent gameEvent = new GameEvent("ReactiveEvent" + eventIndex, GameEvent.EventType.REACTIVE, question, reactiveAnswers);
+            GameEvent gameEvent = new GameEvent("ReactiveEvent" + eventIndex, GameEvent.EventType.REACTIVE, dialogue, reactiveAnswers);
             eventIndex++;
             CreateAsset(typeof(GameEvent), gameEvent);
         }
@@ -141,7 +137,45 @@ public class CreateEvents : MonoBehaviour
 
     private void GenerateRivalEvents()
     {
+        int eventIndex = 1;
 
+        Dialogue dialogue;
+        foreach (TextAsset e in rivalEvents)
+        {
+            //handle csv file
+            lines = e.text.Split('\n');
+            rivalAnswers.Clear();
+            statChanges.Clear();
+            popChanges.Clear();
+
+            dialogue = new Dialogue(lines[1].Split(';')[0].Split('$'));
+
+            for(int i = 2; i < lines.Length; i++)
+            {
+                string[] lineContent = lines[i].Split(';');
+                statChanges.Clear();
+                for (int j = 1; j < (lineContent.Length-1) / 2; j++)
+                {
+                    if (lineContent[j] != "0" && lineContent[j] != "" && !string.IsNullOrEmpty(lineContent[j]))
+                    {
+                        statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
+                    }
+                }
+                popChanges.Clear();
+                for (int j = (lineContent.Length-1) / 2; j < lineContent.Length-1; j++)
+                {
+                    if (lineContent[j] != "0" && lineContent[j] != "\r" && !string.IsNullOrEmpty(lineContent[j]))
+                    {
+                        popChanges.Add(new StatChange((Utilities.SocialClass)(j - lineContent.Length / 2), int.Parse(lineContent[j])));
+                    }
+                }
+                rivalAnswers.Add(new Answer(i - 1, lineContent[0], statChanges, popChanges, new Dialogue(lineContent[lineContent.Length-1].Split('$'))));
+            }
+
+            GameEvent gameEvent = new GameEvent("RivalEvent" + eventIndex, GameEvent.EventType.RIVAL, dialogue, rivalAnswers);
+            eventIndex++;
+            CreateAsset(typeof(GameEvent), gameEvent);
+        }
     }
 
     private void GenerateCrisisEvents()

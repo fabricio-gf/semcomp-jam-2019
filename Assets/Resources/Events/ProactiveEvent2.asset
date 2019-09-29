@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: ProactiveEvent2
   type: 0
-  question: "The jokes from the royal jester are getting pretty funny.\r"
+  question:
+    sentences:
+    - "The jokes from the royal jester are boring as always.\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.
@@ -26,7 +28,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 1
     answerText: Lower taxes.
     statChanges:
@@ -37,7 +40,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 2
     answerText: Hold a holy mass.
     statChanges:
@@ -48,7 +52,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 3
     answerText: Hold a ball at the castle.
     statChanges:
@@ -59,7 +64,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 4
     answerText: Hold a guard parade.
     statChanges:
@@ -70,7 +76,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 5
     answerText: Hold a science fair.
     statChanges:
@@ -81,7 +88,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 6
     answerText: Build more houses for the commoners.
     statChanges:
@@ -92,7 +100,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 7
     answerText: Increase patrol units.
     statChanges:
@@ -103,7 +112,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 8
     answerText: Hold a public execution.
     statChanges:
@@ -114,7 +124,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 9
     answerText: Open trade routes with neighbors.
     statChanges:
@@ -125,7 +136,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 10
     answerText: Hold a trade fair.
     statChanges:
@@ -136,7 +148,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 11
     answerText: Invest in crazy alchemy project.
     statChanges:
@@ -147,7 +160,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 12
     answerText: Create a merchant's guild.
     statChanges:
@@ -158,7 +172,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 13
     answerText: Build a new Cathedral.
     statChanges:
@@ -169,7 +184,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 14
     answerText: Hold a carnival.
     statChanges:
@@ -180,7 +196,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 15
     answerText: Buy better weapons and armors for guards.
     statChanges:
@@ -191,7 +208,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 16
     answerText: Pay a minstrel to sing your praises.
     statChanges:
@@ -202,7 +220,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 17
     answerText: Build a new pub.
     statChanges:
@@ -213,7 +232,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 18
     answerText: Hold a joust tournament.
     statChanges:
@@ -224,7 +244,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 19
     answerText: Send spies to other kingdoms.
     statChanges:
@@ -235,7 +256,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 20
     answerText: Build a golden statue of yourself.
     statChanges:
@@ -246,7 +268,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 21
     answerText: Name a llama as Viscount.
     statChanges:
@@ -257,7 +280,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 22
     answerText: Decree free booze day.
     statChanges:
@@ -268,7 +292,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 23
     answerText: Designate yourself as God-King.
     statChanges:
@@ -279,7 +304,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 24
     answerText: Turn the kingdom into a secular state.
     statChanges:
@@ -290,7 +316,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 25
     answerText: Build a school.
     statChanges:
@@ -301,7 +328,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 26
     answerText: Build an infirmary.
     statChanges:
@@ -312,7 +340,8 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []
   - identifier: 27
     answerText: Distribute more lands to the Church.
     statChanges:
@@ -323,4 +352,5 @@ MonoBehaviour:
     - socialClass: 5
       changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences: []

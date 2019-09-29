@@ -14,50 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: ReactiveEvent2
   type: 1
-  question: "\"You will throw a royal ball. Who will you invite as a guest of honor?\"\r"
+  question:
+    sentences:
+    - You will throw a royal ball. Who will you invite as a guest of honor?
   answers:
   - identifier: 1
-    answerText: 
+    answerText: The merchant guild's chief. Even a ball can be a good oportunity for
+      business.
     statChanges:
     - socialClass: 2
       changeValue: 20
     - socialClass: 3
       changeValue: -10
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasdasd\r"
   - identifier: 2
-    answerText: The merchant guild's chief.
+    answerText: The grand duke. Life as nobility is full of hardships, so we must
+      help each other.
     statChanges:
     - socialClass: 2
       changeValue: 20
     - socialClass: 3
       changeValue: -10
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasdasd\r"
   - identifier: 3
-    answerText: The grand duke.
+    answerText: The captain of the guard. The man who defends our kingdom should be
+      given a night of rest.
     statChanges:
     - socialClass: 2
       changeValue: 20
     - socialClass: 3
       changeValue: -10
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasdasd\r"
   - identifier: 4
-    answerText: The captain of the guard.
+    answerText: Some random commoner. You know, we need some new faces in the castle.
     statChanges:
     - socialClass: 2
       changeValue: 20
     - socialClass: 3
       changeValue: -10
     popChanges: []
-    resolution: 
-  - identifier: 5
-    answerText: Some random commoner.
-    statChanges:
-    - socialClass: 2
-      changeValue: 20
-    - socialClass: 3
-      changeValue: -10
-    popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - asdasdasdas

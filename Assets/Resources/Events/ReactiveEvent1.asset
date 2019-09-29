@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: ReactiveEvent1
   type: 1
-  question: You are in the royal banquet. You are really bored and want to do something
-    different. What will you do to liven things up?
+  question:
+    sentences:
+    - You are in the royal banquet. You are really bored and want to do something
+      different. What will you do to liven things up?
   answers:
   - identifier: 1
     answerText: Call the alchemists to create some strange lights and smokes. What
@@ -25,21 +27,21 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    - socialClass: 5
-      changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasd\r"
   - identifier: 2
-    answerText: '"Call the castle guards to the party. They deserve it."'
+    answerText: Call the castle guards to the party, they deserve it.
     statChanges:
     - socialClass: 3
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    - socialClass: 5
-      changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasd\r"
   - identifier: 3
     answerText: Give the leftovers to the commoners. It is better than to give to
       the pigs... I think.
@@ -48,10 +50,10 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    - socialClass: 5
-      changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - "asdasdas\r"
   - identifier: 4
     answerText: Call the pope to praise our dear Lord and give us his blessings.
     statChanges:
@@ -59,7 +61,7 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    - socialClass: 5
-      changeValue: 20
     popChanges: []
-    resolution: 
+    resolution:
+      sentences:
+      - asdasd

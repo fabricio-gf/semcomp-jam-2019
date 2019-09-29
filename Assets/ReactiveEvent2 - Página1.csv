@@ -1,7 +1,0 @@
-Quote-Answer,Merchant Infl,Guard Infl,Commoner Infl,Noble Infl,Alchemists Infl,Clergy Infl,Merchant Pop,Guard Pop,Commoner Pop,Noble Pop,Alchemists Pop,Clergy Pop,Answer
-"You will throw a royal ball. Who will you invite as a guest of honor?"
-,,,,,,,,,,,,,
-The merchant guild's chief.,20,0,0,-5,0,0,0,0,0,0,0,0,
-The grand duke.,-5,0,0,20,0,0,0,0,0,0,0,0,
-The captain of the guard.,0,20,0,-5,0,0,0,0,0,0,0,0,
-Some random commoner.,0,0,20,-10,0,0,0,0,0,0,0,0,
