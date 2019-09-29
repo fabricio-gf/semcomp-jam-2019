@@ -50,15 +50,14 @@ public class GameEvent : ScriptableObject
         
         foreach (PlayerAnswer ans in answers)
         {
-            //World.Instance.groups += ans.answer.popChanges;
-            ans.player.influence += ans.answer.AdaptedStatChanges();
-            World.Instance.groups += ans.answer.AdaptedStatChanges();
+            ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges);
+            World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges);
             List<Player> players = new List<Player>(FindObjectsOfType<Player>());
             foreach(Player p in players)
             {
                 if (p != ans.player)
                 {
-                    
+                    p.influence += Answer.AdaptedStatChanges(ans.answer.rivalStatChanges);
                 }
             }
         }

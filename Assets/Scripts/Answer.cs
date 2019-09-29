@@ -42,7 +42,7 @@ public class Answer
     }
 
 
-    public World.PopulationGroups AdaptedStatChanges()
+    public static World.PopulationGroups AdaptedStatChanges(List<StatChange> changes)
     {
         int size = (int)World.Faction.SIZE;
         List<float> values = new List<float>();
@@ -50,7 +50,7 @@ public class Answer
         {
             values.Add(0f);
         }
-        foreach (StatChange s in statChanges)
+        foreach (StatChange s in changes)
         {
             if (s.socialClass != Utilities.SocialClass.NULL)
             {
