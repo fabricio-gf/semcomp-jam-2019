@@ -1,0 +1,10 @@
+Quote-Answer,Class,Threshold
+"The guards of this somewhat peaceful kingdom rarely has to fight and serve mostly as a display of power and to keep revolutions and crimes at bay. $However, their equipment is getting rusted and crushed and old. The captain of the guard asked you for money for new equipments. $Your counselor advised that the gold is not that abundant and you must choose wisely what to do.",,
+Give them some money.,-,-
+Refuse to buy new equipment.,-,-
+Ask the merchant's guild to sponsor the guard.,Merchant,240
+Negotiate a progressive change of equipment over time.,Guard,240
+-,Commoner,240
+Task each noble to buy equipments for the guards of their lands.,Noble,240
+Ask the help of alchemists to fix and improve equipments.,Alchemist,240
+-,Clergy,240
