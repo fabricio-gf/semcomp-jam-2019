@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NormalEventController : MonoBehaviour
+public class RivalEventController : MonoBehaviour
 {
     Animator animator;
 
@@ -14,8 +14,7 @@ public class NormalEventController : MonoBehaviour
 
     public float eventStartDelay;
 
-    public TextMeshProUGUI[] player1Texts;
-    public TextMeshProUGUI[] player2Texts;
+    public TextMeshProUGUI[] optionTexts;
 
     public Player player1;
     public Player player2;
@@ -26,14 +25,19 @@ public class NormalEventController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
+    }
+
+    private void Start()
+    {
         GameFlow.Instance.OnEventStart += StartEvent;
         EventHandler.Instance.OnEventResolved += ShowResolution;
+
     }
 
     public void StartEvent(GameEvent _gameEvent)
     {
         gameEvent = _gameEvent;
-        if(gameEvent.type == GameEvent.EventType.RIVAL)
+        if (gameEvent.type != GameEvent.EventType.RIVAL)
         {
             return;
         }
@@ -46,7 +50,7 @@ public class NormalEventController : MonoBehaviour
     {
         yield return new WaitForSeconds(eventStartDelay);
         WritePlayerOptions();
-        animator.SetTrigger("BeginNormalEvent");
+        animator.SetTrigger("StartRivalEvent");
     }
 
     public void StartDialogue()
@@ -54,9 +58,9 @@ public class NormalEventController : MonoBehaviour
         questionBox.StartDialogue(gameEvent.question);
     }
 
-    public void ShowButtons()
+    public void StartCountdown()
     {
-        animator.SetTrigger("ShowButtons");
+        animator.SetTrigger("StartCountdown");
     }
 
     public void ShowResolution()
@@ -76,16 +80,15 @@ public class NormalEventController : MonoBehaviour
     public void EndEvent()
     {
         currentEvent = false;
-        animator.SetTrigger("EndNormalEvent");
+        animator.SetTrigger("EndRivalEvent");
         GameFlow.Instance.OnEventFinished();
     }
 
     void WritePlayerOptions()
     {
-        for(int i = 0; i < player1Texts.Length; i++)
+        for(int i = 0; i < 2; i++)
         {
-            player1Texts[i].text = player1.avaiableAnswers[i].answerText;
-            player2Texts[i].text = player2.avaiableAnswers[i].answerText;
+            optionTexts[i].text = player1.avaiableAnswers[i].answerText;
         }
     }
 }
