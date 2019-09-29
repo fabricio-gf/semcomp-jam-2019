@@ -44,23 +44,32 @@ public class GameEvent : ScriptableObject
 
     }
 
-    public void Resolve(List<PlayerAnswer> answers)
+    public List<PlayerAnswer> Resolve(List<PlayerAnswer> answers)
     {
-        //TODO: make all cases here - switch or inheritance
-        
-        foreach (PlayerAnswer ans in answers)
+        if (type != EventType.CRISIS)
         {
-            ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges);
-            World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges);
-            List<Player> players = new List<Player>(FindObjectsOfType<Player>());
-            foreach(Player p in players)
+            foreach (PlayerAnswer ans in answers)
             {
-                if (p != ans.player)
+                ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges);
+                World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges);
+                List<Player> players = new List<Player>(FindObjectsOfType<Player>());
+                foreach (Player p in players)
                 {
-                    p.influence += Answer.AdaptedStatChanges(ans.answer.rivalStatChanges);
+                    if (p != ans.player)
+                    {
+                        p.influence += Answer.AdaptedStatChanges(ans.answer.rivalStatChanges);
+                    }
                 }
             }
+            return answers;
         }
+        else
+        {
+            //FIXME: implement to get resolution of the crisis
+            return null;
+        }
+        
+        
     }
 
     

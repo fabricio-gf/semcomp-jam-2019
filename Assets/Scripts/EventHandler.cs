@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventHandler : MonoBehaviour
 {
 
-    public delegate void EventResolved();
+    public delegate void EventResolved(List<GameEvent.PlayerAnswer> answers);
     public event EventResolved OnEventResolved;
 
     public static EventHandler Instance { get; private set; }
@@ -113,8 +113,7 @@ public class EventHandler : MonoBehaviour
     private void Resolve()
     {
         //Resolve effects on players and world - should use GameEvent
-        ActiveEvent.Resolve(_answers);
-        OnEventResolved?.Invoke();
+        OnEventResolved?.Invoke(ActiveEvent.Resolve(_answers)); // Warning: resolve does things AND returns more stuff
     }
 
     
