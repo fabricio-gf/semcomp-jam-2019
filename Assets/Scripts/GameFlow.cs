@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameFLow : MonoBehaviour
+public class GameFlow : MonoBehaviour
 {
     public float eventTimeoutSeconds = 3;
     public float startEventDelaySeconds = 0.5f;
@@ -18,7 +18,7 @@ public class GameFLow : MonoBehaviour
     public delegate void EventForceEnd();
     public event EventForceEnd OnEventForceEnd;
 
-    static public GameFLow Instance { get; private set; }
+    static public GameFlow Instance { get; private set; }
 
     public int Turn { get; private set; } = 0;
 
@@ -54,6 +54,7 @@ public class GameFLow : MonoBehaviour
         avaiableEvents.Remove(gameEvent);
 
         StartCoroutine(EventTimeout(eventTimeoutSeconds));
+        Debug.Log("Starting Event: " + gameEvent.identifier);
         OnEventStart?.Invoke(gameEvent);
     }
 

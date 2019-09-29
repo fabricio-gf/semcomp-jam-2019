@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static List<Player> players = new List<Player>();
+    public List<Answer> avaiableAnswers; // UI needs it
 
     public static void NormalizeInfluences()
     {
@@ -36,6 +37,35 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void PressUP()
+    {
+        SendAnswer(2);
+    }
+
+    public void PressDown()
+    {
+        SendAnswer(3);
+    }
+
+    public void PressLeft()
+    {
+        SendAnswer(0);
+    }
+
+    public void PressRight()
+    {
+        SendAnswer(1);
+    }
+
+    public void SendAnswer(int index)
+    {
+        if (index >= avaiableAnswers.Count)
+        {
+            return;
+        }
+        EventHandler.Instance.RecordAnswer(avaiableAnswers[index], this);
     }
 
 }

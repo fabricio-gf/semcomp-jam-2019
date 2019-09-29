@@ -11,7 +11,10 @@ public class EventHandler : MonoBehaviour
     public static EventHandler Instance { get; private set; }
 
 
-    private GameEvent activeEvent;
+    public GameEvent ActiveEvent { get; private set; }
+
+    public Player player1;
+    public Player player2;
 
     private List<GameEvent.PlayerAnswer> answers = new List<GameEvent.PlayerAnswer>(2);
 
@@ -26,14 +29,13 @@ public class EventHandler : MonoBehaviour
         {
             Instance = this;
         }
-        GameFLow.Instance.OnEventStart += OnEventStart;
-        GameFLow.Instance.OnEventForceEnd += OnEventForceEnd;
-        //OnEventResolved += GameFLow.Instance.OnEventResolved; //FIXME: some UI should handle this instead of the gameflow
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameFlow.Instance.OnEventStart += OnEventStart;
+        GameFlow.Instance.OnEventForceEnd += OnEventForceEnd;
+        //OnEventResolved += GameFLow.Instance.OnEventResolved; //FIXME: some UI should handle this instead of the gameflow
     }
 
     // Update is called once per frame
@@ -42,15 +44,36 @@ public class EventHandler : MonoBehaviour
         
     }
 
-    void OnEventStart(GameEvent gameEvent)
+    void OnEventStart(GameEvent gameEvent) // UI needs it
     {
-        activeEvent = gameEvent;
+        ActiveEvent = gameEvent;
         answers.Clear();
+        SetPlayersAvaiableAnswers();
     }
 
-    void OnEventForceEnd()
+    void SetPlayersAvaiableAnswers()
     {
-        if(activeEvent.type == GameEvent.EventType.RIVAL)
+        List<Answer> answers = new List<Answer>(ActiveEvent.answers);
+        player1.avaiableAnswers = new List<Answer>();
+        while(player1.avaiableAnswers.Count < 4 && answers.Count > 0)
+        {
+            int rand = Random.Range(0, answers.Count);
+            player1.avaiableAnswers.Add(answers[rand]);
+            answers.RemoveAt(rand);
+        }
+        answers = new List<Answer>(ActiveEvent.answers);
+        player2.avaiableAnswers = new List<Answer>();
+        while (player2.avaiableAnswers.Count < 4 && answers.Count > 0)
+        {
+            int rand = Random.Range(0, answers.Count);
+            player2.avaiableAnswers.Add(answers[rand]);
+            answers.RemoveAt(rand);
+        }
+    }
+
+    void OnEventForceEnd() // UI needs it
+    {
+        if(ActiveEvent.type == GameEvent.EventType.RIVAL)
         {
             return;
         }
@@ -58,14 +81,23 @@ public class EventHandler : MonoBehaviour
         Resolve();
     }
 
-    public void RecordAnswer(Answer answer, Player player)
+    public void RecordAnswer(Answer answer, Player player) 
     {
+        //Make additional checks to see if it is possible to record the answer
+        // Avoid multiple inputs
+        foreach(GameEvent.PlayerAnswer ans in answers)
+        {
+            if (ans.player == player)
+            {
+                return;
+            }
+        }
         GameEvent.PlayerAnswer a = new GameEvent.PlayerAnswer(answer, player);
         answers.Add(a);
         /* Rival Events: first answer takes effect, event is resolved
          * Other events: waits for two answers, applies results, is resolved
          */
-        if (activeEvent.type == GameEvent.EventType.RIVAL)
+        if (ActiveEvent.type == GameEvent.EventType.RIVAL)
         {
             Resolve();
         }
@@ -81,8 +113,8 @@ public class EventHandler : MonoBehaviour
     private void Resolve()
     {
         //Resolve effects on players and world - should use GameEvent
-        activeEvent.Resolve(answers);
-        OnEventResolved();
+        ActiveEvent.Resolve(answers);
+        OnEventResolved?.Invoke();
     }
 
     
