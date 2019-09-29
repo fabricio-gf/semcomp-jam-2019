@@ -18,6 +18,9 @@ public class GameFlow : MonoBehaviour
     public delegate void EventForceEnd();
     public event EventForceEnd OnEventForceEnd;
 
+    public delegate void GameOver(Player player);
+    public event GameOver OnGameOver;
+
     static public GameFlow Instance { get; private set; }
 
     public int Turn { get; private set; } = 0;
@@ -38,6 +41,45 @@ public class GameFlow : MonoBehaviour
     private IEnumerator StartEventCoroutine(float startEventDelay)
     {
         yield return new WaitForSeconds(startEventDelay);
+        // START Conquest Victory
+        // If player can have conquest victory
+        List<Player> players = new List<Player>(FindObjectsOfType<Player>());
+        Player attackingPlayer = null;
+        float attackingPlayerPower = 0f;
+        float attackingPlayerPowerIndex = 0;
+        foreach(Player p in players)
+        {
+            int highestIndex = (int)p.Power.Highest();
+            float highestValue = p.Power.groups[highestIndex];
+            if (highestValue >= conquestWinThreshold)
+            {
+                if (attackingPlayerPower < highestValue)
+                {
+                    attackingPlayer = p;
+                    attackingPlayerPower = highestValue;
+                    attackingPlayerPowerIndex = highestIndex;
+                }
+            }
+        }
+        if (attackingPlayer != null)
+        {
+            //Run crisis event to finish
+        }
+        // END Conquest Victory
+        // Supremacy victory - turns count expired
+        if (Turn == maxTurns - 1)
+        {
+            float power1 = players[0].Power.Total();
+            float power2 = players[1].Power.Total();
+            if (power1 > power2)
+            {
+                OnGameOver?.Invoke(players[0]);
+            }
+            else
+            {
+                OnGameOver?.Invoke(players[1]);
+            }
+        }
         //Choose event from list, considering probabilities
         int rand = -1;
         GameEvent gameEvent = null;
