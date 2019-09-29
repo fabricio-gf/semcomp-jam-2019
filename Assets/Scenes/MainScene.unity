@@ -1060,6 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf0e00326f2c97458bf46eaebc6d226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playername: Charles
   avaiableAnswers: []
   influence:
     groups:
@@ -3416,6 +3417,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
+      propertyPath: isResolutionBox
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
 --- !u!224 &1149349071 stripped
@@ -3852,6 +3857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68de8e0e18dc6444b85d1ebdeb8e4da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playertext: {fileID: 1917321421}
 --- !u!224 &1202093105 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6723029130279829632, guid: 2305f69ef5286eb47bd9912b096a0e72,
@@ -5295,6 +5301,10 @@ PrefabInstance:
       propertyPath: typingSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
+      propertyPath: isResolutionBox
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
 --- !u!224 &1702682801 stripped
@@ -5321,6 +5331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf0e00326f2c97458bf46eaebc6d226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playername: Katrina
   avaiableAnswers: []
   influence:
     groups:
@@ -7785,6 +7796,10 @@ PrefabInstance:
     - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
       propertyPath: typingSpeed
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
+      propertyPath: isResolutionBox
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}

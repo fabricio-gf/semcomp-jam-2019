@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public string playername;
+
     public static List<Player> players = new List<Player>();
     public List<Answer> avaiableAnswers; // UI needs it
 

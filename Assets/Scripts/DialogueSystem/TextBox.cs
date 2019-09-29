@@ -104,7 +104,14 @@ public class TextBox : MonoBehaviour
         }
         else
         {
-
+            if (transform.parent.name == "RivalEventCanvas")
+            {
+                animator.SetTrigger("EndRivalEvent");
+            }
+            else
+            {
+                animator.SetTrigger("EndNormalEvent");
+            }
         }
     }
 }

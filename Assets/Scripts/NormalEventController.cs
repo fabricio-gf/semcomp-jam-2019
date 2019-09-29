@@ -105,4 +105,9 @@ public class NormalEventController : MonoBehaviour
             player2Texts[i].text = player2.avaiableAnswers[i].answerText;
         }
     }
+
+    public void ToggleCanPress()
+    {
+        InputManager.instance.canPress = !InputManager.instance.canPress;
+    }
 }

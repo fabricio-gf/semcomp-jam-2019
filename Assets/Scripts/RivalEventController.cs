@@ -94,4 +94,9 @@ public class RivalEventController : MonoBehaviour
             optionTexts[i].text = player1.avaiableAnswers[i].answerText;
         }
     }
+
+    public void ToggleCanPress()
+    {
+        InputManager.instance.canPress = !InputManager.instance.canPress;
+    }
 }
