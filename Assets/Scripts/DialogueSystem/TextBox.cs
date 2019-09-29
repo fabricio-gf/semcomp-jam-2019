@@ -15,6 +15,8 @@ public class TextBox : MonoBehaviour
     bool skipDialogue = false;
     bool dialogueEnded = false;
 
+    public bool isResolutionBox = false;
+
     private void Awake()
     {
         animator = transform.parent.GetComponent<Animator>();
@@ -89,13 +91,20 @@ public class TextBox : MonoBehaviour
     public void EndDialogue()
     {
         dialogueEnded = true;
-        if (transform.parent.name == "RivalEventCanvas")
+        if (!isResolutionBox)
         {
-            animator.SetTrigger("StartCountdown");
+            if (transform.parent.name == "RivalEventCanvas")
+            {
+                animator.SetTrigger("StartCountdown");
+            }
+            else
+            {
+                animator.SetTrigger("ShowButtons");
+            }
         }
         else
         {
-            animator.SetTrigger("ShowButtons");
+
         }
     }
 }
