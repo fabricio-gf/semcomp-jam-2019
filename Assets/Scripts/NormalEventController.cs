@@ -70,7 +70,6 @@ public class NormalEventController : MonoBehaviour
         {
             return;
         }
-        print(gameEvent.type);
         if(gameEvent.type == GameEvent.EventType.PROACTIVE)
         {
             EndEvent();
@@ -92,6 +91,8 @@ public class NormalEventController : MonoBehaviour
 
     public void EndEvent()
     {
+        print("end event");
+        if (!currentEvent) return;
         currentEvent = false;
         animator.SetTrigger("EndNormalEvent");
         GameFlow.Instance.OnEventFinished();

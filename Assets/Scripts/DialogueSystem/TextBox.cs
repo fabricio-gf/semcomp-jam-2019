@@ -104,6 +104,8 @@ public class TextBox : MonoBehaviour
         }
         else
         {
+            if (name == "ResolutionBox2") return;
+
             if (transform.parent.name == "RivalEventCanvas")
             {
                 animator.SetTrigger("EndRivalEvent");
