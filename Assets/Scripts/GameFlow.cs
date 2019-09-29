@@ -44,7 +44,7 @@ public class GameFLow : MonoBehaviour
     {
         yield return new WaitForSeconds(startEventDelay);
         //Choose event from list, considering probabilities
-        GameEvent gameEvent = new GameEvent(); //FIXME
+        GameEvent gameEvent = null;// = new GameEvent(); //FIXME - get from list
         StartCoroutine(EventTimeout(eventTimeoutSeconds));
         OnEventStart?.Invoke(gameEvent);
     }
