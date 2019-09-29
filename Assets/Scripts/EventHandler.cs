@@ -13,17 +13,7 @@ public class EventHandler : MonoBehaviour
 
     private GameEvent activeEvent;
 
-    private class PlayerAnswer
-    {
-        public int playerID;
-        public Answer answer;
-        public PlayerAnswer(Answer a, int playerID)
-        {
-            this.playerID = playerID;
-            this.answer = a;
-        }
-    }
-    private List<PlayerAnswer> answers = new List<PlayerAnswer>(2);
+    private List<GameEvent.PlayerAnswer> answers = new List<GameEvent.PlayerAnswer>(2);
 
     private void Awake()
     {
@@ -38,7 +28,7 @@ public class EventHandler : MonoBehaviour
         }
         GameFLow.Instance.OnEventStart += OnEventStart;
         GameFLow.Instance.OnEventForceEnd += OnEventForceEnd;
-        OnEventResolved += GameFLow.Instance.OnEventResolved;
+        //OnEventResolved += GameFLow.Instance.OnEventResolved; //FIXME: some UI should handle this instead of the gameflow
     }
     // Start is called before the first frame update
     void Start()
@@ -65,11 +55,12 @@ public class EventHandler : MonoBehaviour
             return;
         }
         // Else, makes resolution based on the taken inputs (answers)
+        Resolve();
     }
 
-    public void RecordAnswer(Answer answer, int playerID)
+    public void RecordAnswer(Answer answer, Player player)
     {
-        PlayerAnswer a = new PlayerAnswer(answer, playerID);
+        GameEvent.PlayerAnswer a = new GameEvent.PlayerAnswer(answer, player);
         answers.Add(a);
         /* Rival Events: first answer takes effect, event is resolved
          * Other events: waits for two answers, applies results, is resolved
@@ -90,6 +81,7 @@ public class EventHandler : MonoBehaviour
     private void Resolve()
     {
         //Resolve effects on players and world - should use GameEvent
+        activeEvent.Resolve(answers);
         OnEventResolved();
     }
 

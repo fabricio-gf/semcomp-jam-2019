@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public struct Influence
+    {
+        public float merchants;
+        public float nobility;
+        public float guard;
+        public float peasants;
+        public float alchemists;
+        public float clerics;
+    }
+
+    public Influence influence;
+
     // Player attributes, infuence, etc
 
     // Start is called before the first frame update
