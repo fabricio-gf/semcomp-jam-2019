@@ -16,4 +16,9 @@ public class Answer
         statChanges = _statChanges;
         resolution = _resolution;
     }
+
+    public Answer()
+    {
+
+    }
 }

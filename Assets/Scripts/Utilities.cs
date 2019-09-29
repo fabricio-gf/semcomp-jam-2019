@@ -11,7 +11,8 @@ public class Utilities
         COMMONER,
         NOBLE,
         ALCHEMIST,
-        CLERIC
+        CLERIC,
+        NULL
     }
 
 

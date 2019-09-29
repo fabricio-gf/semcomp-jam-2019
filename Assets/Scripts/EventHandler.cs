@@ -26,8 +26,8 @@ public class EventHandler : MonoBehaviour
         {
             Instance = this;
         }
-        GameFLow.Instance.OnEventStart += OnEventStart;
-        GameFLow.Instance.OnEventForceEnd += OnEventForceEnd;
+        GameFlow.Instance.OnEventStart += OnEventStart;
+        GameFlow.Instance.OnEventForceEnd += OnEventForceEnd;
         //OnEventResolved += GameFLow.Instance.OnEventResolved; //FIXME: some UI should handle this instead of the gameflow
     }
     // Start is called before the first frame update

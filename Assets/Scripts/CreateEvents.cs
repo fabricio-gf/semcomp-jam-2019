@@ -16,17 +16,17 @@ public class CreateEvents : MonoBehaviour
     List<Answer> proactiveAnswers = new List<Answer>();
 
     [Space(20)]
-    [SerializeField] TextAsset[] reactiveEvents = null;
+    [SerializeField] TextAsset[] reactiveEventsAssets = null;
     List<Answer> reactiveAnswers = new List<Answer>();
 
     [Space(20)]
-    [SerializeField] TextAsset[] rivalEvents = null;
+    [SerializeField] TextAsset[] rivalEventsAssets = null;
     List<Answer> rivalAnswers = new List<Answer>();
 
     [Space(20)]
-    [SerializeField] TextAsset[] crisisEventQuestion = null;
-    [SerializeField] TextAsset[] crisisEventResultsTable = null;
-    [SerializeField] TextAsset[] crisisEventResolutions = null;
+    [SerializeField] TextAsset[] crisisQuestionsAssets = null;
+    [SerializeField] TextAsset[] crisisResultsTableAssets = null;
+    [SerializeField] TextAsset[] crisisResolutionsAssets = null;
 
     [Space(20)]
 
@@ -97,7 +97,7 @@ public class CreateEvents : MonoBehaviour
         Dialogue dialogue;
 
         //handle csv file
-        foreach(TextAsset e in reactiveEvents)
+        foreach(TextAsset e in reactiveEventsAssets)
         {
             //handle csv file
             lines = e.text.Split('\n');
@@ -115,6 +115,7 @@ public class CreateEvents : MonoBehaviour
                 {
                     if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
+                        print(lineContent[j]);
                         statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
                     }
                 }
@@ -123,6 +124,8 @@ public class CreateEvents : MonoBehaviour
                 {
                     if (lineContent[j] != "0" && lineContent[j] != "-" &&  !string.IsNullOrEmpty(lineContent[j]))
                     {
+                        print(lineContent[j]);
+
                         popChanges.Add(new StatChange((Utilities.SocialClass)(j - lineContent.Length / 2), int.Parse(lineContent[j])));
                     }
                 }
@@ -140,7 +143,7 @@ public class CreateEvents : MonoBehaviour
         int eventIndex = 1;
 
         Dialogue dialogue;
-        foreach (TextAsset e in rivalEvents)
+        foreach (TextAsset e in rivalEventsAssets)
         {
             //handle csv file
             lines = e.text.Split('\n');
@@ -156,7 +159,7 @@ public class CreateEvents : MonoBehaviour
                 statChanges.Clear();
                 for (int j = 1; j < (lineContent.Length-1) / 2; j++)
                 {
-                    if (lineContent[j] != "0" && lineContent[j] != "" && !string.IsNullOrEmpty(lineContent[j]))
+                    if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
                         statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
                     }
@@ -180,7 +183,101 @@ public class CreateEvents : MonoBehaviour
 
     private void GenerateCrisisEvents()
     {
+        List<CrisisEvent.CrisisResolution> crisisResolutions = new List<CrisisEvent.CrisisResolution>();
+        CrisisEvent.CrisisResolution tempResolution;
 
+        ConditionalAnswer conditionalAnswer;
+        List<ConditionalAnswer> crisisAnswers = new List<ConditionalAnswer>();
+        Dialogue dialogue;
+        popChanges.Clear();
+        statChanges.Clear();
+
+
+        int eventIndex = 1;
+        for(int i = 0; i < crisisQuestionsAssets.Length; i++){
+
+            //resolutions
+            lines = crisisResolutionsAssets[i].text.Split('\n');
+
+            for(int j = 1; j < lines.Length; j++)
+            {
+                string[] lineContent = lines[j].Split(';');
+                tempResolution.resolution = new Dialogue(lineContent[lineContent.Length - 1].Split('$'));
+
+                for(int k = 1; k < lineContent.Length-1; k++)
+                {
+                    if(lineContent[k] != "0" && lineContent[k] != "-" && !string.IsNullOrEmpty(lineContent[k]))
+                    {
+                        popChanges.Add(new StatChange((Utilities.SocialClass)(k), int.Parse(lineContent[k])));
+                    }
+                }
+                tempResolution.index = int.Parse(lineContent[0]);
+                tempResolution.popChanges = popChanges;
+                crisisResolutions.Add(tempResolution);
+            }
+
+            //questions
+            lines = crisisQuestionsAssets[i].text.Split('\n');
+
+            dialogue = new Dialogue(lines[1].Split(';')[0].Split('$'));
+            Utilities.SocialClass tempClass;
+            ConditionalAnswer.Condition tempCondition;
+
+            for (int j = 2; j < lines.Length; j++)
+            {
+                print("j " + j);
+                string[] lineContent = lines[j].Split(';');
+                
+                if(lineContent[0] != "-" || lineContent[0] != "")
+                {
+                    switch (lineContent[1])
+                    {
+                        case "Merchant":
+                            tempClass = Utilities.SocialClass.MERCHANT;
+                            break;
+                        case "Guard":
+                            tempClass = Utilities.SocialClass.GUARD;
+                            break;
+                        case "Commoner":
+                            tempClass = Utilities.SocialClass.COMMONER;
+                            break;
+                        case "Noble":
+                            tempClass = Utilities.SocialClass.NOBLE;
+                            break;
+                        case "Alchemist":
+                            tempClass = Utilities.SocialClass.ALCHEMIST;
+                            break;
+                        case "Clergy":
+                            tempClass = Utilities.SocialClass.CLERIC;
+                            break;
+                        default:
+                            tempClass = Utilities.SocialClass.NULL;
+                            break;
+                    }
+
+                    tempCondition.socialClass = tempClass;
+
+                    if (lineContent[2][0] == '-')
+                    {
+                        tempCondition.threshold = 10000;
+                    }
+                    else
+                    {
+                        tempCondition.threshold = int.Parse(lineContent[2]);
+                    }
+
+                    print(tempCondition.socialClass + tempCondition.threshold);
+                    conditionalAnswer = new ConditionalAnswer(j-1, lineContent[0], null, null, null, tempCondition);
+                    crisisAnswers.Add(conditionalAnswer);
+                }
+            }
+
+            //table
+
+            CrisisEvent gameEvent = new CrisisEvent("CrisisEvent" + eventIndex, GameEvent.EventType.CRISIS, dialogue, crisisAnswers, crisisResolutions);
+            CreateAsset(typeof(CrisisEvent), gameEvent);
+            eventIndex++;
+        }
     }
 
     private static void CreateAsset(System.Type type, GameEvent _gameEvent)

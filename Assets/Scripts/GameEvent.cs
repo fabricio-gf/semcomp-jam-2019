@@ -39,6 +39,11 @@ public class GameEvent : ScriptableObject
         answers = _answers;
     }
 
+    public GameEvent()
+    {
+
+    }
+
     public void Resolve(List<PlayerAnswer> answers)
     {
 

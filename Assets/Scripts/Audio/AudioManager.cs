@@ -3,6 +3,8 @@
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
+    MusicController musicController = null;
+    EffectsController effectsController = null;
 
     private void Awake()
     {
@@ -15,5 +17,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        musicController = GetComponent<MusicController>();
+        effectsController = GetComponent<EffectsController>();
+    }
+
+    public void PlayClip(string key)
+    {
+        effectsController.PlayClip(key);
     }
 }
