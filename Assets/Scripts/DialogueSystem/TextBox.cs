@@ -15,8 +15,6 @@ public class TextBox : MonoBehaviour
     bool skipDialogue = false;
     bool dialogueEnded = false;
 
-    public Dialogue tempDialogue;
-
     private void Awake()
     {
         animator = transform.parent.GetComponent<Animator>();
@@ -32,10 +30,6 @@ public class TextBox : MonoBehaviour
             {
                 DisplayNextSentence();
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartDialogue(tempDialogue);
         }
     }
 
@@ -95,6 +89,13 @@ public class TextBox : MonoBehaviour
     public void EndDialogue()
     {
         dialogueEnded = true;
-        animator.SetTrigger("ShowButtons");
+        if (transform.parent.name == "RivalEventCanvas")
+        {
+            animator.SetTrigger("StartCountdown");
+        }
+        else
+        {
+            animator.SetTrigger("ShowButtons");
+        }
     }
 }
