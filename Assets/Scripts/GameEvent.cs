@@ -26,12 +26,23 @@ public class GameEvent : ScriptableObject
 
     public string identifier;
     public EventType type;
+    //public string question; //temp
     public Dialogue question;
-    public Answer[] answers;
-    
+
+    public List<Answer> answers;
+
+    public GameEvent(string _identifier, EventType _type, Dialogue _question, List<Answer> _answers)
+    {
+        identifier = _identifier;
+        type = _type;
+        question = _question;
+        answers = _answers;
+    }
+
     public void Resolve(List<PlayerAnswer> answers)
     {
 
     }
 
+    
 }

@@ -7,9 +7,9 @@ public class Utilities
     public enum SocialClass
     {
         MERCHANT,
-        NOBLE,
         GUARD,
         COMMONER,
+        NOBLE,
         ALCHEMIST,
         CLERIC
     }
