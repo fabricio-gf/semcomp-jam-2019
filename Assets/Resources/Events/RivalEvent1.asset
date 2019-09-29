@@ -30,9 +30,14 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 10
-    - socialClass: 7
+    rivalStatChanges:
+    - socialClass: 1
       changeValue: -5
-    popChanges: []
+    - socialClass: 2
+      changeValue: -5
+    popChanges:
+    - socialClass: 2
+      changeValue: 400
     resolution:
       sentences:
       - 'Everybody was shocked by the royal resolution of <PlayerWin>, except the
@@ -50,9 +55,14 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 10
-    - socialClass: 7
+    rivalStatChanges:
+    - socialClass: 1
       changeValue: -5
-    popChanges: []
+    - socialClass: 2
+      changeValue: -5
+    popChanges:
+    - socialClass: 2
+      changeValue: 400
     resolution:
       sentences:
       - 'The act of benevolence from <PlayerWin> impressed the masses and the holy

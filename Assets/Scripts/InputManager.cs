@@ -41,19 +41,19 @@ public class InputManager : MonoBehaviour
             player1.PressRight();
         }
         //P2
-        if (Input.GetKeyDown(p1UpKey))
+        if (Input.GetKeyDown(p2UpKey))
         {
             player2.PressUP();
         }
-        if (Input.GetKeyDown(p1DownKey))
+        if (Input.GetKeyDown(p2DownKey))
         {
             player2.PressDown();
         }
-        if (Input.GetKeyDown(p1LeftKey))
+        if (Input.GetKeyDown(p2LeftKey))
         {
             player2.PressLeft();
         }
-        if (Input.GetKeyDown(p1RightKey))
+        if (Input.GetKeyDown(p2RightKey))
         {
             player2.PressRight();
         }

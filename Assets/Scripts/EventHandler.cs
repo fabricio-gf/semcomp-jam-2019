@@ -5,8 +5,8 @@ using UnityEngine;
 public class EventHandler : MonoBehaviour
 {
 
-    private delegate void EventResolved();
-    private event EventResolved OnEventResolved;
+    public delegate void EventResolved();
+    public event EventResolved OnEventResolved;
 
     public static EventHandler Instance { get; private set; }
 
@@ -16,7 +16,7 @@ public class EventHandler : MonoBehaviour
     public Player player1;
     public Player player2;
 
-    private List<GameEvent.PlayerAnswer> answers = new List<GameEvent.PlayerAnswer>(2);
+    private List<GameEvent.PlayerAnswer> _answers = new List<GameEvent.PlayerAnswer>();
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class EventHandler : MonoBehaviour
     void OnEventStart(GameEvent gameEvent) // UI needs it
     {
         ActiveEvent = gameEvent;
-        answers.Clear();
+        _answers.Clear();
         SetPlayersAvaiableAnswers();
     }
 
@@ -85,7 +85,7 @@ public class EventHandler : MonoBehaviour
     {
         //Make additional checks to see if it is possible to record the answer
         // Avoid multiple inputs
-        foreach(GameEvent.PlayerAnswer ans in answers)
+        foreach(GameEvent.PlayerAnswer ans in _answers)
         {
             if (ans.player == player)
             {
@@ -93,7 +93,7 @@ public class EventHandler : MonoBehaviour
             }
         }
         GameEvent.PlayerAnswer a = new GameEvent.PlayerAnswer(answer, player);
-        answers.Add(a);
+        _answers.Add(a);
         /* Rival Events: first answer takes effect, event is resolved
          * Other events: waits for two answers, applies results, is resolved
          */
@@ -103,7 +103,7 @@ public class EventHandler : MonoBehaviour
         }
         else
         {
-            if (answers.Count == 2) //TODO: for expansion, check against playercount
+            if (_answers.Count == 2) //TODO: for expansion, check against playercount
             {
                 Resolve();
             }
@@ -113,7 +113,7 @@ public class EventHandler : MonoBehaviour
     private void Resolve()
     {
         //Resolve effects on players and world - should use GameEvent
-        ActiveEvent.Resolve(answers);
+        ActiveEvent.Resolve(_answers);
         OnEventResolved?.Invoke();
     }
 

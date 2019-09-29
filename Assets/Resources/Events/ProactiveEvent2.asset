@@ -21,324 +21,413 @@ MonoBehaviour:
   - identifier: 0
     answerText: Raise taxes.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
+    - socialClass: 0
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 2
+      changeValue: -10
+    - socialClass: 3
       changeValue: 20
+    - socialClass: 5
+      changeValue: 10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 1
     answerText: Lower taxes.
     statChanges:
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 20
     - socialClass: 3
       changeValue: -10
-    - socialClass: 4
-      changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 2
     answerText: Hold a holy mass.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
+    - socialClass: 0
       changeValue: -5
+    - socialClass: 2
+      changeValue: 10
+    - socialClass: 4
+      changeValue: -10
     - socialClass: 5
       changeValue: 20
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 3
     answerText: Hold a ball at the castle.
     statChanges:
-    - socialClass: 3
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 2
       changeValue: -10
+    - socialClass: 3
+      changeValue: 20
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: 10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 4
     answerText: Hold a guard parade.
     statChanges:
-    - socialClass: 3
+    - socialClass: 1
+      changeValue: 20
+    - socialClass: 2
       changeValue: -10
+    - socialClass: 3
+      changeValue: 10
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 5
     answerText: Hold a science fair.
     statChanges:
+    - socialClass: 0
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 4
       changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 6
     answerText: Build more houses for the commoners.
     statChanges:
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 20
     - socialClass: 3
       changeValue: -10
-    - socialClass: 4
-      changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 7
     answerText: Increase patrol units.
     statChanges:
-    - socialClass: 3
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 1
       changeValue: -10
-    - socialClass: 4
+    - socialClass: 2
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 3
       changeValue: 20
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 8
     answerText: Hold a public execution.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
-      changeValue: -5
-    - socialClass: 5
+    - socialClass: 1
       changeValue: 20
+    - socialClass: 2
+      changeValue: -10
+    - socialClass: 3
+      changeValue: 10
+    - socialClass: 5
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 9
     answerText: Open trade routes with neighbors.
     statChanges:
+    - socialClass: 0
+      changeValue: 20
     - socialClass: 3
       changeValue: -10
     - socialClass: 4
-      changeValue: -5
+      changeValue: 10
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 10
     answerText: Hold a trade fair.
     statChanges:
+    - socialClass: 0
+      changeValue: 20
     - socialClass: 3
       changeValue: -10
     - socialClass: 4
-      changeValue: -5
+      changeValue: 10
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 11
     answerText: Invest in crazy alchemy project.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 2
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 4
       changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 12
     answerText: Create a merchant's guild.
     statChanges:
+    - socialClass: 0
+      changeValue: 20
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
       changeValue: -10
-    - socialClass: 4
-      changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 13
     answerText: Build a new Cathedral.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
+    - socialClass: 0
       changeValue: -5
+    - socialClass: 2
+      changeValue: 10
+    - socialClass: 4
+      changeValue: -10
     - socialClass: 5
       changeValue: 20
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 14
     answerText: Hold a carnival.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 20
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 15
     answerText: Buy better weapons and armors for guards.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
-      changeValue: -5
-    - socialClass: 5
+    - socialClass: 1
       changeValue: 20
+    - socialClass: 3
+      changeValue: 10
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 16
     answerText: Pay a minstrel to sing your praises.
     statChanges:
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
-      changeValue: -5
+      changeValue: 10
     - socialClass: 5
-      changeValue: 20
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 17
     answerText: Build a new pub.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 20
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 18
     answerText: Hold a joust tournament.
     statChanges:
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
+      changeValue: 20
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 19
     answerText: Send spies to other kingdoms.
     statChanges:
+    - socialClass: 0
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
-      changeValue: -5
-    - socialClass: 5
       changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 20
     answerText: Build a golden statue of yourself.
     statChanges:
+    - socialClass: 2
+      changeValue: -5
     - socialClass: 3
-      changeValue: -10
+      changeValue: -5
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 21
     answerText: Name a llama as Viscount.
     statChanges:
+    - socialClass: 0
+      changeValue: -5
+    - socialClass: 2
+      changeValue: 20
     - socialClass: 3
       changeValue: -10
-    - socialClass: 4
-      changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 22
     answerText: Decree free booze day.
     statChanges:
-    - socialClass: 3
+    - socialClass: 0
       changeValue: -10
-    - socialClass: 4
-      changeValue: -5
-    - socialClass: 5
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
       changeValue: 20
+    - socialClass: 5
+      changeValue: -5
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 23
     answerText: Designate yourself as God-King.
     statChanges:
+    - socialClass: 1
+      changeValue: 20
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
+      changeValue: -5
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 20
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 24
     answerText: Turn the kingdom into a secular state.
     statChanges:
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 4
       changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 25
     answerText: Build a school.
     statChanges:
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 3
-      changeValue: -10
-    - socialClass: 4
       changeValue: -5
-    - socialClass: 5
+    - socialClass: 4
       changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
   - identifier: 26
     answerText: Build an infirmary.
     statChanges:
-    - socialClass: 3
-      changeValue: -10
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
+      changeValue: 10
     - socialClass: 4
-      changeValue: -5
-    - socialClass: 5
       changeValue: 20
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -351,6 +440,7 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []

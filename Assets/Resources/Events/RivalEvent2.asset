@@ -32,7 +32,20 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 5
       changeValue: -10
-    popChanges: []
+    rivalStatChanges:
+    - socialClass: 2
+      changeValue: -5
+    - socialClass: 3
+      changeValue: -5
+    - socialClass: 5
+      changeValue: -5
+    popChanges:
+    - socialClass: 0
+      changeValue: 40
+    - socialClass: 4
+      changeValue: 40
+    - socialClass: 5
+      changeValue: -20
     resolution:
       sentences:
       - '<PlayerWin> has heeded the Pope''s words and burned some alchemists for heresy. '
@@ -57,7 +70,20 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 5
       changeValue: -10
-    popChanges: []
+    rivalStatChanges:
+    - socialClass: 2
+      changeValue: -5
+    - socialClass: 3
+      changeValue: -5
+    - socialClass: 5
+      changeValue: -5
+    popChanges:
+    - socialClass: 0
+      changeValue: 40
+    - socialClass: 4
+      changeValue: 40
+    - socialClass: 5
+      changeValue: -20
     resolution:
       sentences:
       - 'The level-headedness of <PlayerWin> saved the lives of the alchemists, which

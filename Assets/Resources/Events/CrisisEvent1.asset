@@ -27,6 +27,7 @@ MonoBehaviour:
   - identifier: 1
     answerText: Give them some money.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -36,6 +37,7 @@ MonoBehaviour:
   - identifier: 2
     answerText: Refuse to buy new equipment.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -45,6 +47,7 @@ MonoBehaviour:
   - identifier: 3
     answerText: Ask the merchant's guild to sponsor the guard.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -54,6 +57,7 @@ MonoBehaviour:
   - identifier: 4
     answerText: Negotiate a progressive change of equipment over time.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -63,6 +67,7 @@ MonoBehaviour:
   - identifier: 5
     answerText: '-'
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -72,6 +77,7 @@ MonoBehaviour:
   - identifier: 6
     answerText: Task each noble to buy equipments for the guards of their lands.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -81,6 +87,7 @@ MonoBehaviour:
   - identifier: 7
     answerText: Ask the help of alchemists to fix and improve equipments.
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []
@@ -90,6 +97,7 @@ MonoBehaviour:
   - identifier: 8
     answerText: '-'
     statChanges: []
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences: []

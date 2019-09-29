@@ -72,10 +72,13 @@ public class CreateEvents : MonoBehaviour
             {
                 if (lineContent[i] != "0")
                 {
+                    print("line content " + lineContent[i]);
                     statChanges.Add(new StatChange((Utilities.SocialClass)(i - 1), int.Parse(lineContent[i])));
+                    print("stat changes " + statChanges[statChanges.Count-1].changeValue);
                 }
             }
-            proactiveAnswers.Add(new Answer(j - 1, lineContent[0], statChanges, null, new Dialogue(new string[0])));
+            print("stat changes out " + statChanges.Count);
+            proactiveAnswers.Add(new Answer(j - 1, lineContent[0], new List<StatChange> (statChanges), new Dialogue(new string[0])));
         }
 
         lines = proactiveEventQuotes.text.Split('\n');
@@ -115,7 +118,6 @@ public class CreateEvents : MonoBehaviour
                 {
                     if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
-                        print(lineContent[j]);
                         statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
                     }
                 }
@@ -124,8 +126,6 @@ public class CreateEvents : MonoBehaviour
                 {
                     if (lineContent[j] != "0" && lineContent[j] != "-" &&  !string.IsNullOrEmpty(lineContent[j]))
                     {
-                        print(lineContent[j]);
-
                         popChanges.Add(new StatChange((Utilities.SocialClass)(j - lineContent.Length / 2), int.Parse(lineContent[j])));
                     }
                 }
@@ -142,6 +142,8 @@ public class CreateEvents : MonoBehaviour
     {
         int eventIndex = 1;
 
+        List<StatChange> rivalChanges = new List<StatChange>();
+
         Dialogue dialogue;
         foreach (TextAsset e in rivalEventsAssets)
         {
@@ -149,6 +151,7 @@ public class CreateEvents : MonoBehaviour
             lines = e.text.Split('\n');
             rivalAnswers.Clear();
             statChanges.Clear();
+            rivalChanges.Clear();
             popChanges.Clear();
 
             dialogue = new Dialogue(lines[1].Split(';')[0].Split('$'));
@@ -157,22 +160,30 @@ public class CreateEvents : MonoBehaviour
             {
                 string[] lineContent = lines[i].Split(';');
                 statChanges.Clear();
-                for (int j = 1; j < (lineContent.Length-1) / 2; j++)
+                for (int j = 1; j < ((lineContent.Length-1) / 3) +1; j++)
                 {
                     if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
                         statChanges.Add(new StatChange((Utilities.SocialClass)(j - 1), int.Parse(lineContent[j])));
                     }
                 }
-                popChanges.Clear();
-                for (int j = (lineContent.Length-1) / 2; j < lineContent.Length-1; j++)
+                rivalChanges.Clear();
+                for (int j = ((lineContent.Length - 1) / 3) + 1; j < (2*(lineContent.Length - 1) / 3)+1; j++)
                 {
-                    if (lineContent[j] != "0" && lineContent[j] != "\r" && !string.IsNullOrEmpty(lineContent[j]))
+                    if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
                     {
-                        popChanges.Add(new StatChange((Utilities.SocialClass)(j - lineContent.Length / 2), int.Parse(lineContent[j])));
+                        rivalChanges.Add(new StatChange((Utilities.SocialClass)(j - 7), int.Parse(lineContent[j])));
                     }
                 }
-                rivalAnswers.Add(new Answer(i - 1, lineContent[0], statChanges, popChanges, new Dialogue(lineContent[lineContent.Length-1].Split('$'))));
+                popChanges.Clear();
+                for (int j = (2 * (lineContent.Length - 1) / 3) + 1; j < lineContent.Length-1; j++)
+                {
+                    if (lineContent[j] != "0" && lineContent[j] != "-" && !string.IsNullOrEmpty(lineContent[j]))
+                    {
+                        popChanges.Add(new StatChange((Utilities.SocialClass)(j - 13), int.Parse(lineContent[j])));
+                    }
+                }
+                rivalAnswers.Add(new Answer(i - 1, lineContent[0], statChanges, rivalChanges, popChanges, new Dialogue(lineContent[lineContent.Length-1].Split('$'))));
             }
 
             GameEvent gameEvent = new GameEvent("RivalEvent" + eventIndex, GameEvent.EventType.RIVAL, dialogue, rivalAnswers);

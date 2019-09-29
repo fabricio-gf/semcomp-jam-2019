@@ -15,7 +15,7 @@ public class GameEvent : ScriptableObject
             answer = a;
         }
     }
-
+    
     public enum EventType
     {
         PROACTIVE,
@@ -47,8 +47,10 @@ public class GameEvent : ScriptableObject
     public void Resolve(List<PlayerAnswer> answers)
     {
         //TODO: make all cases here - switch or inheritance
+        
         foreach (PlayerAnswer ans in answers)
         {
+            //World.Instance.groups += ans.answer.popChanges;
             ans.player.influence += ans.answer.AdaptedStatChanges();
         }
     }
