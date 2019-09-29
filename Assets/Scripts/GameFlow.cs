@@ -41,31 +41,31 @@ public class GameFlow : MonoBehaviour
     private IEnumerator StartEventCoroutine(float startEventDelay)
     {
         yield return new WaitForSeconds(startEventDelay);
-        // START Conquest Victory
-        // If player can have conquest victory
         List<Player> players = new List<Player>(FindObjectsOfType<Player>());
-        Player attackingPlayer = null;
-        float attackingPlayerPower = 0f;
-        float attackingPlayerPowerIndex = 0;
-        foreach(Player p in players)
-        {
-            int highestIndex = (int)p.Power.Highest();
-            float highestValue = p.Power.groups[highestIndex];
-            if (highestValue >= conquestWinThreshold)
-            {
-                if (attackingPlayerPower < highestValue)
-                {
-                    attackingPlayer = p;
-                    attackingPlayerPower = highestValue;
-                    attackingPlayerPowerIndex = highestIndex;
-                }
-            }
-        }
-        if (attackingPlayer != null)
-        {
-            //Run crisis event to finish
-        }
-        // END Conquest Victory
+        //// START Conquest Victory
+        //// If player can have conquest victory
+        //Player attackingPlayer = null;
+        //float attackingPlayerPower = 0f;
+        //float attackingPlayerPowerIndex = 0;
+        //foreach(Player p in players)
+        //{
+        //    int highestIndex = (int)p.Power.Highest();
+        //    float highestValue = p.Power.groups[highestIndex];
+        //    if (highestValue >= conquestWinThreshold)
+        //    {
+        //        if (attackingPlayerPower < highestValue)
+        //        {
+        //            attackingPlayer = p;
+        //            attackingPlayerPower = highestValue;
+        //            attackingPlayerPowerIndex = highestIndex;
+        //        }
+        //    }
+        //}
+        //if (attackingPlayer != null)
+        //{
+        //    //Run crisis event to finish
+        //}
+        //// END Conquest Victory
         // Supremacy victory - turns count expired
         if (Turn == maxTurns - 1)
         {
@@ -79,6 +79,7 @@ public class GameFlow : MonoBehaviour
             {
                 OnGameOver?.Invoke(players[1]);
             }
+            StopCoroutine("StartEventCoroutine");
         }
         //Choose event from list, considering probabilities
         int rand = -1;
@@ -105,6 +106,7 @@ public class GameFlow : MonoBehaviour
 
     public void OnEventFinished()
     {
+        Player.NormalizeInfluences(); //FIXME - fora de lugar
         // Subscribe this to an event
         if (Turn < maxTurns)
         {
