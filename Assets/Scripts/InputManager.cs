@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance = null;
+
+
     public bool isListening;
 
     public Player player1;
@@ -21,8 +24,25 @@ public class InputManager : MonoBehaviour
     public KeyCode p2DownKey;
     public KeyCode p2LeftKey;
 
+    public bool canPress = false;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     private void Update()
     {
+        if (!canPress) return;
+
         //P1
         if (Input.GetKeyDown(p1UpKey))
         {

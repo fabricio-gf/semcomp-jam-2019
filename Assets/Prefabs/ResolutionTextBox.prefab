@@ -97,7 +97,7 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -176,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7681487650496042915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -250,5 +250,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyText: {fileID: 7681487649957896418}
   typingSpeed: 0.02
-  tempDialogue:
-    sentences: []

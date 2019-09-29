@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
     MusicController musicController = null;
     EffectsController effectsController = null;
 
+    bool mute = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -24,5 +26,12 @@ public class AudioManager : MonoBehaviour
     public void PlayClip(string key)
     {
         effectsController.PlayClip(key);
+    }
+
+    public void MuteAll()
+    {
+        mute = !mute;
+        musicController.ToggleMuteMusic(mute);
+        effectsController.ToggleMuteSFX(mute);
     }
 }

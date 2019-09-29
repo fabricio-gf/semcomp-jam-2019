@@ -21,6 +21,8 @@ public class RivalEventController : MonoBehaviour
 
     bool currentEvent = false;
 
+    Dialogue resolutionDialogue;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -63,18 +65,19 @@ public class RivalEventController : MonoBehaviour
         animator.SetTrigger("StartCountdown");
     }
 
-    public void ShowResolution()
+    public void ShowResolution(List<GameEvent.PlayerAnswer> playerAnswer)
     {
         if (!currentEvent)
         {
             return;
         }
+        resolutionDialogue = playerAnswer[0].answer.resolution;
         animator.SetTrigger("ShowResolution");
     }
 
     public void StartResolutionDialogue()
     {
-        //resolutionBox.StartDialogue();
+        resolutionBox.StartDialogue(resolutionDialogue);
     }
 
     public void EndEvent()
@@ -90,5 +93,10 @@ public class RivalEventController : MonoBehaviour
         {
             optionTexts[i].text = player1.avaiableAnswers[i].answerText;
         }
+    }
+
+    public void ToggleCanPress()
+    {
+        InputManager.instance.canPress = !InputManager.instance.canPress;
     }
 }

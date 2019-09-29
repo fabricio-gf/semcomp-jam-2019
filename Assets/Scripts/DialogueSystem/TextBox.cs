@@ -15,7 +15,7 @@ public class TextBox : MonoBehaviour
     bool skipDialogue = false;
     bool dialogueEnded = false;
 
-    public Dialogue tempDialogue;
+    public bool isResolutionBox = false;
 
     private void Awake()
     {
@@ -32,10 +32,6 @@ public class TextBox : MonoBehaviour
             {
                 DisplayNextSentence();
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartDialogue(tempDialogue);
         }
     }
 
@@ -95,6 +91,29 @@ public class TextBox : MonoBehaviour
     public void EndDialogue()
     {
         dialogueEnded = true;
-        animator.SetTrigger("ShowButtons");
+        if (!isResolutionBox)
+        {
+            if (transform.parent.name == "RivalEventCanvas")
+            {
+                animator.SetTrigger("StartCountdown");
+            }
+            else
+            {
+                animator.SetTrigger("ShowButtons");
+            }
+        }
+        else
+        {
+            if (name == "ResolutionBox2") return;
+
+            if (transform.parent.name == "RivalEventCanvas")
+            {
+                animator.SetTrigger("EndRivalEvent");
+            }
+            else
+            {
+                animator.SetTrigger("EndNormalEvent");
+            }
+        }
     }
 }

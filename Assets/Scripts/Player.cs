@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public string playername;
+
     public static List<Player> players = new List<Player>();
     public List<Answer> avaiableAnswers; // UI needs it
 
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
     public World.PopulationGroups influence;
     
 
-    public World.PopulationGroups Power { get => World.Instance.groups * influence; }
+    public World.PopulationGroups Power { get => World.Instance.groups * influence; }   
 
     // Player attributes, infuence, etc
 

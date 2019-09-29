@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ClassIcon : MonoBehaviour
 {
+    public World.Faction faction;
+    public bool isStatChange;
+
     public Sprite badIcon;
     public Sprite mediumIcon;
     public Sprite goodIcon;
@@ -17,8 +20,27 @@ public class ClassIcon : MonoBehaviour
 
     private void Awake()
     {
+        //EventHandler.Instance.OnEventResolved += ResolveEvent;
         faceIcon = GetComponent<Image>();
         animator = GetComponent<Animator>();
+    }
+
+    public void ResolveEvent(List<GameEvent.PlayerAnswer> playerAnswers)
+    {
+        foreach (var v in playerAnswers) {
+            World.PopulationGroups p = Answer.AdaptedStatChanges(playerAnswers[0].answer.statChanges);
+            if (p.groups[(int)faction] > 0)
+            {
+                PlayAnimation(3);
+                //if (play)
+        }
+            else
+            {
+                PlayAnimation(1);
+            }
+
+            Invoke("ChangeIcon", 0.5f);
+        }
     }
 
     public void ChangeIcon(int newIcon)

@@ -77,7 +77,7 @@ public class GameFlow : MonoBehaviour
         avaiableEvents.Remove(gameEvent);
 
         StartCoroutine(EventTimeout(eventTimeoutSeconds));
-        Debug.Log("Starting Event: " + gameEvent.identifier);
+
         OnEventStart?.Invoke(gameEvent);
     }
 
@@ -102,19 +102,15 @@ public class GameFlow : MonoBehaviour
             //Finish game
             List<Player> players = new List<Player>(FindObjectsOfType<Player>());
             // Supremacy victory - turns count expired
-            if (Turn == maxTurns - 1)
+            float power1 = players[0].Power.Total();
+            float power2 = players[1].Power.Total();
+            if (power1 > power2)
             {
-                float power1 = players[0].Power.Total();
-                float power2 = players[1].Power.Total();
-                if (power1 > power2)
-                {
-                    OnGameOver?.Invoke(players[0]);
-                }
-                else
-                {
-                    OnGameOver?.Invoke(players[1]);
-                }
-                StopCoroutine("StartEventCoroutine");
+                OnGameOver?.Invoke(players[0]);
+            }
+            else
+            {
+                OnGameOver?.Invoke(players[1]);
             }
             Debug.Log("Game is finished");
         }
