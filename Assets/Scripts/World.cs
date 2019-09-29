@@ -63,6 +63,7 @@ public class World : MonoBehaviour
         //Constructors
         public PopulationGroups(float min = -Mathf.Infinity, float max = -Mathf.Infinity)
         {
+            Initialize();
             MinValue = min;
             MaxValue = max;
         }
@@ -72,6 +73,14 @@ public class World : MonoBehaviour
             MinValue = min;
             MaxValue = max;
             groups = new List<float>(values);
+            Initialize();
+        }
+        public void Initialize()
+        {
+            for (int i = 0; i < (int)Faction.SIZE; i++)
+            {
+                groups.Add(0f);
+            }
         }
         //Operators
         public static PopulationGroups operator+ (PopulationGroups a, PopulationGroups b)

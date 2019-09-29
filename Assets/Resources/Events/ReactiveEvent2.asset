@@ -26,6 +26,7 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 3
       changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
@@ -38,6 +39,7 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 3
       changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
@@ -50,6 +52,7 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 3
       changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
@@ -61,6 +64,7 @@ MonoBehaviour:
       changeValue: 20
     - socialClass: 3
       changeValue: -10
+    rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:

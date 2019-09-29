@@ -27,7 +27,10 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    popChanges: []
+    rivalStatChanges: []
+    popChanges:
+    - socialClass: -1
+      changeValue: 20
     resolution:
       sentences:
       - "asdasd\r"
@@ -38,7 +41,10 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    popChanges: []
+    rivalStatChanges: []
+    popChanges:
+    - socialClass: -1
+      changeValue: 20
     resolution:
       sentences:
       - "asdasd\r"
@@ -50,7 +56,10 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    popChanges: []
+    rivalStatChanges: []
+    popChanges:
+    - socialClass: -1
+      changeValue: 20
     resolution:
       sentences:
       - "asdasdas\r"
@@ -61,7 +70,10 @@ MonoBehaviour:
       changeValue: 10
     - socialClass: 4
       changeValue: -10
-    popChanges: []
+    rivalStatChanges: []
+    popChanges:
+    - socialClass: -1
+      changeValue: 20
     resolution:
       sentences:
       - asdasd

@@ -35,11 +35,6 @@ public class GameFlow : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartEvent();
-    }
-
     private IEnumerator StartEventCoroutine(float startEventDelay)
     {
         yield return new WaitForSeconds(startEventDelay);
@@ -58,10 +53,10 @@ public class GameFlow : MonoBehaviour
         OnEventStart?.Invoke(gameEvent);
     }
 
-    private void StartEvent()
+    public void StartEvent()
     {
         Turn++;
-        StartCoroutine(StartEventCoroutine(eventTimeoutSeconds));
+        StartCoroutine(StartEventCoroutine(startEventDelaySeconds));
     }
 
 
