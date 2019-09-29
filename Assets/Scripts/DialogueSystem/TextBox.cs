@@ -15,6 +15,8 @@ public class TextBox : MonoBehaviour
     bool skipDialogue = false;
     bool dialogueEnded = false;
 
+    public Dialogue tempDialogue;
+
     private void Awake()
     {
         animator = transform.parent.GetComponent<Animator>();
@@ -30,6 +32,10 @@ public class TextBox : MonoBehaviour
             {
                 DisplayNextSentence();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartDialogue(tempDialogue);
         }
     }
 
@@ -60,6 +66,7 @@ public class TextBox : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        AudioManager.instance.PlayClip("writing");
         isTyping = true;
         foreach(char letter in sentence.ToCharArray())
         {
@@ -70,7 +77,6 @@ public class TextBox : MonoBehaviour
                 break;
             }
             BodyText.text += letter;
-            AudioManager.instance.PlayClip("writing");
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;

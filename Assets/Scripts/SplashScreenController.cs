@@ -14,5 +14,6 @@ public class SplashScreenController : MonoBehaviour
     public void PressPlay()
     {
         animator.SetTrigger("PressPlay");
+        AudioManager.instance.PlayClip("play");
     }
 }
