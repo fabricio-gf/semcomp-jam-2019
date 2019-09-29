@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a79d6ef1be428441888aa68c1ccdf6e, type: 3}
+  m_Name: RivalEvent2
+  m_EditorClassIdentifier: 
+  identifier: RivalEvent2
+  type: 3
+  question:
+    sentences:
+    - The alchemists are a bunch of strange people, albeit very knowledeable and contribute
+      to the kingdom with many useful inventions. But the holy church is always in
+      a fight with them. This time, the Pope accused them of heresy and is asking
+      the royal court to judge and execute them. What will you do?
+  answers:
+  - identifier: 1
+    answerText: Kill the heretics and please the Pope.
+    statChanges:
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 3
+      changeValue: -5
+    - socialClass: 4
+      changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - '<PlayerWin> has heeded the Pope''s words and burned some alchemists for heresy. '
+      - 'Some of them didn''t go down without a fight and killed some nobles and guards
+        with mysteryous gases and liquids and explosions. '
+      - 'Asides from the burned ones, other alchemists decided to leave the kingdom,
+        as well as some merchants, as they feared for their lives and freedom. '
+      - 'Nevertheless, the church was very pleased, and your devotion brought even
+        more people to the clergy. '
+      - 'Some nobles also thought the burning as a fun spectacle. '
+      - 'As for <PlayerLose>, his lack of action will be remembered by the alchemists
+        and merchants, for letting the kingdom lose its freedom. '
+      - "The commoners also speak of him as weak and indecisive.\r"
+  - identifier: 2
+    answerText: Thwart the Pope's and do nothing.
+    statChanges:
+    - socialClass: 0
+      changeValue: 10
+    - socialClass: 3
+      changeValue: -5
+    - socialClass: 4
+      changeValue: 20
+    - socialClass: 5
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - 'The level-headedness of <PlayerWin> saved the lives of the alchemists, which
+        hold him now in high praise. '
+      - 'The merchants also liked to know unfounded persecutions were not allowed
+        in the kingdom. '
+      - 'This also raised the number of both classes. '
+      - 'The church obviously didn''t like this, and some clergymen left the kingdom,
+        doubting its sacredness and accusing you as an herectic ruler. '
+      - 'The accusation also made some nobles dislike you. '
+      - 'As for <PlayerLose>, his lack of action will be remembered by the clergy
+        and nobles, for letting the kingdom fall in heresy. '
+      - The commoners also speak of him as weak and indecisive.

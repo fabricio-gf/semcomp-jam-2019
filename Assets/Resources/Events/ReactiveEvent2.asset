@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a79d6ef1be428441888aa68c1ccdf6e, type: 3}
+  m_Name: ReactiveEvent2
+  m_EditorClassIdentifier: 
+  identifier: ReactiveEvent2
+  type: 1
+  question:
+    sentences:
+    - You will throw a royal ball. Who will you invite as a guest of honor?
+  answers:
+  - identifier: 1
+    answerText: The merchant guild's chief. Even a ball can be a good oportunity for
+      business.
+    statChanges:
+    - socialClass: 2
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - "asdasdasd\r"
+  - identifier: 2
+    answerText: The grand duke. Life as nobility is full of hardships, so we must
+      help each other.
+    statChanges:
+    - socialClass: 2
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - "asdasdasd\r"
+  - identifier: 3
+    answerText: The captain of the guard. The man who defends our kingdom should be
+      given a night of rest.
+    statChanges:
+    - socialClass: 2
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - "asdasdasd\r"
+  - identifier: 4
+    answerText: Some random commoner. You know, we need some new faces in the castle.
+    statChanges:
+    - socialClass: 2
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    popChanges: []
+    resolution:
+      sentences:
+      - asdasdasdas
