@@ -16,4 +16,14 @@ public class Answer
         statChanges = _statChanges;
         resolution = _resolution;
     }
+
+    public World.PopulationGroups AdaptedStatChanges()
+    {
+        List<float> values = new List<float>((int)World.Faction.SIZE);
+        foreach (StatChange s in statChanges)
+        {
+            values[(int)Utilities.Adapted(s.socialClass)] = s.changeValue;
+        }
+        return new World.PopulationGroups(values);
+    }
 }

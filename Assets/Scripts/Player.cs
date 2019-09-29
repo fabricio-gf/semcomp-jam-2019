@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public World.PopulationGroups influence;
     
 
-    public World.PopulationGroups Power { get => World.Instance.Groups * influence; }
+    public World.PopulationGroups Power { get => World.Instance.groups * influence; }
 
     // Player attributes, infuence, etc
 

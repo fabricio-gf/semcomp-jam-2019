@@ -41,7 +41,11 @@ public class GameEvent : ScriptableObject
 
     public void Resolve(List<PlayerAnswer> answers)
     {
-
+        //TODO: make all cases here - switch or inheritance
+        foreach (PlayerAnswer ans in answers)
+        {
+            ans.player.influence += ans.answer.AdaptedStatChanges();
+        }
     }
 
     

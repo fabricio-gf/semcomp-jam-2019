@@ -15,48 +15,49 @@ public class World : MonoBehaviour
         SIZE
     }
 
+    [System.Serializable]
     public class PopulationGroups //TODO: extract class - too big to be here
     {
         //Constraints
         public float MinValue { get; private set; }
         public float MaxValue { get; private set; }
         //Data
-        public List<float> Groups { get; private set; } 
-            = new List<float>((int)Faction.SIZE);
+        public List<float> groups
+            = new List<float>((int)Faction.SIZE); // should use private set
         //Properties
         public float Merchants {
-            get => Groups[(int)Faction.MERCHANTS];
-            private set => Groups[(int)Faction.MERCHANTS] =
+            get => groups[(int)Faction.MERCHANTS];
+            private set => groups[(int)Faction.MERCHANTS] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float Nobility
         {
-            get => Groups[(int)Faction.NOBILITY];
-            private set => Groups[(int)Faction.NOBILITY] =
+            get => groups[(int)Faction.NOBILITY];
+            private set => groups[(int)Faction.NOBILITY] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float Guard
         {
-            get => Groups[(int)Faction.GUARD];
-            private set => Groups[(int)Faction.GUARD] =
+            get => groups[(int)Faction.GUARD];
+            private set => groups[(int)Faction.GUARD] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float Peasants
         {
-            get => Groups[(int)Faction.PEASANTS];
-            private set => Groups[(int)Faction.PEASANTS] =
+            get => groups[(int)Faction.PEASANTS];
+            private set => groups[(int)Faction.PEASANTS] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float Alchemists
         {
-            get => Groups[(int)Faction.ALCHEMISTS];
-            private set => Groups[(int)Faction.ALCHEMISTS] =
+            get => groups[(int)Faction.ALCHEMISTS];
+            private set => groups[(int)Faction.ALCHEMISTS] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float Clerics
         {
-            get => Groups[(int)Faction.CLERICS];
-            private set => Groups[(int)Faction.CLERICS] =
+            get => groups[(int)Faction.CLERICS];
+            private set => groups[(int)Faction.CLERICS] =
                 Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         //Constructors
@@ -65,13 +66,20 @@ public class World : MonoBehaviour
             MinValue = min;
             MaxValue = max;
         }
+        //Constructors
+        public PopulationGroups(List<float> values, float min = -Mathf.Infinity, float max = -Mathf.Infinity)
+        {
+            MinValue = min;
+            MaxValue = max;
+            groups = new List<float>(values);
+        }
         //Operators
         public static PopulationGroups operator+ (PopulationGroups a, PopulationGroups b)
         {
             PopulationGroups p = new PopulationGroups();
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.Groups[i] = a.Groups[i] + b.Groups[i];
+                p.groups[i] = a.groups[i] + b.groups[i];
             }
             return p;
         }
@@ -80,7 +88,7 @@ public class World : MonoBehaviour
             PopulationGroups p = new PopulationGroups();
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.Groups[i] = a.Groups[i] * b.Groups[i];
+                p.groups[i] = a.groups[i] * b.groups[i];
             }
             return p;
         }
@@ -89,7 +97,7 @@ public class World : MonoBehaviour
             PopulationGroups p = new PopulationGroups();
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.Groups[i] = a.Groups[i] * b;
+                p.groups[i] = a.groups[i] * b;
             }
             return p;
         }
@@ -98,7 +106,7 @@ public class World : MonoBehaviour
             PopulationGroups p = new PopulationGroups();
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.Groups[i] = a.Groups[i] / b.Groups[i];
+                p.groups[i] = a.groups[i] / b.groups[i];
             }
             return p;
         }
@@ -108,10 +116,10 @@ public class World : MonoBehaviour
             int index = 0;
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                f = Mathf.Max(f, p.Groups[i]);
-                if (p.Groups[i] > f)
+                f = Mathf.Max(f, p.groups[i]);
+                if (p.groups[i] > f)
                 {
-                    f = p.Groups[i];
+                    f = p.groups[i];
                     index = i;
                 }
             }
@@ -119,7 +127,8 @@ public class World : MonoBehaviour
         }
     }
 
-    public PopulationGroups Groups { get; private set; } = new PopulationGroups(0.1f, 1f);
+    [SerializeField]
+    public PopulationGroups groups = new PopulationGroups(0.1f, 1f); // should use private set
 
     public static World Instance;
 
