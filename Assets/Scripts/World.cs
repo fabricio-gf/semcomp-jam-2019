@@ -119,20 +119,29 @@ public class World : MonoBehaviour
             }
             return p;
         }
-        public static Faction Highest(PopulationGroups p)
+        public Faction Highest()
         {
             float f = -1;
             int index = 0;
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                f = Mathf.Max(f, p.groups[i]);
-                if (p.groups[i] > f)
+                f = Mathf.Max(f, groups[i]);
+                if (groups[i] > f)
                 {
-                    f = p.groups[i];
+                    f = groups[i];
                     index = i;
                 }
             }
             return (Faction)index;
+        }
+        public float Total()
+        {
+            float f = 0f;
+            foreach(float val in groups)
+            {
+                f += val;
+            }
+            return f;
         }
     }
 
