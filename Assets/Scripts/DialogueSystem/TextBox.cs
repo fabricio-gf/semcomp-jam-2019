@@ -70,6 +70,7 @@ public class TextBox : MonoBehaviour
                 break;
             }
             BodyText.text += letter;
+            AudioManager.instance.PlayClip("writing");
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;

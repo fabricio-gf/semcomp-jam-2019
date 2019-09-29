@@ -17,6 +17,7 @@ public class Answer
         resolution = _resolution;
     }
 
+
     public World.PopulationGroups AdaptedStatChanges()
     {
         List<float> values = new List<float>((int)World.Faction.SIZE);
@@ -25,5 +26,10 @@ public class Answer
             values[(int)Utilities.Adapted(s.socialClass)] = s.changeValue;
         }
         return new World.PopulationGroups(values);
+    }
+
+    public Answer()
+    {
+
     }
 }

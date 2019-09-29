@@ -39,6 +39,11 @@ public class GameEvent : ScriptableObject
         answers = _answers;
     }
 
+    public GameEvent()
+    {
+
+    }
+
     public void Resolve(List<PlayerAnswer> answers)
     {
         //TODO: make all cases here - switch or inheritance

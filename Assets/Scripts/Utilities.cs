@@ -11,7 +11,8 @@ public class Utilities //FIXME: undescriptive name
         COMMONER,
         NOBLE,
         ALCHEMIST,
-        CLERIC
+        CLERIC,
+        NULL
     }
 
     public static World.Faction Adapted(SocialClass s)
