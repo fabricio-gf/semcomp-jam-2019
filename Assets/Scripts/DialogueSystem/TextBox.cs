@@ -17,6 +17,9 @@ public class TextBox : MonoBehaviour
 
     public bool isResolutionBox = false;
 
+    public bool p1confirmKeyPressed = false;
+    public bool p2confirmKeyPressed = false;
+
     private void Awake()
     {
         animator = transform.parent.GetComponent<Animator>();
@@ -34,6 +37,8 @@ public class TextBox : MonoBehaviour
             }
         }
     }
+
+
 
     public void StartDialogue (Dialogue dialogue)
     {

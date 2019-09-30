@@ -6,6 +6,8 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager instance = null;
 
+    public delegate void InputManagerDelegate(KeyCode keyCode);
+    public InputManagerDelegate OnKeyDown;
 
     public bool isListening;
 
@@ -46,35 +48,44 @@ public class InputManager : MonoBehaviour
         //P1
         if (Input.GetKeyDown(p1UpKey))
         {
+            OnKeyDown?.Invoke(p1UpKey);
             player1.PressUP();
         }
         if (Input.GetKeyDown(p1DownKey))
         {
+            OnKeyDown?.Invoke(p1DownKey);
             player1.PressDown();
         }
         if (Input.GetKeyDown(p1LeftKey))
         {
+            OnKeyDown?.Invoke(p1LeftKey);
+
             player1.PressLeft();
         }
         if (Input.GetKeyDown(p1RightKey))
         {
+            OnKeyDown?.Invoke(p1RightKey);
             player1.PressRight();
         }
         //P2
         if (Input.GetKeyDown(p2UpKey))
         {
+            OnKeyDown?.Invoke(p2RightKey);
             player2.PressUP();
         }
         if (Input.GetKeyDown(p2DownKey))
         {
+            OnKeyDown?.Invoke(p2RightKey);
             player2.PressDown();
         }
         if (Input.GetKeyDown(p2LeftKey))
         {
+            OnKeyDown?.Invoke(p2RightKey);
             player2.PressLeft();
         }
         if (Input.GetKeyDown(p2RightKey))
         {
+            OnKeyDown?.Invoke(p2RightKey);
             player2.PressRight();
         }
     }
