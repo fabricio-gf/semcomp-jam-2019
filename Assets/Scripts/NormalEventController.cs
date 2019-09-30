@@ -29,50 +29,84 @@ public class NormalEventController : MonoBehaviour
     public bool p1ConfirmKeyPressed = false;
     public bool p2ConfirmKeyPressed = false;
 
+    int endEventCounter = 0;
+    int counterLimit = 2;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
 
         GameFlow.Instance.OnEventStart += StartEvent;
         EventHandler.Instance.OnEventResolved += ShowResolution;
-        InputManager.instance.OnPressConfirm += ReadInput;
+        InputManager.instance.OnPressConfirm += ConfirmKeyDown;
+        InputManager.instance.OnReleaseConfirm += ConfirmKeyUp;
         questionBox.OnDialogueEnded += ShowButtons;
+        resolutionBox.OnDialogueEnded += EndEvent;
+        resolutionBox2.OnDialogueEnded += EndEvent;
     }
 
     private void Update()
     {
         if (questionBox.duringDialogue)
         {
-            if(p1ConfirmKeyPressed || p2ConfirmKeyPressed)
+            if (p1ConfirmKeyPressed || p2ConfirmKeyPressed)
             {
-                p1ConfirmKeyPressed = false;
-                p2ConfirmKeyPressed = false;
-                questionBox.SkipDialogue();
+                print("entrou 1");
+                if (questionBox.isTyping)
+                {
+                    p1ConfirmKeyPressed = false;
+                    p2ConfirmKeyPressed = false;
+                    questionBox.SkipDialogue();
+                }
+                else
+                {
+                    questionBox.DisplayNextSentence();
+                }
             }
         }
         if (resolutionBox.duringDialogue)
         {
             if (p1ConfirmKeyPressed)
             {
-                p1ConfirmKeyPressed = false;
-                resolutionBox.SkipDialogue();
+                print("entrou 2");
+                if (resolutionBox.isTyping)
+                {
+
+                    p1ConfirmKeyPressed = false;
+                    resolutionBox.SkipDialogue();
+                }
+                else
+                {
+                    resolutionBox.DisplayNextSentence();
+                }
             }
         }
         if (resolutionBox2.duringDialogue)
         {
-            if (p1ConfirmKeyPressed)
+            if (p2ConfirmKeyPressed)
             {
-                p1ConfirmKeyPressed = false;
-                resolutionBox2.SkipDialogue();
-                StartCoroutine(ToggleCanPressWithDelay(0.5f));
+                print("entrou 3");
+                if (resolutionBox2.isTyping)
+                {
+                    p2ConfirmKeyPressed = false;
+                    resolutionBox2.SkipDialogue();
+                }
+                else
+                {
+                    resolutionBox2.DisplayNextSentence();
+                }
             }
         }
 
-        if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
+        if(resolutionBox.duringDialogue && resolutionBox2.duringDialogue && !resolutionBox.isTyping && !resolutionBox2.isTyping)
         {
-            print("Confirmed");
-            p1ConfirmKeyPressed = false;
-            p2ConfirmKeyPressed = false;
+            if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
+            {
+                p1ConfirmKeyPressed = false;
+                p2ConfirmKeyPressed = false;
+
+                EndEvent();
+            }
         }
     }
 
@@ -112,7 +146,10 @@ public class NormalEventController : MonoBehaviour
         {
             return;
         }
-        if(gameEvent.type == GameEvent.EventType.PROACTIVE)
+
+        questionBox.ClearTextBox();
+
+        if (gameEvent.type == GameEvent.EventType.PROACTIVE)
         {
             EndEvent();
             return;
@@ -129,19 +166,27 @@ public class NormalEventController : MonoBehaviour
     {
         resolutionBox.StartDialogue(resolutionDialogue1);
         resolutionBox2.StartDialogue(resolutionDialogue2);
+        ToggleCanPress(true);
     }
 
     public void EndEvent()
     {
-        if (!currentEvent) return;
-        currentEvent = false;
-        animator.SetTrigger("EndNormalEvent");
-        //GameFlow.Instance.OnEventFinished();
-        Debug.Log("Normal Event ended.");
+        endEventCounter++;
+        if (endEventCounter >= counterLimit)
+        {
+            endEventCounter = 0;
+
+            currentEvent = false;
+            animator.SetTrigger("EndNormalEvent");
+
+            Debug.Log("Normal Event ended.");
+        }
     }
 
     public void EventEnded()
     {
+        resolutionBox.ClearTextBox();
+        resolutionBox2.ClearTextBox();
         GameFlow.Instance.OnEventFinished();
     }
 
@@ -171,7 +216,7 @@ public class NormalEventController : MonoBehaviour
         InputManager.instance.canPress = true;
     }
 
-    public void ReadInput(int player)
+    public void ConfirmKeyDown(int player)
     {
         switch (player)
         {
@@ -179,11 +224,25 @@ public class NormalEventController : MonoBehaviour
                 p1ConfirmKeyPressed = true;
                 break;
             case 2:
-                p1ConfirmKeyPressed = true;
+                p2ConfirmKeyPressed = true;
                 break;
             default:
                 break;
         }
     }
 
+    public void ConfirmKeyUp(int player)
+    {
+        switch (player)
+        {
+            case 1:
+                p1ConfirmKeyPressed = false;
+                break;
+            case 2:
+                p2ConfirmKeyPressed = false;
+                break;
+            default:
+                break;
+        }
+    }
 }

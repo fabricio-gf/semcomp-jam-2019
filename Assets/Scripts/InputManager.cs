@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
 
     public delegate void InputManagerDelegate(int player); // 1 for player 1, 2 for player 2
     public InputManagerDelegate OnPressConfirm;
+    public InputManagerDelegate OnReleaseConfirm;
+
     public InputManagerDelegate OnPressUp;
     public InputManagerDelegate OnPressDown;
     public InputManagerDelegate OnPressLeft;
@@ -32,7 +34,7 @@ public class InputManager : MonoBehaviour
     public KeyCode p2LeftKey;
     public KeyCode p2ConfirmKey;
 
-    [HideInInspector] public bool canPress = false;
+    public bool canPress = false;
 
     private void Awake()
     {
@@ -53,13 +55,20 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(p1ConfirmKey))
         {
-            print("confirm 1");
             OnPressConfirm?.Invoke(1);
         }
         if (Input.GetKeyDown(p2ConfirmKey))
         {
-            print("confirm 2");
             OnPressConfirm?.Invoke(2);
+        }
+
+        if (Input.GetKeyUp(p1ConfirmKey))
+        {
+            OnReleaseConfirm?.Invoke(1);
+        }
+        if (Input.GetKeyUp(p2ConfirmKey))
+        {
+            OnReleaseConfirm?.Invoke(2);
         }
 
         //P1
