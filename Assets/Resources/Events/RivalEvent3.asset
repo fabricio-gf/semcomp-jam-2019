@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a79d6ef1be428441888aa68c1ccdf6e, type: 3}
+  m_Name: RivalEvent3
+  m_EditorClassIdentifier: 
+  identifier: RivalEvent3
+  type: 3
+  question:
+    sentences:
+    - A merchant approached the castle with a unique business opportunity. But she
+      is hasty and said that she needs a yes or no right now. Will you listen to her?
+  answers:
+  - identifier: 1
+    answerText: Yes. Summon her in!
+    statChanges:
+    - socialClass: 0
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    - socialClass: 4
+      changeValue: 10
+    - socialClass: 5
+      changeValue: -5
+    rivalStatChanges:
+    - socialClass: 0
+      changeValue: -5
+    - socialClass: 4
+      changeValue: -5
+    popChanges:
+    - socialClass: 0
+      changeValue: 80
+    - socialClass: 4
+      changeValue: 40
+    - socialClass: 5
+      changeValue: -20
+    resolution:
+      sentences:
+      - '<PlayerWin> has quickly accepted the chance of making business. '
+      - 'The merchant proposed the creation of an exclusive trade business of some
+        rare minerals. You tought it was a good deal as it would please not only the
+        merchants but the alchemists as well. '
+      - 'The deal was a success and the alchemists were able to create some crazy
+        new inventions with said minerals. '
+      - 'The nobles didn''t like your lack of self-respect for rushing to someone''s
+        unplanned meeting, and the clergymen frowned upon your thirst for money. '
+      - 'But the merchants and alchemists population increased... even if some clergymen
+        left. '
+      - "As for <PlayerLose>, the merchants and alchemists were not amused by the
+        lack of quick thinking.\r"
+  - identifier: 2
+    answerText: No. Nobody rushes the heir!
+    statChanges:
+    - socialClass: 0
+      changeValue: -10
+    - socialClass: 3
+      changeValue: 10
+    - socialClass: 4
+      changeValue: -5
+    rivalStatChanges:
+    - socialClass: 0
+      changeValue: -10
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -20
+    resolution:
+      sentences:
+      - 'The outright refusal of <PlayerWin> pleased the nobles and the church for
+        maintaining the composure of a ruler and the refusal to speak with greedy
+        merchants. '
+      - 'Of course, the merchants were not happy to know their kind was not considered
+        important and many left the kingdom. '
+      - 'The alchemists didn''t like your close-mindedness and some also left. '
+      - "As for <PlayerLose>, his lack of action displeased the merchants for not
+        talking with their friend.\r"

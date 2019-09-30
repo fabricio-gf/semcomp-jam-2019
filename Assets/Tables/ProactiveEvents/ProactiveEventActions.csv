@@ -1,0 +1,34 @@
+Action;Merchant Infl;Guard Infl;Commoner Infl;Noble Infl;Alchemists Infl;Clergy Infl
+Raise taxes.;-5;0;-10;20;0;10
+Lower taxes.;10;0;20;-10;0;-5
+Hold a holy mass.;-5;0;10;0;-10;20
+Hold a ball at the castle.;10;0;-10;20;-5;10
+Hold a guard parade.;0;20;-10;10;-5;0
+Hold a science fair.;10;0;0;-5;20;-10
+Build more houses for the commoners.;0;10;20;-10;0;-5
+Increase patrol units.;10;-10;-5;20;0;0
+Hold a public execution.;0;20;-10;10;0;-5
+Open trade routes with neighbors.;20;0;0;-10;10;-5
+Hold a trade fair.;20;0;0;-10;10;-5
+Invest in crazy alchemy project.;10;0;-5;0;20;-10
+Create a merchant's guild.;20;0;10;-10;0;-5
+Build a new Cathedral.;-5;0;10;0;-10;20
+Hold a carnival.;10;0;20;0;-5;-10
+Buy better weapons and armors for guards.;0;20;0;10;0;0
+Pay a minstrel to sing your praises.;0;10;10;10;0;0
+Build a new pub.;10;10;20;0;-5;-10
+Hold a joust tournament.;0;0;10;20;-5;-10
+Send spies to other kingdoms.;10;0;0;20;0;-10
+Build a golden statue of yourself.;0;0;-5;-5;-5;-5
+Name a llama as Viscount.;-5;0;20;-10;0;0
+Decree free booze day.;-10;10;20;0;0;-5
+Spread some prophecy that you were chosen by God.;0;0;20;10;-5;-10
+Turn the kingdom into a secular state.;10;0;10;-5;20;-10
+Build a school.;0;0;10;-5;20;-10
+Build an infirmary.;0;10;10;0;20;0
+Distribute more lands to the Church.;0;0;0;-10;-5;20
+Throw gold coins from the castle's gates.;0;0;20;-10;0;0
+Take over the feud of a corrupt noble.;0;0;10;-5;0;0
+Put some criminals to fight in an arena.;0;10;-5;10;0;-5
+Ask the alchemists to create and light pretty fireworks.;0;0;10;0;20;-5
+Condecorate some guards;0;20;0;0;0;0

@@ -1,0 +1,10 @@
+Quote-Answer;Class;Threshold
+"No more heresy in this land!", said the Pope. Tired of the greedy merchants polluting the minds of the pious and the alchemists doing whatever kind of sorcery they do, the clergymen urge to eliminate them from the kingdom and turn it into a holy empire. They will use force, faith and torture with their specially-trained combat monks.;;
+Reduce the influence of the alchemists and promisse to have the pope as your next counselor.;-0;-0
+Lock yourself in the castle and wait for the situation to resolve itself.;-0;-0
+Ask the merchants' guild to hire pagan mercenaries to fight the church.;Merchant;240
+-0;Guard;240
+-0;Commoner;240
+Call the nobles' help to reinforce the churches' army with their private guard.;Noble;240
+Ask for the alchemists' help. No matter what kind of strange and occult forces they use!;Alchemist;310
+Join the clergyman in their pursue of faith and infinite devotion. You must be the new holy emperor chosen by God!;Clergy;360

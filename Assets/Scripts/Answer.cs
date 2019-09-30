@@ -16,8 +16,8 @@ public class Answer
         identifier = _identifier;
         answerText = _answerText;
         statChanges = _statChanges;
-        rivalStatChanges = null;
-        popChanges = null;
+        rivalStatChanges = new List<StatChange>();
+        popChanges = new List<StatChange>();
         resolution = _resolution;
     }
 
@@ -26,7 +26,7 @@ public class Answer
         identifier = _identifier;
         answerText = _answerText;
         statChanges = _statChanges;
-        rivalStatChanges = null;
+        rivalStatChanges = new List<StatChange>();
         popChanges = _popChanges;
         resolution = _resolution;
     }

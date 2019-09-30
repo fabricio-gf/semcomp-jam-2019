@@ -24,20 +24,28 @@ MonoBehaviour:
   - identifier: 1
     answerText: Set an example with a public execution.
     statChanges:
+    - socialClass: 0
+      changeValue: -5
     - socialClass: 2
-      changeValue: 10
+      changeValue: -10
     - socialClass: 3
+      changeValue: 10
+    - socialClass: 4
       changeValue: -5
     - socialClass: 5
-      changeValue: 10
+      changeValue: -5
     rivalStatChanges:
     - socialClass: 1
       changeValue: -5
     - socialClass: 2
       changeValue: -5
+    - socialClass: 3
+      changeValue: -5
     popChanges:
+    - socialClass: 1
+      changeValue: -60
     - socialClass: 2
-      changeValue: 400
+      changeValue: -800
     resolution:
       sentences:
       - 'Everybody was shocked by the royal resolution of <PlayerWin>, except the
@@ -68,5 +76,5 @@ MonoBehaviour:
       - 'The act of benevolence from <PlayerWin> impressed the masses and the holy
         church, but was not so well received by the nobles. '
       - 'Some people even came to live in the kingdom of such a good ruler. '
-      - As for <PlayerLose>, his inaptitude to solve conflicts has been noted by the
-        guards and commoners.
+      - "As for <PlayerLose>, his inaptitude to solve conflicts has been noted by
+        the guards and commoners.\r"

@@ -22,41 +22,55 @@ MonoBehaviour:
     answerText: The merchant guild's chief. Even a ball can be a good oportunity for
       business.
     statChanges:
-    - socialClass: 2
+    - socialClass: 0
       changeValue: 20
     - socialClass: 3
-      changeValue: -10
+      changeValue: -5
+    - socialClass: 5
+      changeValue: -5
     rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
-      - "asdasdasd\r"
+      - "<Player> invited the merchant guild's chief for the ball as a guest of honor.
+        They had fun talking business and the prosperity of the kingdom. The nobles
+        didn't like the favoritism over a commoner, and the clergymen disapprove this
+        heresy.\r"
   - identifier: 2
     answerText: The grand duke. Life as nobility is full of hardships, so we must
       help each other.
     statChanges:
-    - socialClass: 2
-      changeValue: 20
+    - socialClass: 0
+      changeValue: -5
     - socialClass: 3
-      changeValue: -10
+      changeValue: 20
+    - socialClass: 4
+      changeValue: -5
     rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
-      - "asdasdasd\r"
+      - "<Player> invited the grand duke as a guest of honor. The nobles were pleased
+        by the maintenance of tradition. But the merchants don't feel very confortable
+        with these traditions, neither do the alchemists.\r"
   - identifier: 3
     answerText: The captain of the guard. The man who defends our kingdom should be
       given a night of rest.
     statChanges:
-    - socialClass: 2
+    - socialClass: 1
       changeValue: 20
     - socialClass: 3
-      changeValue: -10
+      changeValue: -5
+    - socialClass: 5
+      changeValue: -5
     rivalStatChanges: []
     popChanges: []
     resolution:
       sentences:
-      - "asdasdasd\r"
+      - "<Player> invited the captain of the guard for the ball as a guest of honor.
+        They had fun training swordplay instead of dancing. The nobles didn't like
+        the favoritism over a commoner, and the clergymen disapprove this display
+        of violence.\r"
   - identifier: 4
     answerText: Some random commoner. You know, we need some new faces in the castle.
     statChanges:
@@ -68,4 +82,6 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - asdasdasdas
+      - "<Player> invited some random commoner met at the pub as a guest of honor.
+        He had no manners of a noble and his clothes were clearly of a commoner. The
+        nobles were outraged by such indecency.\r"

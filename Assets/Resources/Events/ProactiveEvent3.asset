@@ -368,14 +368,12 @@ MonoBehaviour:
     resolution:
       sentences: []
   - identifier: 23
-    answerText: Designate yourself as God-King.
+    answerText: Spread some prophecy that you were chosen by God.
     statChanges:
-    - socialClass: 1
-      changeValue: 20
     - socialClass: 2
-      changeValue: 10
+      changeValue: 20
     - socialClass: 3
-      changeValue: -5
+      changeValue: 10
     - socialClass: 4
       changeValue: -5
     - socialClass: 5
@@ -440,6 +438,78 @@ MonoBehaviour:
       changeValue: -5
     - socialClass: 5
       changeValue: 20
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 28
+    answerText: Throw gold coins from the castle's gates.
+    statChanges:
+    - socialClass: 2
+      changeValue: 20
+    - socialClass: 3
+      changeValue: -10
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 29
+    answerText: Take over the feud of a corrupt noble.
+    statChanges:
+    - socialClass: 2
+      changeValue: 10
+    - socialClass: 3
+      changeValue: -5
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 30
+    answerText: Put some criminals to fight in an arena.
+    statChanges:
+    - socialClass: 1
+      changeValue: 10
+    - socialClass: 2
+      changeValue: -5
+    - socialClass: 3
+      changeValue: 10
+    - socialClass: 5
+      changeValue: -5
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 31
+    answerText: Ask the alchemists to create and light pretty fireworks.
+    statChanges:
+    - socialClass: 2
+      changeValue: 10
+    - socialClass: 4
+      changeValue: 20
+    - socialClass: 5
+      changeValue: -5
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 32
+    answerText: Condecorate some guards
+    statChanges:
+    - socialClass: 1
+      changeValue: 20
+    - socialClass: 5
+      changeValue: 0
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+  - identifier: 33
+    answerText: 
+    statChanges: []
     rivalStatChanges: []
     popChanges: []
     resolution:

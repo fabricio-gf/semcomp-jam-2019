@@ -25,27 +25,27 @@ MonoBehaviour:
     answerText: Kill the heretics and please the Pope.
     statChanges:
     - socialClass: 0
-      changeValue: 10
-    - socialClass: 3
       changeValue: -5
+    - socialClass: 3
+      changeValue: 10
     - socialClass: 4
-      changeValue: 20
-    - socialClass: 5
       changeValue: -10
+    - socialClass: 5
+      changeValue: 20
     rivalStatChanges:
+    - socialClass: 0
+      changeValue: -5
     - socialClass: 2
       changeValue: -5
-    - socialClass: 3
-      changeValue: -5
-    - socialClass: 5
+    - socialClass: 4
       changeValue: -5
     popChanges:
     - socialClass: 0
-      changeValue: 40
+      changeValue: -40
     - socialClass: 4
-      changeValue: 40
+      changeValue: -40
     - socialClass: 5
-      changeValue: -20
+      changeValue: 40
     resolution:
       sentences:
       - '<PlayerWin> has heeded the Pope''s words and burned some alchemists for heresy. '
@@ -96,4 +96,4 @@ MonoBehaviour:
       - 'The accusation also made some nobles dislike you. '
       - 'As for <PlayerLose>, his lack of action will be remembered by the clergy
         and nobles, for letting the kingdom fall in heresy. '
-      - The commoners also speak of him as weak and indecisive.
+      - "The commoners also speak of him as weak and indecisive.\r"
