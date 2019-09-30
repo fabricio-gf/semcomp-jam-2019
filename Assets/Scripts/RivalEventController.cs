@@ -95,8 +95,18 @@ public class RivalEventController : MonoBehaviour
         }
     }
 
+    public void ToggleCanPress(bool toggle)
+    {
+        InputManager.instance.canPress = toggle;
+    }
+
     public void ToggleCanPress()
     {
         InputManager.instance.canPress = !InputManager.instance.canPress;
+    }
+
+    public void EndCountdown()
+    {
+        ToggleCanPress(true);
     }
 }

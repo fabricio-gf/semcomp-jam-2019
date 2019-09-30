@@ -11,14 +11,14 @@ public class TextBox : MonoBehaviour
     public TextMeshProUGUI BodyText;
     public float typingSpeed;
 
-    bool isTyping = false;
+    [HideInInspector] public bool isTyping = false;
+    [HideInInspector] public bool duringDialogue = false;
     bool skipDialogue = false;
-    bool dialogueEnded = false;
 
     public bool isResolutionBox = false;
 
-    public bool p1confirmKeyPressed = false;
-    public bool p2confirmKeyPressed = false;
+    public delegate void TextBoxDelegate();
+    public TextBoxDelegate OnDialogueEnded;
 
     private void Awake()
     {
@@ -28,22 +28,33 @@ public class TextBox : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
         {
-            if (dialogueEnded) return;
+            if (dialogueEnded)
+            {
+                return;
+            }
             if (!isTyping)
             {
                 DisplayNextSentence();
             }
-        }
+            else
+            {
+                SkipDialogue();
+            }
+        }*/
+
     }
 
-
+    public void ClearTextBox()
+    {
+        BodyText.text = string.Empty;
+    }
 
     public void StartDialogue (Dialogue dialogue)
     {
         sentences.Clear();
-        dialogueEnded = false;
+        duringDialogue = true;
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -82,21 +93,25 @@ public class TextBox : MonoBehaviour
         }
         isTyping = false;
 
-        Debug.Log("Sentences size: " + sentences.Count);
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            OnDialogueEnded?.Invoke();
         }
     }
 
     public void SkipDialogue()
     {
-        skipDialogue = true;
+        print(isTyping);
+        if (isTyping)
+        {
+            skipDialogue = true;
+        }
     }
 
     public void EndDialogue()
     {
-        dialogueEnded = true;
+        duringDialogue = false;
+        ClearTextBox();
         if (!isResolutionBox)
         {
             if (transform.parent.name == "RivalEventCanvas")

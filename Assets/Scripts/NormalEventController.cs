@@ -26,6 +26,8 @@ public class NormalEventController : MonoBehaviour
     Dialogue resolutionDialogue1;
     Dialogue resolutionDialogue2;
 
+    public bool p1ConfirmKeyPressed = false;
+    public bool p2ConfirmKeyPressed = false;
 
     private void Awake()
     {
@@ -33,6 +35,45 @@ public class NormalEventController : MonoBehaviour
 
         GameFlow.Instance.OnEventStart += StartEvent;
         EventHandler.Instance.OnEventResolved += ShowResolution;
+        InputManager.instance.OnPressConfirm += ReadInput;
+        questionBox.OnDialogueEnded += ShowButtons;
+    }
+
+    private void Update()
+    {
+        if (questionBox.duringDialogue)
+        {
+            if(p1ConfirmKeyPressed || p2ConfirmKeyPressed)
+            {
+                p1ConfirmKeyPressed = false;
+                p2ConfirmKeyPressed = false;
+                questionBox.SkipDialogue();
+            }
+        }
+        if (resolutionBox.duringDialogue)
+        {
+            if (p1ConfirmKeyPressed)
+            {
+                p1ConfirmKeyPressed = false;
+                resolutionBox.SkipDialogue();
+            }
+        }
+        if (resolutionBox2.duringDialogue)
+        {
+            if (p1ConfirmKeyPressed)
+            {
+                p1ConfirmKeyPressed = false;
+                resolutionBox2.SkipDialogue();
+                StartCoroutine(ToggleCanPressWithDelay(0.5f));
+            }
+        }
+
+        if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
+        {
+            print("Confirmed");
+            p1ConfirmKeyPressed = false;
+            p2ConfirmKeyPressed = false;
+        }
     }
 
     public void StartEvent(GameEvent _gameEvent)
@@ -57,6 +98,7 @@ public class NormalEventController : MonoBehaviour
     public void StartDialogue()
     {
         questionBox.StartDialogue(gameEvent.question);
+        ToggleCanPress(true);
     }
 
     public void ShowButtons()
@@ -83,7 +125,7 @@ public class NormalEventController : MonoBehaviour
         animator.SetTrigger("ShowResolution");
     }
 
-    public void StartResolutionDialogue() ////
+    public void StartResolutionDialogue()
     {
         resolutionBox.StartDialogue(resolutionDialogue1);
         resolutionBox2.StartDialogue(resolutionDialogue2);
@@ -91,7 +133,6 @@ public class NormalEventController : MonoBehaviour
 
     public void EndEvent()
     {
-        print("end event");
         if (!currentEvent) return;
         currentEvent = false;
         animator.SetTrigger("EndNormalEvent");
@@ -113,8 +154,36 @@ public class NormalEventController : MonoBehaviour
         }
     }
 
+    public void ToggleCanPress(bool toggle)
+    {
+        InputManager.instance.canPress = toggle;
+    }
+
     public void ToggleCanPress()
     {
         InputManager.instance.canPress = !InputManager.instance.canPress;
     }
+
+    IEnumerator ToggleCanPressWithDelay(float delay)
+    {
+        InputManager.instance.canPress = false;
+        yield return new WaitForSeconds(delay);
+        InputManager.instance.canPress = true;
+    }
+
+    public void ReadInput(int player)
+    {
+        switch (player)
+        {
+            case 1:
+                p1ConfirmKeyPressed = true;
+                break;
+            case 2:
+                p1ConfirmKeyPressed = true;
+                break;
+            default:
+                break;
+        }
+    }
+
 }

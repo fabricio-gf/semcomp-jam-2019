@@ -6,9 +6,13 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager instance = null;
 
-    public delegate void InputManagerDelegate(KeyCode keyCode);
-    public InputManagerDelegate OnKeyDown;
-
+    public delegate void InputManagerDelegate(int player); // 1 for player 1, 2 for player 2
+    public InputManagerDelegate OnPressConfirm;
+    public InputManagerDelegate OnPressUp;
+    public InputManagerDelegate OnPressDown;
+    public InputManagerDelegate OnPressLeft;
+    public InputManagerDelegate OnPressRight;
+    
     public bool isListening;
 
     public Player player1;
@@ -19,14 +23,16 @@ public class InputManager : MonoBehaviour
     public KeyCode p1RightKey;
     public KeyCode p1DownKey;
     public KeyCode p1LeftKey;
+    public KeyCode p1ConfirmKey;
 
     //p2 keys
     public KeyCode p2UpKey;
     public KeyCode p2RightKey;
     public KeyCode p2DownKey;
     public KeyCode p2LeftKey;
+    public KeyCode p2ConfirmKey;
 
-    public bool canPress = false;
+    [HideInInspector] public bool canPress = false;
 
     private void Awake()
     {
@@ -45,47 +51,57 @@ public class InputManager : MonoBehaviour
     {
         if (!canPress) return;
 
+        if (Input.GetKeyDown(p1ConfirmKey))
+        {
+            print("confirm 1");
+            OnPressConfirm?.Invoke(1);
+        }
+        if (Input.GetKeyDown(p2ConfirmKey))
+        {
+            print("confirm 2");
+            OnPressConfirm?.Invoke(2);
+        }
+
         //P1
         if (Input.GetKeyDown(p1UpKey))
         {
-            OnKeyDown?.Invoke(p1UpKey);
+            OnPressUp?.Invoke(1);
             player1.PressUP();
         }
         if (Input.GetKeyDown(p1DownKey))
         {
-            OnKeyDown?.Invoke(p1DownKey);
+            OnPressDown?.Invoke(1);
             player1.PressDown();
         }
         if (Input.GetKeyDown(p1LeftKey))
         {
-            OnKeyDown?.Invoke(p1LeftKey);
-
+            OnPressLeft?.Invoke(1);
             player1.PressLeft();
         }
         if (Input.GetKeyDown(p1RightKey))
         {
-            OnKeyDown?.Invoke(p1RightKey);
+            OnPressRight?.Invoke(1);
             player1.PressRight();
         }
         //P2
         if (Input.GetKeyDown(p2UpKey))
         {
-            OnKeyDown?.Invoke(p2RightKey);
+            OnPressUp?.Invoke(2);
             player2.PressUP();
         }
         if (Input.GetKeyDown(p2DownKey))
         {
-            OnKeyDown?.Invoke(p2RightKey);
+            OnPressDown?.Invoke(2);
             player2.PressDown();
         }
         if (Input.GetKeyDown(p2LeftKey))
         {
-            OnKeyDown?.Invoke(p2RightKey);
+            OnPressLeft?.Invoke(2);
             player2.PressLeft();
         }
         if (Input.GetKeyDown(p2RightKey))
         {
-            OnKeyDown?.Invoke(p2RightKey);
+            OnPressRight?.Invoke(2);
             player2.PressRight();
         }
     }
