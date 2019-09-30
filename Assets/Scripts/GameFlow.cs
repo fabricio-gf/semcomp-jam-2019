@@ -67,18 +67,25 @@ public class GameFlow : MonoBehaviour
         //}
         //// END Conquest Victory
         //Choose event from list, considering probabilities
-        int rand = -1;
-        GameEvent gameEvent = null;
-        while (gameEvent == null)
+
+        if (avaiableEvents.Count > 0)
         {
-            rand = Random.Range(0, avaiableEvents.Count);
-            gameEvent = avaiableEvents[rand];
+            int rand = -1;
+            GameEvent gameEvent = null;
+            while (gameEvent == null)
+            {
+                rand = Random.Range(0, avaiableEvents.Count);
+                if (avaiableEvents[rand] != null)
+                {
+                    gameEvent = avaiableEvents[rand];
+                }
+            }
+            avaiableEvents.Remove(gameEvent);
+
+            StartCoroutine(EventTimeout(eventTimeoutSeconds));
+
+            OnEventStart?.Invoke(gameEvent);
         }
-        avaiableEvents.Remove(gameEvent);
-
-        StartCoroutine(EventTimeout(eventTimeoutSeconds));
-
-        OnEventStart?.Invoke(gameEvent);
     }
 
     public void StartEvent()

@@ -26,6 +26,11 @@ public class NormalEventController : MonoBehaviour
     Dialogue resolutionDialogue1;
     Dialogue resolutionDialogue2;
 
+    public bool p1ConfirmKeyPressed = false;
+    public bool p2ConfirmKeyPressed = false;
+
+    int endEventCounter = 0;
+    int counterLimit = 2;
 
     private void Awake()
     {
@@ -33,6 +38,76 @@ public class NormalEventController : MonoBehaviour
 
         GameFlow.Instance.OnEventStart += StartEvent;
         EventHandler.Instance.OnEventResolved += ShowResolution;
+        InputManager.instance.OnPressConfirm += ConfirmKeyDown;
+        InputManager.instance.OnReleaseConfirm += ConfirmKeyUp;
+        questionBox.OnDialogueEnded += ShowButtons;
+        resolutionBox.OnDialogueEnded += EndEvent;
+        resolutionBox2.OnDialogueEnded += EndEvent;
+    }
+
+    private void Update()
+    {
+        if (questionBox.duringDialogue)
+        {
+            if (p1ConfirmKeyPressed || p2ConfirmKeyPressed)
+            {
+                print("entrou 1");
+                if (questionBox.isTyping)
+                {
+                    p1ConfirmKeyPressed = false;
+                    p2ConfirmKeyPressed = false;
+                    questionBox.SkipDialogue();
+                }
+                else
+                {
+                    questionBox.DisplayNextSentence();
+                }
+            }
+        }
+        if (resolutionBox.duringDialogue)
+        {
+            if (p1ConfirmKeyPressed)
+            {
+                print("entrou 2");
+                if (resolutionBox.isTyping)
+                {
+
+                    p1ConfirmKeyPressed = false;
+                    resolutionBox.SkipDialogue();
+                }
+                else
+                {
+                    resolutionBox.DisplayNextSentence();
+                }
+            }
+        }
+        if (resolutionBox2.duringDialogue)
+        {
+            if (p2ConfirmKeyPressed)
+            {
+                print("entrou 3");
+                if (resolutionBox2.isTyping)
+                {
+                    p2ConfirmKeyPressed = false;
+                    resolutionBox2.SkipDialogue();
+                }
+                else
+                {
+                    resolutionBox2.DisplayNextSentence();
+                }
+            }
+        }
+
+        if(resolutionBox.duringDialogue && resolutionBox2.duringDialogue && !resolutionBox.isTyping && !resolutionBox2.isTyping)
+        {
+            if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
+            {
+                p1ConfirmKeyPressed = false;
+                p2ConfirmKeyPressed = false;
+
+                EndEvent();
+            }
+        }
     }
 
     public void StartEvent(GameEvent _gameEvent)
@@ -57,6 +132,7 @@ public class NormalEventController : MonoBehaviour
     public void StartDialogue()
     {
         questionBox.StartDialogue(gameEvent.question);
+        ToggleCanPress(true);
     }
 
     public void ShowButtons()
@@ -70,7 +146,10 @@ public class NormalEventController : MonoBehaviour
         {
             return;
         }
-        if(gameEvent.type == GameEvent.EventType.PROACTIVE)
+
+        questionBox.ClearTextBox();
+
+        if (gameEvent.type == GameEvent.EventType.PROACTIVE)
         {
             EndEvent();
             return;
@@ -83,24 +162,31 @@ public class NormalEventController : MonoBehaviour
         animator.SetTrigger("ShowResolution");
     }
 
-    public void StartResolutionDialogue() ////
+    public void StartResolutionDialogue()
     {
         resolutionBox.StartDialogue(resolutionDialogue1);
         resolutionBox2.StartDialogue(resolutionDialogue2);
+        ToggleCanPress(true);
     }
 
     public void EndEvent()
     {
-        print("end event");
-        if (!currentEvent) return;
-        currentEvent = false;
-        animator.SetTrigger("EndNormalEvent");
-        //GameFlow.Instance.OnEventFinished();
-        Debug.Log("Normal Event ended.");
+        endEventCounter++;
+        if (endEventCounter >= counterLimit)
+        {
+            endEventCounter = 0;
+
+            currentEvent = false;
+            animator.SetTrigger("EndNormalEvent");
+
+            Debug.Log("Normal Event ended.");
+        }
     }
 
     public void EventEnded()
     {
+        resolutionBox.ClearTextBox();
+        resolutionBox2.ClearTextBox();
         GameFlow.Instance.OnEventFinished();
     }
 
@@ -113,8 +199,50 @@ public class NormalEventController : MonoBehaviour
         }
     }
 
+    public void ToggleCanPress(bool toggle)
+    {
+        InputManager.instance.canPress = toggle;
+    }
+
     public void ToggleCanPress()
     {
         InputManager.instance.canPress = !InputManager.instance.canPress;
+    }
+
+    IEnumerator ToggleCanPressWithDelay(float delay)
+    {
+        InputManager.instance.canPress = false;
+        yield return new WaitForSeconds(delay);
+        InputManager.instance.canPress = true;
+    }
+
+    public void ConfirmKeyDown(int player)
+    {
+        switch (player)
+        {
+            case 1:
+                p1ConfirmKeyPressed = true;
+                break;
+            case 2:
+                p2ConfirmKeyPressed = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void ConfirmKeyUp(int player)
+    {
+        switch (player)
+        {
+            case 1:
+                p1ConfirmKeyPressed = false;
+                break;
+            case 2:
+                p2ConfirmKeyPressed = false;
+                break;
+            default:
+                break;
+        }
     }
 }

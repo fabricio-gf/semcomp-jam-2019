@@ -54,9 +54,9 @@ public class Answer
         {
             if (s.socialClass != Utilities.SocialClass.NULL)
             {
-                Debug.Log("Social class: " + s.socialClass);
-                Debug.Log("index: " + (int)Utilities.Adapted(s.socialClass));
-                Debug.Log("size: " + values.Count);
+                //Debug.Log("Social class: " + s.socialClass);
+                //Debug.Log("index: " + (int)Utilities.Adapted(s.socialClass));
+                //Debug.Log("size: " + values.Count);
                 values[(int)(Utilities.Adapted(s.socialClass))] = s.changeValue;
             }
         }

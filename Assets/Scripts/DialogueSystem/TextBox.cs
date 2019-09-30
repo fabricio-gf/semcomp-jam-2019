@@ -11,11 +11,14 @@ public class TextBox : MonoBehaviour
     public TextMeshProUGUI BodyText;
     public float typingSpeed;
 
-    bool isTyping = false;
+    public bool isTyping = false;
+    public bool duringDialogue = false;
     bool skipDialogue = false;
-    bool dialogueEnded = false;
 
     public bool isResolutionBox = false;
+
+    public delegate void TextBoxDelegate();
+    public TextBoxDelegate OnDialogueEnded;
 
     private void Awake()
     {
@@ -23,22 +26,15 @@ public class TextBox : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    private void Update()
+    public void ClearTextBox()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (dialogueEnded) return;
-            if (!isTyping)
-            {
-                DisplayNextSentence();
-            }
-        }
+        BodyText.text = string.Empty;
     }
 
     public void StartDialogue (Dialogue dialogue)
     {
         sentences.Clear();
-        dialogueEnded = false;
+        duringDialogue = true;
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -77,45 +73,23 @@ public class TextBox : MonoBehaviour
         }
         isTyping = false;
 
-        Debug.Log("Sentences size: " + sentences.Count);
-        if (sentences.Count == 0)
+        if (sentences.Count == 0 && !isResolutionBox)
         {
-            EndDialogue();
+            OnDialogueEnded?.Invoke();
         }
     }
 
     public void SkipDialogue()
     {
-        skipDialogue = true;
+        if (isTyping)
+        {
+            skipDialogue = true;
+        }
     }
 
     public void EndDialogue()
     {
-        dialogueEnded = true;
-        if (!isResolutionBox)
-        {
-            if (transform.parent.name == "RivalEventCanvas")
-            {
-                animator.SetTrigger("StartCountdown");
-            }
-            else
-            {
-                animator.SetTrigger("ShowButtons");
-            }
-        }
-        else
-        {
-            if (name == "ResolutionBox2") return;
-
-            if (transform.parent.name == "RivalEventCanvas")
-            {
-                Debug.Log("EndRivalEvent from text box");
-                animator.SetTrigger("EndRivalEvent");
-            }
-            else
-            {
-                animator.SetTrigger("EndNormalEvent");
-            }
-        }
+        duringDialogue = false;
+        if(isResolutionBox) OnDialogueEnded?.Invoke();
     }
 }
