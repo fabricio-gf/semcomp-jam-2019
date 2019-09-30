@@ -77,6 +77,7 @@ public class TextBox : MonoBehaviour
         }
         isTyping = false;
 
+        Debug.Log("Sentences size: " + sentences.Count);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -108,6 +109,7 @@ public class TextBox : MonoBehaviour
 
             if (transform.parent.name == "RivalEventCanvas")
             {
+                Debug.Log("EndRivalEvent from text box");
                 animator.SetTrigger("EndRivalEvent");
             }
             else

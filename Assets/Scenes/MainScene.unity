@@ -344,34 +344,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
   - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
   - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
-  - {fileID: 11400000, guid: 0cb9cee912f24444cb4e0ab22c1a8293, type: 2}
+  - {fileID: 11400000, guid: b891850f64083e84e980de7a6e8d92af, type: 2}
+  - {fileID: 11400000, guid: b891850f64083e84e980de7a6e8d92af, type: 2}
+  - {fileID: 11400000, guid: b891850f64083e84e980de7a6e8d92af, type: 2}
+  - {fileID: 11400000, guid: b891850f64083e84e980de7a6e8d92af, type: 2}
 --- !u!114 &93453294 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2189145979513149799, guid: 66e49a5229cadbc4f930843989a96cea,
@@ -1811,6 +1787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: typingSpeed
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89180186d6bfdbb47bc99b047d31cda8, type: 3}
@@ -3337,6 +3318,10 @@ PrefabInstance:
     - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
       propertyPath: isResolutionBox
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705773231, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
+      propertyPath: typingSpeed
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9daba596932d8b4491bd3a206a5e7f5, type: 3}
@@ -7574,6 +7559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246107366336581956, guid: 89180186d6bfdbb47bc99b047d31cda8,
+        type: 3}
+      propertyPath: typingSpeed
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89180186d6bfdbb47bc99b047d31cda8, type: 3}
