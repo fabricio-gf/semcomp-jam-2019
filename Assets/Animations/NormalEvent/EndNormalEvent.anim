@@ -1220,7 +1220,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
-    functionName: OnDisable
+    functionName: EventEnded
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -54,7 +54,10 @@ public class Answer
         {
             if (s.socialClass != Utilities.SocialClass.NULL)
             {
-                values[(int)Utilities.Adapted(s.socialClass)] = s.changeValue;
+                Debug.Log("Social class: " + s.socialClass);
+                Debug.Log("index: " + (int)Utilities.Adapted(s.socialClass));
+                Debug.Log("size: " + values.Count);
+                values[(int)(Utilities.Adapted(s.socialClass))] = s.changeValue;
             }
         }
         return new World.PopulationGroups(values);

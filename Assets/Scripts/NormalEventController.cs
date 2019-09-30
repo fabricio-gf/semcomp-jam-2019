@@ -83,7 +83,7 @@ public class NormalEventController : MonoBehaviour
         animator.SetTrigger("ShowResolution");
     }
 
-    public void StartResolutionDialogue()
+    public void StartResolutionDialogue() ////
     {
         resolutionBox.StartDialogue(resolutionDialogue1);
         resolutionBox2.StartDialogue(resolutionDialogue2);
@@ -95,6 +95,12 @@ public class NormalEventController : MonoBehaviour
         if (!currentEvent) return;
         currentEvent = false;
         animator.SetTrigger("EndNormalEvent");
+        //GameFlow.Instance.OnEventFinished();
+        Debug.Log("Normal Event ended.");
+    }
+
+    public void EventEnded()
+    {
         GameFlow.Instance.OnEventFinished();
     }
 
