@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text;
 
 public class NormalEventController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class NormalEventController : MonoBehaviour
 
     public TextBox questionBox;
     public TextBox resolutionBox;
-    public TextBox resolutionBox2;
+    //public TextBox resolutionBox2;
 
     GameEvent gameEvent;
 
@@ -39,14 +40,15 @@ public class NormalEventController : MonoBehaviour
         GameFlow.Instance.OnEventStart += StartEvent;
         EventHandler.Instance.OnEventResolved += ShowResolution;
         InputManager.instance.OnPressConfirm += ConfirmKeyDown;
-        InputManager.instance.OnReleaseConfirm += ConfirmKeyUp;
+        //InputManager.instance.OnReleaseConfirm += ConfirmKeyUp;
         questionBox.OnDialogueEnded += ShowButtons;
         resolutionBox.OnDialogueEnded += EndEvent;
-        resolutionBox2.OnDialogueEnded += EndEvent;
+        //resolutionBox2.OnDialogueEnded += EndEvent;
     }
 
     private void Update()
     {
+        
         if (questionBox.duringDialogue)
         {
             if (p1ConfirmKeyPressed || p2ConfirmKeyPressed)
@@ -67,39 +69,25 @@ public class NormalEventController : MonoBehaviour
         }
         if (resolutionBox.duringDialogue)
         {
-            if (p1ConfirmKeyPressed)
+            if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
             {
-                print("entrou 2");
                 if (resolutionBox.isTyping)
                 {
 
                     p1ConfirmKeyPressed = false;
+                    p2ConfirmKeyPressed = false;
                     resolutionBox.SkipDialogue();
                 }
                 else
                 {
+                    p1ConfirmKeyPressed = false;
+                    p2ConfirmKeyPressed = false;
                     resolutionBox.DisplayNextSentence();
                 }
             }
         }
-        if (resolutionBox2.duringDialogue)
-        {
-            if (p2ConfirmKeyPressed)
-            {
-                print("entrou 3");
-                if (resolutionBox2.isTyping)
-                {
-                    p2ConfirmKeyPressed = false;
-                    resolutionBox2.SkipDialogue();
-                }
-                else
-                {
-                    resolutionBox2.DisplayNextSentence();
-                }
-            }
-        }
 
-        if(resolutionBox.duringDialogue && resolutionBox2.duringDialogue && !resolutionBox.isTyping && !resolutionBox2.isTyping)
+        if(resolutionBox.duringDialogue && !resolutionBox.isTyping)
         {
             if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
             {
@@ -133,6 +121,7 @@ public class NormalEventController : MonoBehaviour
     public void StartDialogue()
     {
         questionBox.StartDialogue(gameEvent.question);
+
         ToggleCanPressConfirm(true);
     }
 
@@ -169,31 +158,45 @@ public class NormalEventController : MonoBehaviour
 
     public void StartResolutionDialogue()
     {
+        StringBuilder sb;
+
+        for(int i = 0; i < resolutionDialogue1.sentences.Length; i++)
+        {
+            sb = new StringBuilder(resolutionDialogue1.sentences[i]);
+            sb.Replace("<Player>", "Charles");
+            resolutionDialogue1.sentences[i] = sb.ToString();
+        }
+        for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
+        {
+            sb = new StringBuilder(resolutionDialogue2.sentences[i]);
+            sb.Replace("<Player>", "Katrina");
+            resolutionDialogue2.sentences[i] = sb.ToString();
+        }
+
+        List<string> tempList = new List<string>();
+        tempList.AddRange(resolutionDialogue1.sentences);
+        tempList.AddRange(resolutionDialogue2.sentences);
+        Dialogue finalResolutionDialogue = new Dialogue(tempList.ToArray());
+
         resolutionBox.StartDialogue(resolutionDialogue1);
-        resolutionBox2.StartDialogue(resolutionDialogue2);
+
         ToggleCanPressConfirm(true);
     }
 
     public void EndEvent()
     {
-        endEventCounter++;
-        if (endEventCounter >= counterLimit)
-        {
-            endEventCounter = 0;
+        ToggleCanPressConfirm(false);
 
-            ToggleCanPressConfirm(false);
+        currentEvent = false;
+        animator.SetTrigger("EndNormalEvent");
 
-            currentEvent = false;
-            animator.SetTrigger("EndNormalEvent");
-
-            Debug.Log("Normal Event ended.");
-        }
+        Debug.Log("Normal Event ended.");
     }
 
     public void EventEnded()
     {
         resolutionBox.ClearTextBox();
-        resolutionBox2.ClearTextBox();
+        //resolutionBox2.ClearTextBox();
         GameFlow.Instance.FinishEvent();
     }
 
@@ -213,21 +216,16 @@ public class NormalEventController : MonoBehaviour
 
     public void ToggleCanPress(bool toggle)
     {
-        print("entrou 1");
         InputManager.instance.canPress = toggle;
     }
 
     public void ToggleCanPress()
     {
-        print("entrou 2");
-
         InputManager.instance.canPress = !InputManager.instance.canPress;
     }
 
     IEnumerator ToggleCanPressWithDelay(float delay)
     {
-        print("entrou 3");
-
         InputManager.instance.canPress = false;
         yield return new WaitForSeconds(delay);
         InputManager.instance.canPress = true;
@@ -235,15 +233,15 @@ public class NormalEventController : MonoBehaviour
 
     public void ToggleCanPressConfirm(bool toggle)
     {
-        print("entrou 4 " + toggle);
-
+        p1ConfirmKeyPressed = false;
+        p2ConfirmKeyPressed = false;
         InputManager.instance.canPressConfirm = toggle;
     }
 
     public void ToggleCanPressConfirm()
     {
-        print("entrou 5");
-
+        p1ConfirmKeyPressed = false;
+        p2ConfirmKeyPressed = false;
         InputManager.instance.canPressConfirm = !InputManager.instance.canPressConfirm;
     }
 
