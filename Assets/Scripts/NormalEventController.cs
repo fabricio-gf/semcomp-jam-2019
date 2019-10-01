@@ -51,7 +51,6 @@ public class NormalEventController : MonoBehaviour
         {
             if (p1ConfirmKeyPressed || p2ConfirmKeyPressed)
             {
-                print("entrou 1");
                 if (questionBox.isTyping)
                 {
                     p1ConfirmKeyPressed = false;
@@ -60,6 +59,8 @@ public class NormalEventController : MonoBehaviour
                 }
                 else
                 {
+                    p1ConfirmKeyPressed = false;
+                    p2ConfirmKeyPressed = false;
                     questionBox.DisplayNextSentence();
                 }
             }
@@ -132,11 +133,12 @@ public class NormalEventController : MonoBehaviour
     public void StartDialogue()
     {
         questionBox.StartDialogue(gameEvent.question);
-        ToggleCanPress(true);
+        ToggleCanPressConfirm(true);
     }
 
     public void ShowButtons()
     {
+        StartCoroutine(ToggleCanPressWithDelay(0.25f));
         animator.SetTrigger("ShowButtons");
     }
 
@@ -147,6 +149,7 @@ public class NormalEventController : MonoBehaviour
             return;
         }
 
+        ToggleCanPress(false);
         questionBox.ClearTextBox();
 
         if (gameEvent.type == GameEvent.EventType.PROACTIVE)
@@ -156,6 +159,8 @@ public class NormalEventController : MonoBehaviour
         }
         else if(gameEvent.type == GameEvent.EventType.REACTIVE)
         {
+            print(playerAnswer[0].answer.resolution.sentences[0]);
+            print(playerAnswer[1].answer.resolution.sentences[0]);
             resolutionDialogue1 = playerAnswer[0].answer.resolution;
             resolutionDialogue2 = playerAnswer[1].answer.resolution;
         }
@@ -166,7 +171,7 @@ public class NormalEventController : MonoBehaviour
     {
         resolutionBox.StartDialogue(resolutionDialogue1);
         resolutionBox2.StartDialogue(resolutionDialogue2);
-        ToggleCanPress(true);
+        ToggleCanPressConfirm(true);
     }
 
     public void EndEvent()
@@ -175,6 +180,8 @@ public class NormalEventController : MonoBehaviour
         if (endEventCounter >= counterLimit)
         {
             endEventCounter = 0;
+
+            ToggleCanPressConfirm(false);
 
             currentEvent = false;
             animator.SetTrigger("EndNormalEvent");
@@ -194,6 +201,11 @@ public class NormalEventController : MonoBehaviour
     {
         for(int i = 0; i < player1Texts.Length; i++)
         {
+            /*print("Player 1 text at " + i + " :" + player1.avaiableAnswers[i].answerText);
+            print("Player 1 resolution at " + i + " :" + player1.avaiableAnswers[i].resolution.sentences[0]);
+            print("Player 2 text at " + i + " :" + player2.avaiableAnswers[i].answerText);
+            print("Player 2 resolution at " + i + " :" + player2.avaiableAnswers[i].resolution.sentences[0]);*/
+
             player1Texts[i].text = player1.avaiableAnswers[i].answerText;
             player2Texts[i].text = player2.avaiableAnswers[i].answerText;
         }
@@ -201,19 +213,38 @@ public class NormalEventController : MonoBehaviour
 
     public void ToggleCanPress(bool toggle)
     {
+        print("entrou 1");
         InputManager.instance.canPress = toggle;
     }
 
     public void ToggleCanPress()
     {
+        print("entrou 2");
+
         InputManager.instance.canPress = !InputManager.instance.canPress;
     }
 
     IEnumerator ToggleCanPressWithDelay(float delay)
     {
+        print("entrou 3");
+
         InputManager.instance.canPress = false;
         yield return new WaitForSeconds(delay);
         InputManager.instance.canPress = true;
+    }
+
+    public void ToggleCanPressConfirm(bool toggle)
+    {
+        print("entrou 4 " + toggle);
+
+        InputManager.instance.canPressConfirm = toggle;
+    }
+
+    public void ToggleCanPressConfirm()
+    {
+        print("entrou 5");
+
+        InputManager.instance.canPressConfirm = !InputManager.instance.canPressConfirm;
     }
 
     public void ConfirmKeyDown(int player)

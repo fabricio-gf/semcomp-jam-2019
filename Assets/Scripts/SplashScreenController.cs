@@ -10,7 +10,7 @@ public class SplashScreenController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         InputManager.instance.OnPressConfirm += PressPlay;
-        InputManager.instance.canPress = true;
+        InputManager.instance.canPressConfirm = true;
     }
 
     public void SetCanStart()
@@ -22,7 +22,7 @@ public class SplashScreenController : MonoBehaviour
     {
         animator.SetTrigger("PressPlay");
         AudioManager.instance.PlayClip("play");
-        InputManager.instance.canPress = false;
+        InputManager.instance.canPressConfirm = false;
         InputManager.instance.OnPressConfirm -= PressPlay;
         GameFlow.Instance.StartEvent();
     }

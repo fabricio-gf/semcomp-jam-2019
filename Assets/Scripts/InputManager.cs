@@ -35,6 +35,7 @@ public class InputManager : MonoBehaviour
     public KeyCode p2ConfirmKey;
 
     public bool canPress = false;
+    public bool canPressConfirm = false;
 
     private void Awake()
     {
@@ -51,17 +52,6 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (!canPress) return;
-
-        if (Input.GetKeyDown(p1ConfirmKey))
-        {
-            OnPressConfirm?.Invoke(1);
-        }
-        if (Input.GetKeyDown(p2ConfirmKey))
-        {
-            OnPressConfirm?.Invoke(2);
-        }
-
         if (Input.GetKeyUp(p1ConfirmKey))
         {
             OnReleaseConfirm?.Invoke(1);
@@ -70,6 +60,19 @@ public class InputManager : MonoBehaviour
         {
             OnReleaseConfirm?.Invoke(2);
         }
+        if (canPressConfirm)
+        {
+            if (Input.GetKeyDown(p1ConfirmKey))
+            {
+                OnPressConfirm?.Invoke(1);
+            }
+            if (Input.GetKeyDown(p2ConfirmKey))
+            {
+                OnPressConfirm?.Invoke(2);
+            }
+        }
+
+        if (!canPress) return;
 
         //P1
         if (Input.GetKeyDown(p1UpKey))

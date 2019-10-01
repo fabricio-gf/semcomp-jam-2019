@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Event", menuName = "Game Event")]
 public class GameEvent : ScriptableObject
 {
-    public class PlayerAnswer
+    public struct PlayerAnswer
     {
         public Player player;
         public Answer answer;

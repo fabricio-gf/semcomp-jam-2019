@@ -113,7 +113,7 @@ public class EventHandler : MonoBehaviour
     private void Resolve()
     {
         //Resolve effects on players and world - should use GameEvent
-        OnEventResolved?.Invoke(ActiveEvent.Resolve(_answers)); // Warning: resolve does things AND returns more stuff
+        OnEventResolved?.Invoke(ActiveEvent.Resolve(new List<GameEvent.PlayerAnswer>(_answers))); // Warning: resolve does things AND returns more stuff
     }
 
     
