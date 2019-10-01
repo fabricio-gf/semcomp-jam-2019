@@ -187,7 +187,7 @@ public class NormalEventController : MonoBehaviour
     {
         resolutionBox.ClearTextBox();
         resolutionBox2.ClearTextBox();
-        GameFlow.Instance.OnEventFinished();
+        GameFlow.Instance.FinishEvent();
     }
 
     void WritePlayerOptions()

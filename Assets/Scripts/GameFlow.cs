@@ -18,6 +18,9 @@ public class GameFlow : MonoBehaviour
     public delegate void EventForceEnd();
     public event EventForceEnd OnEventForceEnd;
 
+    public delegate void EventEnd();
+    public event EventForceEnd OnEventEnd;
+
     public delegate void GameOver(Player player);
     public event GameOver OnGameOver;
 
@@ -96,7 +99,7 @@ public class GameFlow : MonoBehaviour
 
 
 
-    public void OnEventFinished()
+    public void FinishEvent()
     {
         Player.NormalizeInfluences(); //FIXME - fora de lugar
         // Subscribe this to an event
@@ -121,7 +124,7 @@ public class GameFlow : MonoBehaviour
             }
             Debug.Log("Game is finished");
         }
-
+        OnEventEnd?.Invoke();
     }
 
     IEnumerator EventTimeout(float seconds)

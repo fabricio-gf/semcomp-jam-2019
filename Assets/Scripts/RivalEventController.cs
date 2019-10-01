@@ -84,7 +84,7 @@ public class RivalEventController : MonoBehaviour
     {
         currentEvent = false;
         animator.SetTrigger("EndRivalEvent");
-        GameFlow.Instance.OnEventFinished();
+        GameFlow.Instance.FinishEvent();
     }
 
     void WritePlayerOptions()

@@ -8,59 +8,74 @@ public class ClassIcon : MonoBehaviour
     public World.Faction faction;
     public bool isStatChange;
 
+    [Range(0f,1f)]
+    public float changeIconThreshold = 0.4f;
     public Sprite badIcon;
     public Sprite mediumIcon;
+
     public Sprite goodIcon;
 
-    int currentIcon = 1;
+    //int currentIcon = 1;
 
     public Image faceIcon;
 
     Animator animator;
 
+    private Player ownerPlayer;
+    private List<GameEvent.PlayerAnswer> lastResolution = null;
+
     private void Awake()
     {
-        //EventHandler.Instance.OnEventResolved += ResolveEvent;
-        faceIcon = GetComponent<Image>();
+        //EventHandler.Instance.OnEventResolved += ResolveEvent; //WARNING! - Fabrício, a instance do EventHandler (e do GameFlow) são instanciadas no Awake: usa o Start pra settar os listeners
         animator = GetComponent<Animator>();
+        ownerPlayer = GetComponentInParent<Player>();
     }
 
-    public void ResolveEvent(List<GameEvent.PlayerAnswer> playerAnswers)
+    private void Start()
     {
-        foreach (var v in playerAnswers) {
-            World.PopulationGroups p = Answer.AdaptedStatChanges(playerAnswers[0].answer.statChanges);
-            if (p.groups[(int)faction] > 0)
-            {
-                PlayAnimation(3);
-                //if (play)
-        }
-            else
-            {
-                PlayAnimation(1);
-            }
-
-            Invoke("ChangeIcon", 0.5f);
-        }
+        EventHandler.Instance.OnEventResolved += RecordLastResolution;
+        GameFlow.Instance.OnEventEnd += DisplayChanges;
     }
 
-    public void ChangeIcon(int newIcon)
+    public void RecordLastResolution (List<GameEvent.PlayerAnswer> playerAnswers)
     {
-        switch (newIcon)
+        lastResolution = playerAnswers;
+    }
+
+    public void DisplayChanges()
+    {
+        World.PopulationGroups influenceChange = (ownerPlayer.influence - ownerPlayer.EventStartInfluence);
+        float valueChange = influenceChange.groups[(int)faction];
+        if (valueChange > 0)
         {
-            case 0:
-                faceIcon.sprite = badIcon;
-                currentIcon = 0;
-                break;
-            case 1:
-                faceIcon.sprite = mediumIcon;
-                currentIcon = 1;
-                break;
-            case 2:
-                faceIcon.sprite = goodIcon;
-                currentIcon = 2;
-                break;
-            default:
-                break;
+            PlayAnimation(3);
+            //if (play)
+        }
+        else if (valueChange < 0)
+        {
+            PlayAnimation(1);
+        }
+
+        Invoke("ChangeIcon", 0.5f);
+    }
+
+    public void ChangeIcon()
+    {
+        float influence = ownerPlayer.influence.groups[(int)faction];
+        if (influence < changeIconThreshold)
+        {
+            faceIcon.sprite = badIcon;
+            //currentIcon = 0;
+        }
+        else if (influence <= 1 - changeIconThreshold)
+        {
+            faceIcon.sprite = mediumIcon;
+            //currentIcon = 1;
+        }
+        else
+        {
+            faceIcon.sprite = goodIcon;
+            //currentIcon = 2;
         }
     }
 
