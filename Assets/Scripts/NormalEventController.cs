@@ -152,7 +152,6 @@ public class NormalEventController : MonoBehaviour
         {
             resolutionDialogue1 = playerAnswer[0].answer.resolution;
             firstName = playerAnswer[0].player.playername;
-            print("First name " + firstName);
 
             resolutionDialogue2 = playerAnswer[1].answer.resolution;
             secondName = playerAnswer[1].player.playername;
@@ -166,24 +165,15 @@ public class NormalEventController : MonoBehaviour
         for(int i = 0; i < resolutionDialogue1.sentences.Length; i++)
         {
             StringBuilder sb = new StringBuilder(resolutionDialogue1.sentences[i]);
-            print("First name " + firstName);
-
             sb.Replace("<Player>", firstName);
-            print("String builder 1 " + sb);
             resolutionDialogue1.sentences[i] = sb.ToString();
-            print("First player sentence " + resolutionDialogue1.sentences[i]);
 
         }
         for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
         {
             StringBuilder sb = new StringBuilder(resolutionDialogue2.sentences[i]);
-            print("Second name " + secondName);
-
             sb.Replace("<Player>", secondName);
-            print("String builder 2 " + sb);
-
             resolutionDialogue2.sentences[i] = sb.ToString();
-            print("Second player sentence " + resolutionDialogue2.sentences[i]);
         }
 
         List<string> tempList = new List<string>();
