@@ -8,6 +8,9 @@ public class EventHandler : MonoBehaviour
     public delegate void EventResolved(List<GameEvent.PlayerAnswer> answers);
     public event EventResolved OnEventResolved;
 
+    public delegate void AnswerLocked(GameEvent.PlayerAnswer answer);
+    public event AnswerLocked OnAnswerLocked;
+
     public static EventHandler Instance { get; private set; }
 
 
@@ -94,6 +97,7 @@ public class EventHandler : MonoBehaviour
             }
         }
         GameEvent.PlayerAnswer a = new GameEvent.PlayerAnswer(answer, player);
+        OnAnswerLocked?.Invoke(a);
         _answers.Add(a);
         /* Rival Events: first answer takes effect, event is resolved
          * Other events: waits for two answers, applies results, is resolved

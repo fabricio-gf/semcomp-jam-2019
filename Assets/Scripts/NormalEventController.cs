@@ -38,7 +38,10 @@ public class NormalEventController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         GameFlow.Instance.OnEventStart += StartEvent;
+
         EventHandler.Instance.OnEventResolved += ShowResolution;
+        EventHandler.Instance.OnAnswerLocked += LockAnswer;
+
         InputManager.instance.OnPressConfirm += ConfirmKeyDown;
         //InputManager.instance.OnReleaseConfirm += ConfirmKeyUp;
         questionBox.OnDialogueEnded += ShowButtons;
@@ -215,6 +218,9 @@ public class NormalEventController : MonoBehaviour
             player1Texts[i].text = player1.avaiableAnswers[i].answerText;
             player2Texts[i].text = player2.avaiableAnswers[i].answerText;
         }
+
+        questionBox.ChangeSprite(0, 0);
+        questionBox.ChangeSprite(1, 0);
     }
 
     public void ToggleCanPress(bool toggle)
@@ -254,8 +260,16 @@ public class NormalEventController : MonoBehaviour
         {
             case 1:
                 p1ConfirmKeyPressed = true;
+                if (resolutionBox.duringDialogue && !resolutionBox.isTyping)
+                {
+                    resolutionBox.ChangeSprite(0, 1);
+                }
                 break;
             case 2:
+                if (resolutionBox.duringDialogue && !resolutionBox.isTyping)
+                {
+                    resolutionBox.ChangeSprite(1, 1);
+                }
                 p2ConfirmKeyPressed = true;
                 break;
             default:
@@ -272,6 +286,21 @@ public class NormalEventController : MonoBehaviour
                 break;
             case 2:
                 p2ConfirmKeyPressed = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void LockAnswer(GameEvent.PlayerAnswer _answer)
+    {
+        switch (_answer.player.playername)
+        {
+            case "Charles":
+                questionBox.ChangeSprite(0,1);
+                break;
+            case "Katrina":
+                questionBox.ChangeSprite(1, 1);
                 break;
             default:
                 break;
