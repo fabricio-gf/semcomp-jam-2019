@@ -65,7 +65,7 @@ public class GameEvent : ScriptableObject
                 }
             }
             Player.NormalizeInfluences();
-            return answers;
+            return new List<PlayerAnswer>(answers);
         }
         else
         {

@@ -27,11 +27,11 @@ public class NormalEventController : MonoBehaviour
     Dialogue resolutionDialogue1;
     Dialogue resolutionDialogue2;
 
+    string firstName;
+    string secondName;
+
     public bool p1ConfirmKeyPressed = false;
     public bool p2ConfirmKeyPressed = false;
-
-    int endEventCounter = 0;
-    int counterLimit = 2;
 
     private void Awake()
     {
@@ -69,16 +69,18 @@ public class NormalEventController : MonoBehaviour
         }
         if (resolutionBox.duringDialogue)
         {
-            if (p1ConfirmKeyPressed && p2ConfirmKeyPressed)
+            if (resolutionBox.isTyping)
             {
-                if (resolutionBox.isTyping)
+                if(p1ConfirmKeyPressed || p2ConfirmKeyPressed)
                 {
-
                     p1ConfirmKeyPressed = false;
                     p2ConfirmKeyPressed = false;
                     resolutionBox.SkipDialogue();
                 }
-                else
+            }
+            else
+            {
+                if(p1ConfirmKeyPressed && p2ConfirmKeyPressed)
                 {
                     p1ConfirmKeyPressed = false;
                     p2ConfirmKeyPressed = false;
@@ -148,29 +150,40 @@ public class NormalEventController : MonoBehaviour
         }
         else if(gameEvent.type == GameEvent.EventType.REACTIVE)
         {
-            print(playerAnswer[0].answer.resolution.sentences[0]);
-            print(playerAnswer[1].answer.resolution.sentences[0]);
             resolutionDialogue1 = playerAnswer[0].answer.resolution;
+            firstName = playerAnswer[0].player.playername;
+            print("First name " + firstName);
+
             resolutionDialogue2 = playerAnswer[1].answer.resolution;
+            secondName = playerAnswer[1].player.playername;
+
         }
         animator.SetTrigger("ShowResolution");
     }
 
     public void StartResolutionDialogue()
     {
-        StringBuilder sb;
-
         for(int i = 0; i < resolutionDialogue1.sentences.Length; i++)
         {
-            sb = new StringBuilder(resolutionDialogue1.sentences[i]);
-            sb.Replace("<Player>", "Charles");
+            StringBuilder sb = new StringBuilder(resolutionDialogue1.sentences[i]);
+            print("First name " + firstName);
+
+            sb.Replace("<Player>", firstName);
+            print("String builder 1 " + sb);
             resolutionDialogue1.sentences[i] = sb.ToString();
+            print("First player sentence " + resolutionDialogue1.sentences[i]);
+
         }
         for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
         {
-            sb = new StringBuilder(resolutionDialogue2.sentences[i]);
-            sb.Replace("<Player>", "Katrina");
+            StringBuilder sb = new StringBuilder(resolutionDialogue2.sentences[i]);
+            print("Second name " + secondName);
+
+            sb.Replace("<Player>", secondName);
+            print("String builder 2 " + sb);
+
             resolutionDialogue2.sentences[i] = sb.ToString();
+            print("Second player sentence " + resolutionDialogue2.sentences[i]);
         }
 
         List<string> tempList = new List<string>();
@@ -178,7 +191,7 @@ public class NormalEventController : MonoBehaviour
         tempList.AddRange(resolutionDialogue2.sentences);
         Dialogue finalResolutionDialogue = new Dialogue(tempList.ToArray());
 
-        resolutionBox.StartDialogue(resolutionDialogue1);
+        resolutionBox.StartDialogue(finalResolutionDialogue);
 
         ToggleCanPressConfirm(true);
     }
