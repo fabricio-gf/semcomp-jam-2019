@@ -83,6 +83,7 @@ public class EventHandler : MonoBehaviour
 
     public void RecordAnswer(Answer answer, Player player) 
     {
+        Debug.Log("Recording Answer: " + answer.answerText + " - From: " + player);
         //Make additional checks to see if it is possible to record the answer
         // Avoid multiple inputs
         foreach(GameEvent.PlayerAnswer ans in _answers)
