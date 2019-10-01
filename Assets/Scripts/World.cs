@@ -92,6 +92,15 @@ public class World : MonoBehaviour
             }
             return p;
         }
+        public static PopulationGroups operator -(PopulationGroups a, PopulationGroups b)
+        {
+            PopulationGroups p = new PopulationGroups();
+            for (int i = 0; i < (int)Faction.SIZE; i++)
+            {
+                p.groups[i] = a.groups[i] - b.groups[i];
+            }
+            return p;
+        }
         public static PopulationGroups operator* (PopulationGroups a, PopulationGroups b)
         {
             PopulationGroups p = new PopulationGroups();
@@ -142,6 +151,17 @@ public class World : MonoBehaviour
                 f += val;
             }
             return f;
+        }
+        override public string ToString()
+        {
+            string s =
+                "Merchants: " + Merchants + " | " +
+                "Nobility: " + Nobility + " | " +
+                "Guard: " + Guard + " | " +
+                "Commoners: " + Peasants + " | " +
+                "Alchemists: " + Alchemists + " | " +
+                "Clerics: " + Clerics;
+            return s;
         }
     }
 

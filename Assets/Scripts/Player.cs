@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
     public static List<Player> players = new List<Player>();
     public List<Answer> avaiableAnswers; // UI needs it
 
+    public World.PopulationGroups influence;
+    public World.PopulationGroups Power { get => World.Instance.groups * influence; }
+
+    public World.PopulationGroups EventStartInfluence { set; get; }
+
+
+
     public static void NormalizeInfluences()
     {
         World.PopulationGroups globalInfluence = new World.PopulationGroups();
@@ -22,17 +29,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    public World.PopulationGroups influence;
-    
-
-    public World.PopulationGroups Power { get => World.Instance.groups * influence; }   
+      
 
     // Player attributes, infuence, etc
 
     // Start is called before the first frame update
     void Start()
     {
-
+        GameFlow.Instance.OnEventStart += RecordEventStartInfluence;
     }
 
     // Update is called once per frame
@@ -68,6 +72,12 @@ public class Player : MonoBehaviour
             return;
         }
         EventHandler.Instance.RecordAnswer(avaiableAnswers[index], this);
+    }
+
+    private void RecordEventStartInfluence(GameEvent e)
+    {
+        EventStartInfluence = influence;
+        Debug.Log("Player " + playername + "'s influence: " + influence );
     }
 
 }
