@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
 
     public void PressUP()
     {
+        Debug.Log("Player " + playername + " pressed up.");
         SendAnswer(2);
     }
 
