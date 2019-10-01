@@ -128,6 +128,15 @@ public class World : MonoBehaviour
             }
             return p;
         }
+        public static PopulationGroups operator /(PopulationGroups a, float b)
+        {
+            PopulationGroups p = new PopulationGroups();
+            for (int i = 0; i < (int)Faction.SIZE; i++)
+            {
+                p.groups[i] = a.groups[i] / b;
+            }
+            return p;
+        }
         public Faction Highest()
         {
             float f = -1;

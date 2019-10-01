@@ -24,6 +24,9 @@ public class GameEvent : ScriptableObject
         RIVAL
     }
 
+    public const float STATUS_CHANGE_SCALE = 100f;
+
+
     public string identifier;
     public EventType type;
     //public string question; //temp
@@ -50,17 +53,18 @@ public class GameEvent : ScriptableObject
         {
             foreach (PlayerAnswer ans in answers)
             {
-                ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges);
-                World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges);
+                ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges) / STATUS_CHANGE_SCALE;
+                World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges) / STATUS_CHANGE_SCALE;
                 List<Player> players = new List<Player>(FindObjectsOfType<Player>());
                 foreach (Player p in players)
                 {
                     if (p != ans.player)
                     {
-                        p.influence += Answer.AdaptedStatChanges(ans.answer.rivalStatChanges);
+                        p.influence += Answer.AdaptedStatChanges(ans.answer.rivalStatChanges) / STATUS_CHANGE_SCALE;
                     }
                 }
             }
+            Player.NormalizeInfluences();
             return answers;
         }
         else

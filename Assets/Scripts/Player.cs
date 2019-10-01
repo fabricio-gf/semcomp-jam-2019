@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public string playername;
 
-    public static List<Player> players = new List<Player>();
+    private static List<Player> players = null;
     public List<Answer> avaiableAnswers; // UI needs it
 
     public World.PopulationGroups influence;
@@ -18,10 +18,15 @@ public class Player : MonoBehaviour
 
     public static void NormalizeInfluences()
     {
+        if (players == null)
+        {
+            players = new List<Player>(FindObjectsOfType<Player>());
+        }
+
         World.PopulationGroups globalInfluence = new World.PopulationGroups();
         foreach (Player p in players)
         {
-            globalInfluence = p.influence*100 + globalInfluence; //TODO: set a proper parameterized multiplier for sum before adding
+            globalInfluence += p.influence; //TODO: review
         }
         foreach (Player p in players)
         {
