@@ -9,6 +9,8 @@ public class GameFlow : MonoBehaviour
     public int maxTurns = 24;
     public float conquestWinThreshold = 0.9f;
 
+    public GameConfig gameConfig;
+
     public List<GameEvent> avaiableEvents;
 
     public delegate void EventStart(GameEvent gameEvent);
@@ -38,6 +40,11 @@ public class GameFlow : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void OnEnable()
+    {
+        avaiableEvents = new List<GameEvent>(gameConfig.avaiableEvents);
     }
 
     private IEnumerator StartEventCoroutine(float startEventDelay)
