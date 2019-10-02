@@ -233,9 +233,17 @@ public class RivalEventController : MonoBehaviour
         {
             case 1:
                 p1ConfirmKeyPressed = true;
+                if (resolutionBox.duringDialogue && !resolutionBox.isTyping)
+                {
+                    resolutionBox.ChangeSprite(0, 1);
+                }
                 break;
             case 2:
                 p2ConfirmKeyPressed = true;
+                if (resolutionBox.duringDialogue && !resolutionBox.isTyping)
+                {
+                    resolutionBox.ChangeSprite(1, 1);
+                }
                 break;
             default:
                 break;

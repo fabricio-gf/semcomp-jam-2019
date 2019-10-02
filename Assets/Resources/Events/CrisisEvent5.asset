@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent5
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent5
+  type: 2
+  question:
+    sentences:
+    - '"The time is up for feudalism! '
+    - 'We need a state were each man and woman can grow according to its merits, not
+      by birth or mariage.", cried the merchants. '
+    - 'They bought the best weapons and mercenaries and started a war against the
+      system. '
+    - Some words about illuminating something were spoken.
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Promisse to tax inheritances and sell some lands for the merchants.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Lock yourself in the castle and wait for the situation to resolve
+      itself.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: Join the merchants to fight against the other nobles. As long as they
+      don't implement that democracy thing, it will be fine!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 9
+  - identifier: 4
+    answerText: Summon the guards to try to stop the riot.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 1
+      threshold: 6
+  - identifier: 5
+    answerText: The people will surely like this idea of killing nobles and getting
+      rich. We should make them our allies.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 2
+      threshold: 6
+  - identifier: 8
+    answerText: If it is about making people give up on their money, the Pope is the
+      right person to call!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 5
+      threshold: 75
+  crisisResolutions:
+  - index: 1
+    resolution:
+      sentences:
+      - 'No opposition was able to stop the merchants and their mercenaries. '
+      - 'Was this the first good omen for a meritocratic government system? '
+      - "<PlayerWin> does not know. But knew how to maintain his power as the first
+        enlightened despot.\r"
+    popChanges:
+    - socialClass: 5
+      changeValue: -60
+  - index: 2
+    resolution:
+      sentences:
+      - 'Not even all the money and troops to hire in the world was able to stop the
+        counterattack of the church when lacking a great leader. '
+      - The Pope preached with so much fervor against the sin of greed and how terrible
+        hell was for its sinners
+      - ' that the almost the whole kingdom (except the alchemists, of course) went
+        against the merchants'' revolution. '
+      - 'The people fought against the heretics, the mercenaries gave up, a lot of
+        merchants were killed in the name of God. '
+      - 'Guards, commoners, clergymen and nobles all fought together and died together
+        while viciously murdering their own old friends for a place in heaven. '
+      - "But, well, at least both of you were alive and well.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -20
+  - index: 3
+    resolution:
+      sentences:
+      - 'The Pope used his combat monks to fight against the mercenaries while evangelizing
+        to the most weak-willed mercenaries to repent for their sins and stop fighting. '
+      - 'Many bought this chance of salvation and dissuaded their friends. '
+      - "The fight ended with some casualties for both sides, but with the mercenaries
+        giving up on their ideas of better life conditions.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 5
+      changeValue: -20
+  - index: 4
+    resolution:
+      sentences:
+      - 'The nobles would not give away their rights without a fight! '
+      - 'Using all the best armors and equipments and their personal army, they valiantly
+        fought against the mercenaries while protecting the clergymen. '
+      - 'They then stopped the rebellion, with some casualties. '
+      - "The merchants can expect to pay even more tributes from now on.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 5
+      changeValue: -20
+  - index: 5
+    resolution:
+      sentences:
+      - 'The alchemists accepted to help the merchants to fight for meritocracy and
+        the illuminism. '
+      - 'The mercenaries and all the explosives and poisons worked pretty well against
+        the fighting monks and nobles. '
+      - 'But lacking a leader to unite them they failed to maintain their forces united
+        and motivated until the end. '
+      - "The revolution stopped and the feeling of conformity was in the air.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+  - index: 6
+    resolution:
+      sentences:
+      - "The merchants got aided by the alchemists in their fight for better rights.
+        But the Pope got reinforce from the nobles and their highly equipped elite
+        soldiers. A fierce battle raged for long until both sides were exhausted and
+        sustaining large casualties. They settled to keep things as it was.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -40
+  - index: 7
+    resolution:
+      sentences:
+      - 'After the deaths of many clergymen and some nobles, the merchants stopped
+        their bloodlust and decided to trust your promises to rethink and solve things
+        in a more peaceful manner. '
+      - "Your negotiations saved you both.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -60
+    - socialClass: 5
+      changeValue: -20
+  - index: 8
+    resolution:
+      sentences:
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the mercenaries attacks, many clergymen fought. '
+      - 'The alchemists decided to aid the merchants, the nobles sided with the Pope,
+        the civilians died as collateral damage and the guards died trying to protect
+        the people. '
+      - 'After so many deaths they agreed a ceasefire to save the injured. '
+      - "Is that how you reign a kingdom?\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -60

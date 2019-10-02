@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - 'The commoners are tired of the nobles'' oppresion and tyranny. '
-    - ' Centuries of high taxes and hard lives made the fear of the guards and God
+    - 'Centuries of high taxes and hard lives made the fear of the guards and God
       and the respect for tradition unable to restrain their wrath. '
     - 'They are organizing an armed rebellion with their numbers and sickles and pitchforks. '
     - What will you do to face this problem?
@@ -55,7 +55,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 240
+      threshold: 6
   - identifier: 4
     answerText: Call all the guards to smash the revolution!
     statChanges: []
@@ -65,7 +65,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 310
+      threshold: 75
   - identifier: 5
     answerText: Side with the Commoners to destroy the old system and use your influence
       to be their new leader!
@@ -76,7 +76,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 2
-      threshold: 360
+      threshold: 9
   - identifier: 8
     answerText: Prostrate yourself to the Pope and ask him to calm the people with
       his holy words.
@@ -87,14 +87,14 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 240
+      threshold: 6
   crisisResolutions:
   - index: 1
     resolution:
       sentences:
-      - "The rebellion is successfull. Nothing could be done to stop it. The old hierarchy
-        has been destroyed and a new one arises. And <PlayerWin> is the new king.
-        All hail the King of the people!\r"
+      - 'The rebellion is successfull. Nothing could be done to stop it. '
+      - 'The old hierarchy has been destroyed and a new one arises. '
+      - "And <PlayerWin> is the new king. All hail the King of the people!\r"
     popChanges:
     - socialClass: 1
       changeValue: -180
@@ -105,8 +105,8 @@ MonoBehaviour:
   - index: 2
     resolution:
       sentences:
-      - "Despite the commoners efforts the guards succesfully stopped the rebellion.
-        But many guards and commoners are dead. A stain is left in the kingdom.\r"
+      - 'Despite the commoners efforts the guards succesfully stopped the rebellion. '
+      - "But many guards and commoners are dead. A stain is left in the kingdom.\r"
     popChanges:
     - socialClass: 1
       changeValue: -120
@@ -115,8 +115,9 @@ MonoBehaviour:
   - index: 3
     resolution:
       sentences:
-      - "The guards successfully stopped the rebellion. Many commoners are dead and
-        some guards were killed. But, at least, order ir restored. For now.\r"
+      - 'The guards successfully stopped the rebellion. Many commoners are dead and
+        some guards were killed. '
+      - "But, at least, order ir restored. For now.\r"
     popChanges:
     - socialClass: 1
       changeValue: -60
@@ -125,16 +126,17 @@ MonoBehaviour:
   - index: 4
     resolution:
       sentences:
-      - "The Pope's prayers and words of peace successfully stopped the rebellion.
-        Some commoners still fought the guards and died. But the battle is over.\r"
+      - 'The Pope''s prayers and words of peace successfully stopped the rebellion. '
+      - "Some commoners still fought the guards and died. But the battle is over.\r"
     popChanges:
     - socialClass: 2
       changeValue: -400
   - index: 5
     resolution:
       sentences:
-      - "The merchant's aid made the rebels kill many guards and nobles before finally
-        exhausting themselves and stopping. But you both remained safe.\r"
+      - 'The merchant''s aid made the rebels kill many guards and nobles before finally
+        exhausting themselves and stopping. '
+      - "But you both remained safe.\r"
     popChanges:
     - socialClass: 1
       changeValue: -120
@@ -143,16 +145,17 @@ MonoBehaviour:
   - index: 6
     resolution:
       sentences:
-      - "The Pope's prayers calmed the angry mob. But the merchants' assistance proved
-        deadly for many guards that died before the people could be controlled.\r"
+      - 'The Pope''s prayers calmed the angry mob. '
+      - "But the merchants' assistance proved deadly for many guards that died before
+        the people could be controlled.\r"
     popChanges:
     - socialClass: 1
       changeValue: -120
   - index: 7
     resolution:
       sentences:
-      - "After killing many guards and some nobles the mob stopped. Many commoners
-        died but you are both safe. The bribery worked out after all.\r"
+      - 'After killing many guards and some nobles the mob stopped. '
+      - "Many commoners died but you are both safe. The bribery worked out after all.\r"
     popChanges:
     - socialClass: 1
       changeValue: -120
@@ -163,9 +166,10 @@ MonoBehaviour:
   - index: 8
     resolution:
       sentences:
-      - "Your act of cowardice caused the death of many in the kingdom. During the
-        mob, not only commoners, nobles and guards died, but also alchemists, clergymen
-        and merchants, caught in the crossfire. A shameful display.\r"
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the mob, not only commoners, nobles and guards died, but also alchemists,
+        clergymen and merchants, caught in the crossfire. '
+      - "A shameful display.\r"
     popChanges:
     - socialClass: 0
       changeValue: -40

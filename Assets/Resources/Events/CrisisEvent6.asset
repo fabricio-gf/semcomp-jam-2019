@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent6
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent6
+  type: 2
+  question:
+    sentences:
+    - '"We nobles must stand against the oppression of the poor". '
+    - '"They are trying to take away our hard-earned privileges that our great-great-grandparents
+      strived to conquer". '
+    - '"We must defend our rights do live a life full of leisure and pleasures and
+      no work". '
+    - '"The commoners and minorities must know their place and obey!"'
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Promisse to give the nobles even more rights and lands.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Lock yourself in the castle and wait for the situation to resolve
+      itself.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: The merchants are rich enough to oppose the nobles with their own
+      army of mercenaries, let's call them!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 75
+  - identifier: 5
+    answerText: The people must fight for their rights! Rally the commoners against
+      this.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 2
+      threshold: 6
+  - identifier: 6
+    answerText: Join the nobles and make the people remember who they should respect
+      and fear!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 3
+      threshold: 9
+  - identifier: 8
+    answerText: The Church always had a good relation with nobles, they'll help them!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 5
+      threshold: 6
+  crisisResolutions:
+  - index: 1
+    resolution:
+      sentences:
+      - 'The nobles reinforced the reason why they were the ones in the top of the
+        hierarchy, terrorizing the commoners and everyone that stood in their way. '
+      - "And <PlayerWin> rose to the throne with absolute power as the new emperor.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -1200
+    - socialClass: 4
+      changeValue: -20
+  - index: 2
+    resolution:
+      sentences:
+      - 'Nobility was not enough to face the power bought with money, even with the
+        help of a heir. '
+      - 'The merchants used their savings to hire a great army of mercenaries and
+        provide some equipments for the commoners to fight back the tyranny of the
+        nobles. '
+      - 'In a bloody battle for freedom, the nobles'' army fought fiercely but was
+        reduced to the point their own lands would be threatened if they continued. '
+      - 'So they retreated, with crushed pride and bones. '
+      - "But not without killing some commoners and nobles in the battle.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -120
+  - index: 3
+    resolution:
+      sentences:
+      - 'The merchants hired mercenaries to fight the nobles and equipped the commoners. '
+      - 'Without a great leader backing them, the nobles fell against the overwhelming
+        numbers and the strange weaponry and techniques from the mercenaries. '
+      - "Their dominance was shaken and the humiliation left a deep scar in their
+        bloodlines.\r"
+    popChanges:
+    - socialClass: 3
+      changeValue: -120
+  - index: 4
+    resolution:
+      sentences:
+      - 'The commoners were commanded by the heir to rise up and resist against the
+        nobles. '
+      - 'The battle expertise helped them fight using their numbers, but not without
+        a massive bloodshed on both sides. '
+      - "Worn out and hopeless, both sides decided to stop the dispute. At least for
+        now.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -800
+    - socialClass: 3
+      changeValue: -40
+  - index: 5
+    resolution:
+      sentences:
+      - 'The Pope was asked by the heir to help the nobles to reclaim their honor. '
+      - 'Using his influence, he dissuaded some commoners from fighting and to accept
+        the nobles'' dominance, as it was the Lord''s will. '
+      - 'This helped the nobles in having easier fights. Even so, many commoners fought
+        back and even revolted against the Church. '
+      - 'Many of them died, but also some nobles and a few clergymen. '
+      - "Having made their point and seeing at least one of the heirs is their ally,
+        the nobles retreated, hoping their rights would be maintained.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -1200
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -20
+  - index: 6
+    resolution:
+      sentences:
+      - 'With both the commoners being guided by a heir and the Church asked to help
+        by the other, a colossal battle commenced. '
+      - 'The church''s masses to calm the commoners was in vain thanks to the help
+        of their helping heir. So they had to send in the combat monks. '
+      - 'The battle raged on and took many lives until both sided agreed to withdraw
+        as a victor was not going to show up any sooner. '
+      - "Many innocents died in the crossfire.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 2
+      changeValue: -800
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -20
+    - socialClass: 5
+      changeValue: -20
+  - index: 7
+    resolution:
+      sentences:
+      - 'After exterminating many commoners and striking fear in their hearts, the
+        nobles stopped the bloodlust. '
+      - They trusted the heir's promisses and were satisfied with the commoners' subservience.
+      - "Your negotiations saved you both.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -1200
+    - socialClass: 4
+      changeValue: -60
+    - socialClass: 5
+      changeValue: -20
+  - index: 8
+    resolution:
+      sentences:
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the nobles'' attack, many commoners fought. '
+      - 'The alchemists and merchants decided to aid commoners, the nobles sided with
+        the Pope, and the guards had to intervene. '
+      - 'After so many deaths they agreed a ceasefire. '
+      - "How will you rule a kingdom with no people?\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -1200
+    - socialClass: 3
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -20
+    - socialClass: 5
+      changeValue: -40

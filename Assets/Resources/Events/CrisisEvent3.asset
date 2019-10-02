@@ -16,10 +16,12 @@ MonoBehaviour:
   type: 2
   question:
     sentences:
-    - The alchemists demand their "rightful" place as the commanding class in society.
-      They argue that being the most intelligent people in the kingdom, only they
-      could do the right choices. Thanks to the offensives of the church, they are
-      angry and armed with their deadliest inventions. What will you do?
+    - 'The alchemists demand their "rightful" place as the commanding class in society. '
+    - 'They argue that being the most intelligent people in the kingdom, only they
+      could do the right choices. '
+    - 'Thanks to the offensives of the church, they are angry and armed with their
+      deadliest inventions. '
+    - What will you do?
   answers: []
   conditionalAnswers:
   - identifier: 1
@@ -54,7 +56,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 240
+      threshold: 6
   - identifier: 5
     answerText: Call for the commoners to help you fight the alchemists. Call them
       heretics. Say they were mocking the commoners as dumbs... Anything will do!
@@ -65,7 +67,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 2
-      threshold: 310
+      threshold: 75
   - identifier: 7
     answerText: Join the alchemists in their pursue of ultimate knowledge and wisdom.
       You must be the new philosopher king at all costs!
@@ -76,7 +78,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 360
+      threshold: 9
   - identifier: 8
     answerText: Ask the pope to start an inquisition against the heretics. Burn them,
       torture them... Anything goes!
@@ -87,13 +89,13 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 240
+      threshold: 6
   crisisResolutions:
   - index: 1
     resolution:
       sentences:
-      - "The rebellion is successfull. Nothing could stop the weapons of the mystics.
-        And <PlayerWin> is the new philosoper king. All hail the knowledgeable one!\r"
+      - 'The rebellion is successfull. Nothing could stop the weapons of the mystics. '
+      - "And <PlayerWin> is the new philosoper king. All hail the knowledgeable one!\r"
     popChanges:
     - socialClass: 3
       changeValue: -120
@@ -104,9 +106,9 @@ MonoBehaviour:
   - index: 2
     resolution:
       sentences:
-      - "Even all the technology and wisdom was not enough to surpass the power of
-        sheer numbers. But many commoners and alchemists died in this fight. What
-        a loss!\r"
+      - 'Even all the technology and wisdom was not enough to surpass the power of
+        sheer numbers. '
+      - "But many commoners and alchemists died in this fight. What a loss!\r"
     popChanges:
     - socialClass: 2
       changeValue: -800
@@ -115,8 +117,8 @@ MonoBehaviour:
   - index: 3
     resolution:
       sentences:
-      - "The commoners halted the rebellion. Many alchemists died and also some commoners.
-        But peace was restored.\r"
+      - 'The commoners halted the rebellion. Many alchemists died and also some commoners. '
+      - "But peace was restored.\r"
     popChanges:
     - socialClass: 2
       changeValue: -400
@@ -125,9 +127,9 @@ MonoBehaviour:
   - index: 4
     resolution:
       sentences:
-      - "The inquisiton called by the Poped helped stop the alchemists by fear. Some
-        were burned alive and tortured as an example, but not without killing some
-        clergymen first.\r"
+      - 'The inquisiton called by the Poped helped stop the alchemists by fear. '
+      - "Some were burned alive and tortured as an example, but not without killing
+        some clergymen first.\r"
     popChanges:
     - socialClass: 4
       changeValue: -20
@@ -136,18 +138,18 @@ MonoBehaviour:
   - index: 5
     resolution:
       sentences:
-      - "The guards' aid made the alchemists even more fearsome, killing some commoners
-        and nobles and many clergymen before exhausting themselves and stopping. But
-        you both remained safe.\r"
+      - 'The guards'' aid made the alchemists even more fearsome, killing some commoners
+        and nobles and many clergymen before exhausting themselves and stopping. '
+      - "But you both remained safe.\r"
     popChanges:
     - socialClass: 3
       changeValue: -80
   - index: 6
     resolution:
       sentences:
-      - "The Pope's inquisition was able to slow down the alchemists. But the guards'
-        assistance gave them courage enough to kill many clergymen and commoners before
-        the fear of torture spoke louder.\r"
+      - 'The Pope''s inquisition was able to slow down the alchemists. '
+      - "But the guards' assistance gave them courage enough to kill many clergymen
+        and commoners before the fear of torture spoke louder.\r"
     popChanges:
     - socialClass: 2
       changeValue: -400
@@ -158,9 +160,9 @@ MonoBehaviour:
   - index: 7
     resolution:
       sentences:
-      - "After a lot of clergymen and commoners died, the alchemists stopped their
-        bloodlust. But you are both safe. The promisse of changes worked out after
-        all.\r"
+      - 'After a lot of clergymen and commoners died, the alchemists stopped their
+        bloodlust. '
+      - "But you are both safe. The promisse of changes worked out after all.\r"
     popChanges:
     - socialClass: 2
       changeValue: -800
@@ -171,10 +173,10 @@ MonoBehaviour:
   - index: 8
     resolution:
       sentences:
-      - "Your act of cowardice caused the death of many in the kingdom. During the
-        mob, not only clergyman, alchemists and commoners died fighting, but also
-        merchants, guards and nobles were caught in the crossfire. And you call yourselves
-        kings to be?\r"
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the mob, not only clergyman, alchemists and commoners died fighting,
+        but also merchants, guards and nobles were caught in the crossfire. '
+      - "And you call yourselves kings to be?\r"
     popChanges:
     - socialClass: 0
       changeValue: -40

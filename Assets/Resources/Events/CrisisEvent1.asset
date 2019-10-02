@@ -53,7 +53,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 240
+      threshold: 6
   - identifier: 4
     answerText: Negotiate a progressive change of equipment over time.
     statChanges: []
@@ -63,7 +63,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 240
+      threshold: 6
   - identifier: 6
     answerText: Task each noble to buy equipments for the guards of their lands.
     statChanges: []
@@ -73,7 +73,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 3
-      threshold: 240
+      threshold: 6
   - identifier: 7
     answerText: Ask the help of alchemists to fix and improve equipments.
     statChanges: []
@@ -83,9 +83,9 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 240
+      threshold: 6
   crisisResolutions:
-  - index: 0
+  - index: 1
     resolution:
       sentences:
       - 'You got to gather enough money to buy equipment for the guards. '
@@ -101,7 +101,7 @@ MonoBehaviour:
       changeValue: -400
     - socialClass: 4
       changeValue: -20
-  - index: 1
+  - index: 2
     resolution:
       sentences:
       - 'You didn''t gather the money for the troops. They understood the situation,
@@ -122,7 +122,7 @@ MonoBehaviour:
       changeValue: -20
     - socialClass: 5
       changeValue: -20
-  - index: 2
+  - index: 3
     resolution:
       sentences:
       - 'You got enough money to change some equipments, but not all of them. '
@@ -136,7 +136,7 @@ MonoBehaviour:
       changeValue: -60
     - socialClass: 2
       changeValue: -400
-  - index: 3
+  - index: 4
     resolution:
       sentences:
       - 'You bought the equipment with some help. '
@@ -146,7 +146,7 @@ MonoBehaviour:
     popChanges:
     - socialClass: 2
       changeValue: 400
-  - index: 4
+  - index: 5
     resolution:
       sentences:
       - 'You got help from others to renew the equipment. '

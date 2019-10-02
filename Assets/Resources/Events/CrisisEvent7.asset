@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent7
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent7
+  type: 2
+  question:
+    sentences:
+    - 'The guards are tired of the petty skirmishes between the people of this land. '
+    - 'They aren''t paid enough to risk their lives almost every day to stop some
+      nobles killing some commoners or being killed by revolting commoners. '
+    - 'Neither to stop alchemists from blowing the church or the church from burning
+      alchemists and merchants. '
+    - 'Nor stopping merchants from "accidentaly" killing priests and nobles with new
+      "products" from other lands... '
+    - 'They want a firm ruler that can control all those little problems and focus
+      on expanding the borders. '
+    - And they will fight everyone for this, if needed.
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Promisse to give harsher punishments to wrongdoers and start expansionist
+      policies.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Lock yourself in the castle and wait for the situation to resolve
+      itself.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: Ask the merchants guild to help the guards and try to stay in their
+      good side.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 6
+  - identifier: 4
+    answerText: Side with the guards. You will be the one to bring new lands to the
+      kingdom with an iron fist!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 1
+      threshold: 9
+  - identifier: 6
+    answerText: Call the nobles to help defend the kingdom and stop this coup d`etat!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 3
+      threshold: 75
+  - identifier: 7
+    answerText: The alchemists may have something to stop an army. Anything will do.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 4
+      threshold: 6
+  crisisResolutions:
+  - index: 1
+    resolution:
+      sentences:
+      - 'The guards struck mercelessly and took power by force, crushing everyone
+        in their way. '
+      - "Now <PlayerWin> is the expansionist Warrior King that may conquer all the
+        lands.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -120
+  - index: 2
+    resolution:
+      sentences:
+      - 'The guards, without a wise leader to help them, were not enough to destroy
+        the well-equiped noble warriors. '
+      - 'Specially with the aid of a heir by their side. '
+      - 'The fight was fierce, and some civillian casualties were sustained, but the
+        guards'' rebellion ended. '
+      - "They went back to their duty to protect the kingdom.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -180
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -80
+  - index: 3
+    resolution:
+      sentences:
+      - 'Without a heir backing their plans, and against an army of nobles with top-notch
+        equipment, commanded by a heir, the guards couldn''t win. '
+      - "They fough valiantly, but it was not enough.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 3
+      changeValue: -40
+  - index: 4
+    resolution:
+      sentences:
+      - 'The alchemists were called by the heir to help stop the guards'' rampage. '
+      - 'By using explosions and poisons they were able to make it end, but not without
+        some casualties. '
+      - 'Guards, nobles and alchemists died, as well as some commoners. '
+      - "The guards now fear the alchemists and gave up on revolting again.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 4
+      changeValue: -20
+  - index: 5
+    resolution:
+      sentences:
+      - 'The merchants were called by the heir to help the guards take control, in
+        an attempt to gain them some favor. '
+      - 'Even with the help of mercenaries, the nobles didn''t want to give up their
+        land. '
+      - 'Some alchemists also entered the fight on their own, afraid of a millitaristic
+        government. '
+      - 'The same held true for commoners. '
+      - "In the end, a lot of blood was shed, and a truce was reached.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -20
+  - index: 6
+    resolution:
+      sentences:
+      - 'The merchants were called to help the guards by a heir, while the alchemist
+        were called to fight against them by the other. '
+      - 'The two forces clashed violently and uncessantly for days. Many people died. '
+      - "After a while, the guards gave up on their campaign, as their troops grew
+        tired and weaker.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -800
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -40
+  - index: 7
+    resolution:
+      sentences:
+      - 'The guards tried their best to take power, but some classes did not like
+        very well the idea. '
+      - 'The nobles fought back, backed up by the alchemists. '
+      - 'The merchants saw a bussiness opportunity in an expansionist kingdom and
+        tried to help the guards. '
+      - 'After a long fight with many casualties, both sides were tired enough to
+        continue. '
+      - 'The guards gave up, trusting the heir''s promisses for better days for them. '
+      - "Your negotiations saved you both.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 4
+      changeValue: -20
+  - index: 8
+    resolution:
+      sentences:
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the guards'' attack, the nobles retaliated. '
+      - 'The alchemists aided them, while merchants fought by the guards'' side. '
+      - 'Commoners died and even some clergymen, who were trying to preach peace,
+        died. '
+      - 'Without the heirs to intervene, the bloodbath went o and on. '
+      - 'After so many deaths they agreed a ceasefire, as there was not much left
+        for both sides to gain. '
+      - "How will you rule a kingdom with no people?\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 1
+      changeValue: -180
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -20

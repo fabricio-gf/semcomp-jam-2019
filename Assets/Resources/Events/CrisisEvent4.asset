@@ -16,11 +16,11 @@ MonoBehaviour:
   type: 2
   question:
     sentences:
-    - '"No more heresy in this land!", said the Pope. Tired of the greedy merchants
-      polluting the minds of the pious and the alchemists doing whatever kind of sorcery
-      they do, the clergymen urge to eliminate them from the kingdom and turn it into
-      a holy empire. They will use force, faith and torture with their specially-trained
-      combat monks.'
+    - '"No more heresy in this land!", said the Pope. '
+    - 'Tired of the greedy merchants polluting the minds of the pious and the alchemists
+      doing whatever kind of sorcery they do, the clergymen urge to eliminate them
+      from the kingdom and turn it into a holy empire. '
+    - They will use force, faith and torture with their specially-trained combat monks.
   answers: []
   conditionalAnswers:
   - identifier: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 240
+      threshold: 6
   - identifier: 6
     answerText: Call the nobles' help to reinforce the churches' army with their private
       guard.
@@ -65,7 +65,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 3
-      threshold: 240
+      threshold: 6
   - identifier: 7
     answerText: Ask for the alchemists' help. No matter what kind of strange and occult
       forces they use!
@@ -76,7 +76,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 310
+      threshold: 75
   - identifier: 8
     answerText: Join the clergyman in their pursue of faith and infinite devotion.
       You must be the new holy emperor chosen by God!
@@ -87,14 +87,14 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 360
+      threshold: 9
   crisisResolutions:
   - index: 1
     resolution:
       sentences:
-      - "The purge of heretics is successfull. Nothing could stop the hands of God
-        enforcing divine punishment. And <PlayerWin> is the new holy emperor. All
-        hail the blessed one!\r"
+      - 'The purge of heretics is successfull. '
+      - 'Nothing could stop the hands of God enforcing divine punishment. '
+      - "And <PlayerWin> is the new holy emperor. All hail the blessed one!\r"
     popChanges:
     - socialClass: 0
       changeValue: -120
@@ -105,9 +105,9 @@ MonoBehaviour:
   - index: 2
     resolution:
       sentences:
-      - "The secret techniques and fervor from the church was not enough to defeat
-        the strange technology and bizarre tricks of the alchemists. But many alchemists
-        and clergymen lost their lives.\r"
+      - 'The secret techniques and fervor from the church was not enough to defeat
+        the strange technology and bizarre tricks of the alchemists. '
+      - "But many alchemists and clergymen lost their lives.\r"
     popChanges:
     - socialClass: 4
       changeValue: -40
@@ -116,9 +116,10 @@ MonoBehaviour:
   - index: 3
     resolution:
       sentences:
-      - "The alchemists used the full extent of their bizarre experiments to stop
-        the clergymen's wrath. Many clergymen lost their lives, as well as some alchemists
-        and innocent bystanders caught between the religious frenzy and explosions.\r"
+      - 'The alchemists used the full extent of their bizarre experiments to stop
+        the clergymen''s wrath. '
+      - "Many clergymen lost their lives, as well as some alchemists and innocent
+        bystanders caught between the religious frenzy and explosions.\r"
     popChanges:
     - socialClass: 2
       changeValue: -400
@@ -129,9 +130,10 @@ MonoBehaviour:
   - index: 4
     resolution:
       sentences:
-      - "The pagan mercenaries fought well against the monks and won. Defeated by
-        the power of money, the Pope, with its reduced army, accepted defeat. But
-        some merchants mysteriously vanished in a short time.\r"
+      - 'The pagan mercenaries fought well against the monks and won. '
+      - 'Defeated by the power of money, the Pope, with its reduced army, accepted
+        defeat. '
+      - "But some merchants mysteriously vanished in a short time.\r"
     popChanges:
     - socialClass: 0
       changeValue: -40
@@ -140,8 +142,8 @@ MonoBehaviour:
   - index: 5
     resolution:
       sentences:
-      - "The nobles' troops reinforced the army of monks, decimating many merchants.
-        But the skyrocketing inflation made them lose the motivation to overthrow
+      - 'The nobles'' troops reinforced the army of monks, decimating many merchants. '
+      - "But the skyrocketing inflation made them lose the motivation to overthrow
         the kingdom. Lucky you!\r"
     popChanges:
     - socialClass: 0
@@ -149,9 +151,10 @@ MonoBehaviour:
   - index: 6
     resolution:
       sentences:
-      - "The pagan mercenaries faired well against the monks, but the nobles' troops
-        helped them to push forward and kill many alchemists and the heretic merchants
-        until the alchemists' tricks got them for good and they admited defeat.\r"
+      - 'The pagan mercenaries faired well against the monks. '
+      - 'But the nobles'' troops helped them to push forward and kill many alchemists
+        and the heretic merchants. '
+      - "This until the alchemists' tricks got them for good and they admited defeat.\r"
     popChanges:
     - socialClass: 0
       changeValue: -80
@@ -164,9 +167,9 @@ MonoBehaviour:
   - index: 7
     resolution:
       sentences:
-      - "After many deaths of merchants and alchemists in the name of God, the clergymen
-        regained their forgiving stance and stopped their bloodlust. But you are both
-        safe. Swearing allegiance to God seems to have worked.\r"
+      - 'After many deaths of merchants and alchemists in the name of God, the clergymen
+        regained their forgiving stance and stopped their bloodlust. '
+      - "But you are both safe. Swearing allegiance to God seems to have worked.\r"
     popChanges:
     - socialClass: 0
       changeValue: -120
@@ -177,10 +180,10 @@ MonoBehaviour:
   - index: 8
     resolution:
       sentences:
-      - "Your act of cowardice caused the death of many in the kingdom. During the
-        fanatic frenzy, not only clergyman and merchants  died fighting, but also
-        alchemists, commoners, guards and nobles were caught in the crossfire. And
-        you call yourselves kings to be?\r"
+      - 'Your act of cowardice caused the death of many in the kingdom. '
+      - 'During the fanatic frenzy, not only clergyman and merchants died fighting,
+        but also alchemists, commoners, guards and nobles were caught in the crossfire. '
+      - "And you call yourselves kings to be?\r"
     popChanges:
     - socialClass: 0
       changeValue: -120

@@ -48,11 +48,11 @@ public class CreateEvents : MonoBehaviour
             AssetDatabase.Refresh();
         }
 
-        //GenerateProactiveEvents();
+        GenerateProactiveEvents();
 
-        //GenerateReactiveEvents();
+        GenerateReactiveEvents();
 
-        //GenerateRivalEvents();
+        GenerateRivalEvents();
 
         GenerateCrisisEvents();
     }
@@ -296,11 +296,11 @@ public class CreateEvents : MonoBehaviour
 
                     if (lineContent[2][0] == '-')
                     {
-                        tempCondition.threshold = 10000;
+                        tempCondition.threshold = 10000f;
                     }
                     else
                     {
-                        tempCondition.threshold = int.Parse(lineContent[2]);
+                        tempCondition.threshold = float.Parse(lineContent[2]);
                     }
 
                     conditionalAnswer = new ConditionalAnswer(j-1, lineContent[0], null, null, null, tempCondition);

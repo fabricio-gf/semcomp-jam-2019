@@ -9,7 +9,7 @@ public class ConditionalAnswer : Answer
     public struct Condition
     {
         public Utilities.SocialClass socialClass;
-        public int threshold;
+        public float threshold;
     }
 
     public Condition condition;
