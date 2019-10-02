@@ -54,10 +54,12 @@ public class ClassIcon : MonoBehaviour
         }
         else
         {
-            World.PopulationGroups popChange = (World.Instance.groups);
-            valueChange = popChange.GetGroupValueAt((int)faction);
+            valueChange =  World.Instance.groups.GetGroupValueAt((int)faction)
+                - World.Instance.EventStartGroups.GetGroupValueAt((int)faction);
+            // valueChange = (int)popChange.GetGroupValueAt((int)faction);
+            Debug.Log("Pop change: " + valueChange);
         }
-        
+
         if (valueChange > 0)
         {
             PlayAnimation(3);
