@@ -92,17 +92,21 @@ public class EventHandler : MonoBehaviour
             List<ConditionalAnswer> topAnswersP1 = new List<ConditionalAnswer>();
             List<ConditionalAnswer> topAnswersP2 = new List<ConditionalAnswer>();
 
-            /*for(int i = 2; i < answers.Count; i++)
+            for(int i = 2; i < answers.Count; i++)
             {
-                if(answers[i].condition.threshold > player1.influence.groups && World.PopulationGroups >= 0.6)
+                if (answers[i].condition.threshold > player1.influence.GetGroupValueAt((int)answers[i].condition.socialClass) 
+                    && World.Instance.groups.GetGroupValueAt((int)answers[i].condition.socialClass) >= 0.6f)
                 {
                     topAnswersP1.Add(answers[i]);
                 }
-                if (answers[i].condition.threshold > player2.influence.groups && World.PopulationGroups >= 0.6)
+                if (answers[i].condition.threshold > player2.influence.GetGroupValueAt((int)answers[i].condition.socialClass)
+                    && World.Instance.groups.GetGroupValueAt((int)answers[i].condition.socialClass) >= 0.6f)
                 {
                     topAnswersP2.Add(answers[i]);
                 }
             }
+
+            /*topAnswersP1.Sort()
 
             for(int i = 2; i < 4; i++)
             {

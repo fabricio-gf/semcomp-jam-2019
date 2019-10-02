@@ -22,5 +22,4 @@ public class ConditionalAnswer : Answer
         resolution = _resolution;
         condition = _condition;
     }
-
 }
