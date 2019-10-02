@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TextBox : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class TextBox : MonoBehaviour
 
     public delegate void TextBoxDelegate();
     public TextBoxDelegate OnDialogueEnded;
+
+    public Image[] readyIcon; //index 0 for p1, 1 for p2
+
+    public Sprite[] readySprites; //index 0 for not ready, index 1 for ready
 
     private void Awake()
     {
@@ -51,6 +56,9 @@ public class TextBox : MonoBehaviour
             return;
         }
         BodyText.text = string.Empty;
+
+        ChangeSprite(0, 0);
+        ChangeSprite(1, 0);
 
         string sentence = sentences.Dequeue();
         StartCoroutine(TypeSentence(sentence));
@@ -90,6 +98,13 @@ public class TextBox : MonoBehaviour
     public void EndDialogue()
     {
         duringDialogue = false;
-        if(isResolutionBox) OnDialogueEnded?.Invoke();
+        ChangeSprite(0, 0);
+        ChangeSprite(1, 0);
+        if (isResolutionBox) OnDialogueEnded?.Invoke();
+    }
+
+    public void ChangeSprite(int player, int ready)
+    {
+        readyIcon[player].sprite = readySprites[ready];
     }
 }
