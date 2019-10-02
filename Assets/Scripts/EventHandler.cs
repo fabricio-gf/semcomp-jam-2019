@@ -79,6 +79,7 @@ public class EventHandler : MonoBehaviour
         else
         {
             CrisisEvent activeCrisisEvent = (CrisisEvent)ActiveEvent;
+
             List<ConditionalAnswer> answers = new List<ConditionalAnswer>(activeCrisisEvent.conditionalAnswers);
 
             player1.availableAnswers = new List<Answer>();
@@ -106,12 +107,26 @@ public class EventHandler : MonoBehaviour
                 }
             }
 
-            /*topAnswersP1.Sort()
+            //topAnswersP1.Sort();
+            //topAnswersP2.Sort();
 
-            for(int i = 2; i < 4; i++)
+            if (topAnswersP1.Count >= 1)
             {
-                
-            }*/
+                player1.availableAnswers.Add(topAnswersP1[0]);
+            }
+            if (topAnswersP1.Count >= 2)
+            {
+                player1.availableAnswers.Add(topAnswersP1[1]);
+            }
+
+            if (topAnswersP2.Count >= 1)
+            {
+                player2.availableAnswers.Add(topAnswersP2[0]);
+            }
+            if (topAnswersP1.Count >= 2)
+            {
+                player2.availableAnswers.Add(topAnswersP2[1]);
+            }
         }
     }
 

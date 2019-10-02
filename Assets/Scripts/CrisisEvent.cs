@@ -30,6 +30,7 @@ public class CrisisEvent : GameEvent
 
     public override List<PlayerAnswer> Resolve(List<PlayerAnswer> answers)
     {
+        Debug.Log("Length " + crisisResolutionTable.Length);
         Debug.Log("index 1 - " + answers[0].answer.identifier + " index 2 - " + answers[1].answer.identifier);
         int resolutionIndex = crisisResolutionTable[answers[0].answer.identifier, answers[1].answer.identifier];
         Debug.Log("Resolution index - " + resolutionIndex);

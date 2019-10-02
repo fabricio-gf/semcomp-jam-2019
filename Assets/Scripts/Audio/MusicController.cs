@@ -131,6 +131,7 @@ public class MusicController : MonoBehaviour
 
     public void ToggleMuteMusic(bool mute)
     {
+        MusicMuteToggle.isOn = mute;
         Source1.mute = mute;
         Source2.mute = mute;
         PlayerPrefs.SetInt(PrefsString, mute ? 1 : 0);

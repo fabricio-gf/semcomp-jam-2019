@@ -60,12 +60,14 @@ public class ClassIcon : MonoBehaviour
         
         if (valueChange > 0)
         {
-            PlayAnimation(3);
+            //PlayAnimation(3);
+            animator.SetTrigger("LargeIncrement");
             //if (play)
         }
         else if (valueChange < 0)
         {
-            PlayAnimation(1);
+            //PlayAnimation(1);
+            animator.SetTrigger("LargeDecrement");
         }
 
         Invoke("ChangeIcon", 0.5f);

@@ -26,12 +26,7 @@ public class InputManager : MonoBehaviour
     public KeyCode p1DownKey;
     public KeyCode p1LeftKey;
     public KeyCode p1ConfirmKey;
-
-    // p1 controller keys
-    public string p1UpButton;
-    public string p1RightButton;
-    public string p1DownButton;
-    public string p1LeftButton;
+ 
 
     //p2 keys
     public KeyCode p2UpKey;
@@ -60,11 +55,6 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-        {
-            print("joy 1 button 0");
-        }
-
         if (Input.GetKeyUp(p1ConfirmKey))
         {
             OnReleaseConfirm?.Invoke(1);

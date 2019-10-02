@@ -11,7 +11,6 @@ public class GameFlow : MonoBehaviour
 
     public List<GameEvent> avaiableEvents;
 
-
     public delegate void EventStart(GameEvent gameEvent);
     public event EventStart OnEventStart;
 
@@ -44,9 +43,9 @@ public class GameFlow : MonoBehaviour
     private IEnumerator StartEventCoroutine(float startEventDelay)
     {
         yield return new WaitForSeconds(startEventDelay);
-        //List<Player> players = new List<Player>(FindObjectsOfType<Player>());
-        //// START Conquest Victory
-        //// If player can have conquest victory
+        List<Player> players = new List<Player>(FindObjectsOfType<Player>());
+        // START Conquest Victory
+        // If player can have conquest victory
         //Player attackingPlayer = null;
         //float attackingPlayerPower = 0f;
         //float attackingPlayerPowerIndex = 0;
@@ -96,8 +95,6 @@ public class GameFlow : MonoBehaviour
         Turn++;
         StartCoroutine(StartEventCoroutine(startEventDelaySeconds));
     }
-
-
 
     public void FinishEvent()
     {
