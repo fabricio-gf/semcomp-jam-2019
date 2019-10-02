@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent2
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent2
+  type: 2
+  question:
+    sentences:
+    - 'The commoners are tired of the nobles'' oppresion and tyranny. '
+    - ' Centuries of high taxes and hard lives made the fear of the guards and God
+      and the respect for tradition unable to restrain their wrath. '
+    - 'They are organizing an armed rebellion with their numbers and sickles and pitchforks. '
+    - What will you do to face this problem?
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Give them a share of your treasure and promise to speak with the nobles
+      for better conditions.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Lock yourself in the castle and wait for the situation to resolve
+      itself.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: Ask the merchants to help the commoners with their revolution and
+      pray that maybe they'll forgive you after this.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 240
+  - identifier: 4
+    answerText: Call all the guards to smash the revolution!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 1
+      threshold: 310
+  - identifier: 5
+    answerText: Side with the Commoners to destroy the old system and use your influence
+      to be their new leader!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 2
+      threshold: 360
+  - identifier: 8
+    answerText: Prostrate yourself to the Pope and ask him to calm the people with
+      his holy words.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 5
+      threshold: 240
+  crisisResolutions:
+  - index: 1
+    resolution:
+      sentences:
+      - "The rebellion is successfull. Nothing could be done to stop it. The old hierarchy
+        has been destroyed and a new one arises. And <PlayerWin> is the new king.
+        All hail the King of the people!\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -180
+    - socialClass: 2
+      changeValue: 1200
+    - socialClass: 3
+      changeValue: -120
+  - index: 2
+    resolution:
+      sentences:
+      - "Despite the commoners efforts the guards succesfully stopped the rebellion.
+        But many guards and commoners are dead. A stain is left in the kingdom.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -800
+  - index: 3
+    resolution:
+      sentences:
+      - "The guards successfully stopped the rebellion. Many commoners are dead and
+        some guards were killed. But, at least, order ir restored. For now.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -1200
+  - index: 4
+    resolution:
+      sentences:
+      - "The Pope's prayers and words of peace successfully stopped the rebellion.
+        Some commoners still fought the guards and died. But the battle is over.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -400
+  - index: 5
+    resolution:
+      sentences:
+      - "The merchant's aid made the rebels kill many guards and nobles before finally
+        exhausting themselves and stopping. But you both remained safe.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 3
+      changeValue: -80
+  - index: 6
+    resolution:
+      sentences:
+      - "The Pope's prayers calmed the angry mob. But the merchants' assistance proved
+        deadly for many guards that died before the people could be controlled.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -120
+  - index: 7
+    resolution:
+      sentences:
+      - "After killing many guards and some nobles the mob stopped. Many commoners
+        died but you are both safe. The bribery worked out after all.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -800
+    - socialClass: 3
+      changeValue: -40
+  - index: 8
+    resolution:
+      sentences:
+      - "Your act of cowardice caused the death of many in the kingdom. During the
+        mob, not only commoners, nobles and guards died, but also alchemists, clergymen
+        and merchants, caught in the crossfire. A shameful display.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 1
+      changeValue: -180
+    - socialClass: 2
+      changeValue: -1200
+    - socialClass: 3
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -40

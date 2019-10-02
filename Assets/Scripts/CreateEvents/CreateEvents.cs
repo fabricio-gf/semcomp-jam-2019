@@ -47,18 +47,14 @@ public class CreateEvents : MonoBehaviour
             AssetDatabase.CreateFolder("Assets/Resources", "Events");
             AssetDatabase.Refresh();
         }
-        //Debug.Log("Testing time - Start time: " + Time.time);
-        //float now = Time.time;
 
-        // PROACTIVE EVENTS
+        //GenerateProactiveEvents();
 
-        GenerateProactiveEvents();
+        //GenerateReactiveEvents();
 
-        GenerateReactiveEvents();
+        //GenerateRivalEvents();
 
-        GenerateRivalEvents();
-
-        //GenerateCrisisEvents();
+        GenerateCrisisEvents();
     }
 
     private void GenerateProactiveEvents()
@@ -218,41 +214,58 @@ public class CreateEvents : MonoBehaviour
 
 
         int eventIndex = 1;
+        print(crisisQuestionsAssets.Length);
         for(int i = 0; i < crisisQuestionsAssets.Length; i++){
 
             //resolutions
             lines = crisisResolutionsAssets[i].text.Split('\n');
 
+            crisisResolutions.Clear();
+            
             for(int j = 1; j < lines.Length; j++)
             {
+                if (string.IsNullOrEmpty(lines[j]))
+                {
+                    //print("Empty line");
+                    break;
+                }
+
                 string[] lineContent = lines[j].Split(';');
                 tempResolution.resolution = new Dialogue(lineContent[lineContent.Length - 1].Split('$'));
 
-                for(int k = 1; k < lineContent.Length-1; k++)
+                popChanges.Clear();
+                for (int k = 1; k < lineContent.Length-1; k++)
                 {
-                    if(lineContent[k] != "0" && lineContent[k] != "-" && !string.IsNullOrEmpty(lineContent[k]))
+                    if(lineContent[k] != "0" && lineContent[k] != "-" && lineContent[k] != "-0" && !string.IsNullOrEmpty(lineContent[k]))
                     {
-                        popChanges.Add(new StatChange((Utilities.SocialClass)(k), int.Parse(lineContent[k])));
+                        popChanges.Add(new StatChange((Utilities.SocialClass)(k-1), int.Parse(lineContent[k])));
                     }
                 }
                 tempResolution.index = int.Parse(lineContent[0]);
-                tempResolution.popChanges = popChanges;
+                tempResolution.popChanges = new List<StatChange>(popChanges);
                 crisisResolutions.Add(tempResolution);
             }
 
-            //questions
+            //possible answers to the question
             lines = crisisQuestionsAssets[i].text.Split('\n');
 
             dialogue = new Dialogue(lines[1].Split(';')[0].Split('$'));
             Utilities.SocialClass tempClass;
             ConditionalAnswer.Condition tempCondition;
 
+            crisisAnswers.Clear();
+
             for (int j = 2; j < lines.Length; j++)
             {
-                print("j " + j);
+                if (string.IsNullOrEmpty(lines[j]))
+                {
+                    //print("Empty line");
+                    break;
+                }
+
                 string[] lineContent = lines[j].Split(';');
                 
-                if(lineContent[0] != "-" || lineContent[0] != "")
+                if(lineContent[0] != "-" && lineContent[0] != "" && lineContent[0] != "-0")
                 {
                     switch (lineContent[1])
                     {
@@ -290,15 +303,33 @@ public class CreateEvents : MonoBehaviour
                         tempCondition.threshold = int.Parse(lineContent[2]);
                     }
 
-                    print(tempCondition.socialClass + tempCondition.threshold);
                     conditionalAnswer = new ConditionalAnswer(j-1, lineContent[0], null, null, null, tempCondition);
                     crisisAnswers.Add(conditionalAnswer);
                 }
             }
 
             //table
+            lines = crisisResultsTableAssets[i].text.Split('\n');
 
-            CrisisEvent gameEvent = new CrisisEvent("CrisisEvent" + eventIndex, GameEvent.EventType.CRISIS, dialogue, new List<ConditionalAnswer>(crisisAnswers), crisisResolutions);
+            int[,] crisisResolutionTable = new int[lines[0].Split(';').Length-1, lines.Length-2];
+
+            for(int j = 1; j < lines.Length; j++)
+            {
+                if (string.IsNullOrEmpty(lines[j]))
+                {
+                    //print("Empty line");
+                    continue;
+                }
+
+                string[] lineContent = lines[j].Split(';');
+
+                for(int k = 1; k < lineContent.Length; k++)
+                {
+                    crisisResolutionTable[j - 1, k - 1] = int.Parse(lineContent[k]);
+                }
+            }
+
+            CrisisEvent gameEvent = new CrisisEvent("CrisisEvent" + eventIndex, GameEvent.EventType.CRISIS, dialogue, new List<ConditionalAnswer>(crisisAnswers), new List<CrisisEvent.CrisisResolution>(crisisResolutions), crisisResolutionTable);
             CreateAsset(typeof(CrisisEvent), gameEvent);
             eventIndex++;
         }

@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent4
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent4
+  type: 2
+  question:
+    sentences:
+    - '"No more heresy in this land!", said the Pope. Tired of the greedy merchants
+      polluting the minds of the pious and the alchemists doing whatever kind of sorcery
+      they do, the clergymen urge to eliminate them from the kingdom and turn it into
+      a holy empire. They will use force, faith and torture with their specially-trained
+      combat monks.'
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Reduce the influence of the alchemists and promisse to have the pope
+      as your next counselor.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Lock yourself in the castle and wait for the situation to resolve
+      itself.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: Ask the merchants' guild to hire pagan mercenaries to fight the church.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 240
+  - identifier: 6
+    answerText: Call the nobles' help to reinforce the churches' army with their private
+      guard.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 3
+      threshold: 240
+  - identifier: 7
+    answerText: Ask for the alchemists' help. No matter what kind of strange and occult
+      forces they use!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 4
+      threshold: 310
+  - identifier: 8
+    answerText: Join the clergyman in their pursue of faith and infinite devotion.
+      You must be the new holy emperor chosen by God!
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 5
+      threshold: 360
+  crisisResolutions:
+  - index: 1
+    resolution:
+      sentences:
+      - "The purge of heretics is successfull. Nothing could stop the hands of God
+        enforcing divine punishment. And <PlayerWin> is the new holy emperor. All
+        hail the blessed one!\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -60
+    - socialClass: 5
+      changeValue: 60
+  - index: 2
+    resolution:
+      sentences:
+      - "The secret techniques and fervor from the church was not enough to defeat
+        the strange technology and bizarre tricks of the alchemists. But many alchemists
+        and clergymen lost their lives.\r"
+    popChanges:
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -40
+  - index: 3
+    resolution:
+      sentences:
+      - "The alchemists used the full extent of their bizarre experiments to stop
+        the clergymen's wrath. Many clergymen lost their lives, as well as some alchemists
+        and innocent bystanders caught between the religious frenzy and explosions.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 4
+      changeValue: -20
+    - socialClass: 5
+      changeValue: -60
+  - index: 4
+    resolution:
+      sentences:
+      - "The pagan mercenaries fought well against the monks and won. Defeated by
+        the power of money, the Pope, with its reduced army, accepted defeat. But
+        some merchants mysteriously vanished in a short time.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -40
+  - index: 5
+    resolution:
+      sentences:
+      - "The nobles' troops reinforced the army of monks, decimating many merchants.
+        But the skyrocketing inflation made them lose the motivation to overthrow
+        the kingdom. Lucky you!\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+  - index: 6
+    resolution:
+      sentences:
+      - "The pagan mercenaries faired well against the monks, but the nobles' troops
+        helped them to push forward and kill many alchemists and the heretic merchants
+        until the alchemists' tricks got them for good and they admited defeat.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -80
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 4
+      changeValue: -20
+    - socialClass: 5
+      changeValue: -40
+  - index: 7
+    resolution:
+      sentences:
+      - "After many deaths of merchants and alchemists in the name of God, the clergymen
+        regained their forgiving stance and stopped their bloodlust. But you are both
+        safe. Swearing allegiance to God seems to have worked.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 4
+      changeValue: -60
+    - socialClass: 5
+      changeValue: -20
+  - index: 8
+    resolution:
+      sentences:
+      - "Your act of cowardice caused the death of many in the kingdom. During the
+        fanatic frenzy, not only clergyman and merchants  died fighting, but also
+        alchemists, commoners, guards and nobles were caught in the crossfire. And
+        you call yourselves kings to be?\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -120
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 3
+      changeValue: -80
+    - socialClass: 4
+      changeValue: -40
+    - socialClass: 5
+      changeValue: -60
