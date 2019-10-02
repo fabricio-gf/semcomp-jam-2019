@@ -175,8 +175,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -430,8 +428,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -450,6 +446,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95895887}
   m_CullTransparentMesh: 0
+--- !u!114 &110389928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5339975474710880910, guid: 66e49a5229cadbc4f930843989a96cea,
+    type: 3}
+  m_PrefabInstance: {fileID: 2189145979470144137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &117897460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5758918369474344493, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &117897462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6351856634291733139, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117897460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &117897464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117897460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 2
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 117897462}
+  isPopulationGambiarra: 1
+--- !u!95 &117897465
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117897460}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &117897466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117897460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 2
+  text: {fileID: 1671230223}
 --- !u!1 &119085354
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,8 +644,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Choose!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -703,6 +782,14 @@ MonoBehaviour:
     - 0.5
     - 0.5
     - 0.5
+  popMax:
+    groups:
+    - 100
+    - 20
+    - 500
+    - 10000
+    - 50
+    - 250
 --- !u!4 &139062637
 Transform:
   m_ObjectHideFlags: 0
@@ -883,8 +970,6 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
 --- !u!1 &188287691
 GameObject:
@@ -978,8 +1063,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &188287694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,8 +1081,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1229,6 +1310,164 @@ MonoBehaviour:
   player2: {fileID: 1703344449}
   p1ConfirmKeyPressed: 0
   p2ConfirmKeyPressed: 0
+--- !u!1 &330759898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5726038208597453651, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &330759900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 230073457571763031, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330759898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &330759902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330759898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 1
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 330759900}
+  isPopulationGambiarra: 1
+--- !u!95 &330759903
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330759898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &330759904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330759898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 1
+  text: {fileID: 1607467556}
+--- !u!114 &346798353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028883511491371185, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &371694802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5300205363520465578, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &371694804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 969746467105416005, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371694802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &371694806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371694802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 5
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 371694804}
+  isPopulationGambiarra: 1
+--- !u!95 &371694807
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371694802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &371694808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371694802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 5
+  text: {fileID: 833356377}
 --- !u!1 &406324644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,8 +1659,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1495,8 +1732,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1958,8 +2193,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8350643128806985967, guid: a3daf3a404dd1db42bd7df7a4511e56c,
     type: 3}
   m_Type: 0
@@ -2309,8 +2542,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Heir to the Throne
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -2567,8 +2798,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2645,8 +2874,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 4567298598502439368, guid: ca6175260d4dcf94ba9a85018e5164d7,
     type: 3}
   m_Type: 1
@@ -2721,8 +2948,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2741,6 +2966,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795744997}
   m_CullTransparentMesh: 0
+--- !u!114 &833356377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3526933857766522621, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841210674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,8 +3061,6 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
 --- !u!224 &933611355 stripped
 RectTransform:
@@ -2889,8 +3124,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2964,8 +3197,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 33d1ee05f909e62428adede26781dc73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3052,8 +3283,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -6677279742194608663, guid: dfde6a83a69b3ce47ace35bca39d93f2,
     type: 3}
   m_Type: 0
@@ -3535,8 +3764,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -3916,6 +4143,79 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6723029131325914289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1280414059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023165609271958285, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1280414061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2441753494167663968, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280414059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1280414063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280414059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 1280414061}
+  isPopulationGambiarra: 1
+--- !u!95 &1280414064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280414059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1280414065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280414059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
+  text: {fileID: 346798353}
 --- !u!1 &1294622942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,8 +4271,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4096,8 +4394,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8861703520643672836, guid: 5c4e26568442f1b43a517b5abf048d67,
     type: 3}
   m_Type: 2
@@ -4302,8 +4598,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 7551628170874101356, guid: 2f6cfebb6eea0204ba5a2efdee907751,
     type: 3}
   m_Type: 0
@@ -4725,8 +5019,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4745,6 +5037,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531287784}
   m_CullTransparentMesh: 0
+--- !u!114 &1560096332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9144397075092570034, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1597003153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2627619671583291951, guid: 66e49a5229cadbc4f930843989a96cea,
+    type: 3}
+  m_PrefabInstance: {fileID: 2189145979470144137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1598555881
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,8 +5116,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Press anywhere to begin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -4903,6 +5217,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598555881}
   m_CullTransparentMesh: 0
+--- !u!114 &1607467556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8422675352421443449, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1631240207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5221,6 +5547,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671230223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5324628066698385984, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681712409
 GameObject:
   m_ObjectHideFlags: 0
@@ -5276,8 +5614,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5460,8 +5796,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1766893521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5480,8 +5814,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5555,8 +5887,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8861703520643672836, guid: 5c4e26568442f1b43a517b5abf048d67,
     type: 3}
   m_Type: 2
@@ -5576,6 +5906,164 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798986119}
   m_CullTransparentMesh: 0
+--- !u!114 &1810238193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1263270328065420717, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1835534311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 546436642417341321, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1835534313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8561425533555341874, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835534311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1835534315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835534311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 3
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 1835534313}
+  isPopulationGambiarra: 1
+--- !u!95 &1835534316
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835534311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1835534317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835534311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 3
+  text: {fileID: 1810238193}
+--- !u!1 &1856286998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 365243255536116128, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856287000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636227989140895076, guid: e17b94ca1ba7cb644a7e1ade5f47fb84,
+    type: 3}
+  m_PrefabInstance: {fileID: 610205029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856286998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1856287002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856286998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ad18d570ce3446ae4b29da83b935d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 4
+  isStatChange: 0
+  changeIconThreshold: 0.3
+  badIcon: {fileID: 1635829482864067547, guid: ae0d7924b5945814f829a83691b0a45a, type: 3}
+  mediumIcon: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+    type: 3}
+  goodIcon: {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a,
+    type: 3}
+  faceIcon: {fileID: 1856287000}
+  isPopulationGambiarra: 1
+--- !u!95 &1856287003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856286998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3908e3e85e7800543bcf3e742a4a0333, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1856287004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856286998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbaea88e97c31347971387b5ede65e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 4
+  text: {fileID: 1560096332}
 --- !u!1 &1885970430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,8 +6157,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1885970433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5689,8 +6175,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5764,8 +6248,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 12c68695b7933884fbd9492223c56282, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5839,8 +6321,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'By decree of the king and the kingdom''s people, <player> is the new ruler.
 
 
@@ -6000,8 +6480,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6075,8 +6553,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Month 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -6425,8 +6901,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 6937cd227efc3934588b0aacf5036afc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6839,8 +7313,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 4819f81d043fdd64b8eec865ce5649ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6894,8 +7366,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &3690582172381722884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6939,8 +7409,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!224 &3690582172381722885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6987,8 +7455,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: a2e636c984d26be4c970043ed1dbfef3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7098,8 +7564,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
@@ -7275,8 +7739,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}

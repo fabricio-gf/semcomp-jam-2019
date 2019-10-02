@@ -19,6 +19,8 @@ public class ClassIcon : MonoBehaviour
 
     public Image faceIcon;
 
+    public bool isPopulationGambiarra;
+
     Animator animator;
 
     private Player ownerPlayer;
@@ -44,8 +46,18 @@ public class ClassIcon : MonoBehaviour
 
     public void DisplayChanges()
     {
-        World.PopulationGroups influenceChange = (ownerPlayer.influence - ownerPlayer.EventStartInfluence);
-        float valueChange = influenceChange.groups[(int)faction];
+        float valueChange;
+        if (!isPopulationGambiarra) // FIXME: Gambiarra sinistra
+        {
+            World.PopulationGroups influenceChange = (ownerPlayer.influence - ownerPlayer.EventStartInfluence);
+            valueChange = influenceChange.groups[(int)faction];
+        }
+        else
+        {
+            World.PopulationGroups popChange = (World.Instance.groups);
+            valueChange = popChange.groups[(int)faction];
+        }
+        
         if (valueChange > 0)
         {
             PlayAnimation(3);
@@ -61,7 +73,16 @@ public class ClassIcon : MonoBehaviour
 
     public void ChangeIcon()
     {
-        float influence = ownerPlayer.influence.groups[(int)faction];
+        float influence;
+        if (!isPopulationGambiarra)
+        {
+            influence = ownerPlayer.influence.groups[(int)faction];
+        }
+        else
+        {
+            influence = World.Instance.groups.groups[(int)faction];
+        }
+
         if (influence < changeIconThreshold)
         {
             faceIcon.sprite = badIcon;
