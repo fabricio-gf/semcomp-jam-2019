@@ -30,8 +30,8 @@ public class PopulationCountDisplay : MonoBehaviour
 
     private string PopulationToString()
     {
-        return (World.Instance.groups.groups[(int)faction]
-            * World.Instance.popMax.groups[(int)faction])
+        return (World.Instance.groups.GetGroupValueAt((int)faction)
+            * World.Instance.popMax.GetGroupValueAt((int)faction))
             .ToString();
     }
 }

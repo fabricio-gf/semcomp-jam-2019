@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private static List<Player> players = null;
     public List<Answer> availableAnswers; // UI needs it
 
-    public World.PopulationGroups influence;
+    public World.PopulationGroups influence = new World.PopulationGroups(0f, 1f);
     public World.PopulationGroups Power { get => World.Instance.groups * influence; }
 
     public World.PopulationGroups EventStartInfluence { set; get; }
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
     private void RecordEventStartInfluence(GameEvent e)
     {
         EventStartInfluence = influence;
-        Debug.Log("Player " + playername + "'s influence: " + influence );
+        Debug.Log("Player " + playername + "'s influence: " + influence + "; max: " + influence.MaxValue);
     }
 
     IEnumerator RandomizeAnimation()
