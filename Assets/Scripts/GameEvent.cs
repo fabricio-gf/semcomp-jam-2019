@@ -47,7 +47,7 @@ public class GameEvent : ScriptableObject
 
     }
 
-    public List<PlayerAnswer> Resolve(List<PlayerAnswer> answers)
+    public virtual List<PlayerAnswer> Resolve(List<PlayerAnswer> answers)
     {
         if (type != EventType.CRISIS)
         {

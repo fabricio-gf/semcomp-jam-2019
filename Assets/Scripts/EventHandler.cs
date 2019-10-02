@@ -15,6 +15,7 @@ public class EventHandler : MonoBehaviour
 
 
     public GameEvent ActiveEvent { get; private set; }
+    public CrisisEvent ActiveCrisisEvent { get; private set; }
 
     public Player player1;
     public Player player2;
@@ -56,21 +57,57 @@ public class EventHandler : MonoBehaviour
 
     void SetPlayersAvaiableAnswers()
     {
-        List<Answer> answers = new List<Answer>(ActiveEvent.answers);
-        player1.avaiableAnswers = new List<Answer>();
-        while(player1.avaiableAnswers.Count < 4 && answers.Count > 0)
+        if (ActiveEvent.type != GameEvent.EventType.CRISIS)
         {
-            int rand = Random.Range(0, answers.Count);
-            player1.avaiableAnswers.Add(answers[rand]);
-            answers.RemoveAt(rand);
+            List<Answer> answers = new List<Answer>(ActiveEvent.answers);
+            player1.availableAnswers = new List<Answer>();
+            while (player1.availableAnswers.Count < 4 && answers.Count > 0)
+            {
+                int rand = Random.Range(0, answers.Count);
+                player1.availableAnswers.Add(answers[rand]);
+                answers.RemoveAt(rand);
+            }
+            answers = new List<Answer>(ActiveEvent.answers);
+            player2.availableAnswers = new List<Answer>();
+            while (player2.availableAnswers.Count < 4 && answers.Count > 0)
+            {
+                int rand = Random.Range(0, answers.Count);
+                player2.availableAnswers.Add(answers[rand]);
+                answers.RemoveAt(rand);
+            }
         }
-        answers = new List<Answer>(ActiveEvent.answers);
-        player2.avaiableAnswers = new List<Answer>();
-        while (player2.avaiableAnswers.Count < 4 && answers.Count > 0)
+        else
         {
-            int rand = Random.Range(0, answers.Count);
-            player2.avaiableAnswers.Add(answers[rand]);
-            answers.RemoveAt(rand);
+            CrisisEvent activeCrisisEvent = (CrisisEvent)ActiveEvent;
+            List<ConditionalAnswer> answers = new List<ConditionalAnswer>(activeCrisisEvent.conditionalAnswers);
+
+            player1.availableAnswers = new List<Answer>();
+            player2.availableAnswers = new List<Answer>();
+            for (int i = 0; i < 2; i++)
+            {
+                player1.availableAnswers.Add(answers[i]);
+                player2.availableAnswers.Add(answers[i]);
+            }
+
+            List<ConditionalAnswer> topAnswersP1 = new List<ConditionalAnswer>();
+            List<ConditionalAnswer> topAnswersP2 = new List<ConditionalAnswer>();
+
+            /*for(int i = 2; i < answers.Count; i++)
+            {
+                if(answers[i].condition.threshold > player1.influence.groups && World.PopulationGroups >= 0.6)
+                {
+                    topAnswersP1.Add(answers[i]);
+                }
+                if (answers[i].condition.threshold > player2.influence.groups && World.PopulationGroups >= 0.6)
+                {
+                    topAnswersP2.Add(answers[i]);
+                }
+            }
+
+            for(int i = 2; i < 4; i++)
+            {
+                
+            }*/
         }
     }
 

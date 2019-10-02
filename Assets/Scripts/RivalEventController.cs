@@ -192,7 +192,7 @@ public class RivalEventController : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            optionTexts[i].text = player1.avaiableAnswers[i].answerText;
+            optionTexts[i].text = player1.availableAnswers[i].answerText;
         }
     }
 

@@ -160,6 +160,15 @@ public class NormalEventController : MonoBehaviour
             secondName = playerAnswer[1].player.playername;
 
         }
+        else if(gameEvent.type == GameEvent.EventType.CRISIS)
+        {
+
+        }
+        else
+        {
+            Debug.Log("Error, rival event or null detected");
+        }
+
         animator.SetTrigger("ShowResolution");
     }
 
@@ -210,15 +219,30 @@ public class NormalEventController : MonoBehaviour
 
     void WritePlayerOptions()
     {
-        for(int i = 0; i < player1Texts.Length; i++)
+        if (gameEvent.type != GameEvent.EventType.CRISIS)
         {
-            /*print("Player 1 text at " + i + " :" + player1.avaiableAnswers[i].answerText);
-            print("Player 1 resolution at " + i + " :" + player1.avaiableAnswers[i].resolution.sentences[0]);
-            print("Player 2 text at " + i + " :" + player2.avaiableAnswers[i].answerText);
-            print("Player 2 resolution at " + i + " :" + player2.avaiableAnswers[i].resolution.sentences[0]);*/
+            for (int i = 0; i < player1Texts.Length; i++)
+            {
+                /*print("Player 1 text at " + i + " :" + player1.avaiableAnswers[i].answerText);
+                print("Player 1 resolution at " + i + " :" + player1.avaiableAnswers[i].resolution.sentences[0]);
+                print("Player 2 text at " + i + " :" + player2.avaiableAnswers[i].answerText);
+                print("Player 2 resolution at " + i + " :" + player2.avaiableAnswers[i].resolution.sentences[0]);*/
 
-            player1Texts[i].text = player1.avaiableAnswers[i].answerText;
-            player2Texts[i].text = player2.avaiableAnswers[i].answerText;
+                player1Texts[i].text = player1.availableAnswers[i].answerText;
+                player2Texts[i].text = player2.availableAnswers[i].answerText;
+            }
+        }
+        else
+        {
+            for(int i = 0; i < 2; i++)
+            {
+                player1Texts[i].text = player1.availableAnswers[i].answerText;
+                player2Texts[i].text = player2.availableAnswers[i].answerText;
+            }
+            for(int i = 2; i < player1Texts.Length; i++)
+            {
+
+            }
         }
 
         questionBox.ChangeSprite(0, 0);

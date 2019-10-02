@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public string playername;
 
     private static List<Player> players = null;
-    public List<Answer> avaiableAnswers; // UI needs it
+    public List<Answer> availableAnswers; // UI needs it
 
     public World.PopulationGroups influence;
     public World.PopulationGroups Power { get => World.Instance.groups * influence; }
@@ -79,11 +79,11 @@ public class Player : MonoBehaviour
 
     public void SendAnswer(int index)
     {
-        if (index >= avaiableAnswers.Count)
+        if (index >= availableAnswers.Count)
         {
             return;
         }
-        EventHandler.Instance.RecordAnswer(avaiableAnswers[index], this);
+        EventHandler.Instance.RecordAnswer(availableAnswers[index], this);
     }
 
     private void RecordEventStartInfluence(GameEvent e)
