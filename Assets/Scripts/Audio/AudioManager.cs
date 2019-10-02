@@ -34,4 +34,12 @@ public class AudioManager : MonoBehaviour
         musicController.ToggleMuteMusic(mute);
         effectsController.ToggleMuteSFX(mute);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            MuteAll();
+        }
+    }
 }
