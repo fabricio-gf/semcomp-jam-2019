@@ -165,23 +165,25 @@ public class NormalEventController : MonoBehaviour
 
     public void StartResolutionDialogue()
     {
+        Dialogue firstDialogue = new Dialogue(resolutionDialogue1.sentences);
+        Dialogue secondDialogue = new Dialogue(resolutionDialogue2.sentences);
         for(int i = 0; i < resolutionDialogue1.sentences.Length; i++)
         {
-            StringBuilder sb = new StringBuilder(resolutionDialogue1.sentences[i]);
+            StringBuilder sb = new StringBuilder(firstDialogue.sentences[i]);
             sb.Replace("<Player>", firstName);
-            resolutionDialogue1.sentences[i] = sb.ToString();
+            firstDialogue.sentences[i] = sb.ToString();
 
         }
         for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
         {
-            StringBuilder sb = new StringBuilder(resolutionDialogue2.sentences[i]);
+            StringBuilder sb = new StringBuilder(secondDialogue.sentences[i]);
             sb.Replace("<Player>", secondName);
-            resolutionDialogue2.sentences[i] = sb.ToString();
+            secondDialogue.sentences[i] = sb.ToString();
         }
 
         List<string> tempList = new List<string>();
-        tempList.AddRange(resolutionDialogue1.sentences);
-        tempList.AddRange(resolutionDialogue2.sentences);
+        tempList.AddRange(firstDialogue.sentences);
+        tempList.AddRange(secondDialogue.sentences);
         Dialogue finalResolutionDialogue = new Dialogue(tempList.ToArray());
 
         resolutionBox.StartDialogue(finalResolutionDialogue);

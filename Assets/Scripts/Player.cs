@@ -14,7 +14,13 @@ public class Player : MonoBehaviour
 
     public World.PopulationGroups EventStartInfluence { set; get; }
 
+    Animator animator;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        StartCoroutine(RandomizeAnimation());
+    }
 
     public static void NormalizeInfluences()
     {
@@ -84,6 +90,13 @@ public class Player : MonoBehaviour
     {
         EventStartInfluence = influence;
         Debug.Log("Player " + playername + "'s influence: " + influence );
+    }
+
+    IEnumerator RandomizeAnimation()
+    {
+        yield return new WaitForSeconds(Random.Range(10f,20f));
+        animator.SetTrigger("PlayAnimation");
+        StartCoroutine(RandomizeAnimation());
     }
 
 }
