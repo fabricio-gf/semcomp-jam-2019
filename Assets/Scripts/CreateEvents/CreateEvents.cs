@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
 
+
 public class CreateEvents : MonoBehaviour
 {
+#if UNITY_EDITOR
     List<StatChange> statChanges = new List<StatChange>();
     List<StatChange> popChanges = new List<StatChange>();
     string question;
@@ -358,4 +362,5 @@ public class CreateEvents : MonoBehaviour
         //Debug.Log("Testing time - Final time: " + Time.time);
         //Debug.Log("Elapsed time: " + (Time.time - now));
     }*/
+#endif
 }

@@ -23,7 +23,8 @@ public class TextBox : MonoBehaviour
 
     public Image[] readyIcon; //index 0 for p1, 1 for p2
 
-    public Sprite[] readySprites; //index 0 for not ready, index 1 for ready
+    public Sprite[] readySprites; //p1, index 0 for not ready, index 1 for ready
+    public Sprite[] readySprites2; //p2, index 0 for not ready, index 1 for ready
 
     private void Awake()
     {
@@ -105,6 +106,13 @@ public class TextBox : MonoBehaviour
 
     public void ChangeSprite(int player, int ready)
     {
-        readyIcon[player].sprite = readySprites[ready];
+        if (player == 0)
+        {
+            readyIcon[player].sprite = readySprites[ready];
+        }
+        else if(player == 1)
+        {
+            readyIcon[player].sprite = readySprites2[ready];
+        }
     }
 }

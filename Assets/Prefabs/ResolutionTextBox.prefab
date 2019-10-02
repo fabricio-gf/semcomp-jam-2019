@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 1024780087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 7681487650496042915}
   m_RootOrder: 1
@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 500, y: 30}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 426, y: 486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1024780090
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+  m_Sprite: {fileID: 1322821052197086858, guid: 83726cfd2cf80944bbeccbcf686c2d7d,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -103,7 +103,7 @@ RectTransform:
   m_GameObject: {fileID: 1090913037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 7681487650496042915}
   m_RootOrder: 2
@@ -111,7 +111,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -500, y: 30}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 418, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1090913040
 CanvasRenderer:
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082,
+  m_Sprite: {fileID: -4563798465293866004, guid: ad8776aefbfd73e44b1ffc3559ee6e40,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -411,5 +411,8 @@ MonoBehaviour:
   - {fileID: 1024780089}
   - {fileID: 1090913039}
   readySprites:
-  - {fileID: 2799486287287029877, guid: 037426aa4ab71924da06a7aa84a75082, type: 3}
-  - {fileID: 8504122074818940300, guid: 8cce2f058033ed046ba3baf4f8ee1c8a, type: 3}
+  - {fileID: 3701053908767904816, guid: b4792eb8a2c68cb4389802b9b60fe6f9, type: 3}
+  - {fileID: 1322821052197086858, guid: 83726cfd2cf80944bbeccbcf686c2d7d, type: 3}
+  readySprites2:
+  - {fileID: 1486522181267673317, guid: 74d5a6f0f384eb2499ae952a0fbe4dcf, type: 3}
+  - {fileID: -4563798465293866004, guid: ad8776aefbfd73e44b1ffc3559ee6e40, type: 3}

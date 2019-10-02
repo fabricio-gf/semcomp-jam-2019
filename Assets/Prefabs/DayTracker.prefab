@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &207572498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Month 1
+  m_text: Month 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 680ad359106521f44ac1a9f3a30501bf, type: 2}
   m_sharedMaterial: {fileID: -8062155366477918890, guid: 680ad359106521f44ac1a9f3a30501bf,
@@ -301,7 +301,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 7551628170874101356, guid: 2f6cfebb6eea0204ba5a2efdee907751,
+  m_Sprite: {fileID: -2947633003711736154, guid: 886ba275afe607c41b0870ad1e754d89,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
