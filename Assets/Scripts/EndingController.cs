@@ -24,7 +24,7 @@ public class EndingController : MonoBehaviour
 
     public void StartEnding(Player player)
     {
-        playertext.text = "By decree of the king and the kingdom's people, " + player.playername + "is the new ruler.\n\n< size = 140 > Huzzah!</ size >";
+        playertext.text = "By decree of the king and the kingdom's people, " + player.playername + "is the new ruler.\n\nHuzzah!";
         animator.SetTrigger("OpenEnding");
     }
 
