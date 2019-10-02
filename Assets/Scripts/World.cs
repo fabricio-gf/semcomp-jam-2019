@@ -177,6 +177,8 @@ public class World : MonoBehaviour
     [SerializeField]
     public PopulationGroups groups = new PopulationGroups(0.1f, 1f); // should use private set
 
+    public PopulationGroups popMax = new PopulationGroups();
+
     public static World Instance;
 
     private void Awake()
@@ -194,7 +196,7 @@ public class World : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
