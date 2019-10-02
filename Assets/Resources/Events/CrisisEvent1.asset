@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2564c853e2d556442b9916c630703bf5, type: 3}
+  m_Name: CrisisEvent1
+  m_EditorClassIdentifier: 
+  identifier: CrisisEvent1
+  type: 2
+  question:
+    sentences:
+    - 'The guards of this somewhat peaceful kingdom rarely has to fight and serve
+      mostly as a display of power and to keep revolutions and crimes at bay. '
+    - 'However, their equipment is getting rusted and crushed and old. The captain
+      of the guard asked you for money for new equipments. '
+    - Your counselor advised that the gold is not that abundant and you must choose
+      wisely what to do.
+  answers: []
+  conditionalAnswers:
+  - identifier: 1
+    answerText: Give them some money.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 2
+    answerText: Refuse to buy new equipment.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 6
+      threshold: 10000
+  - identifier: 3
+    answerText: Ask the merchant's guild to sponsor the guard.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 0
+      threshold: 240
+  - identifier: 4
+    answerText: Negotiate a progressive change of equipment over time.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 1
+      threshold: 240
+  - identifier: 6
+    answerText: Task each noble to buy equipments for the guards of their lands.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 3
+      threshold: 240
+  - identifier: 7
+    answerText: Ask the help of alchemists to fix and improve equipments.
+    statChanges: []
+    rivalStatChanges: []
+    popChanges: []
+    resolution:
+      sentences: []
+    condition:
+      socialClass: 4
+      threshold: 240
+  crisisResolutions:
+  - index: 0
+    resolution:
+      sentences:
+      - 'You got to gather enough money to buy equipment for the guards. '
+      - 'But the kingdom treasury was not enough to solve a small food shortage after
+        this. '
+      - 'Some people died from starvation. '
+      - "At the bright side, the barbarians invaded shortly after and our renewed
+        guards defended the kingdom with almost no casualties.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 2
+      changeValue: -400
+    - socialClass: 4
+      changeValue: -20
+  - index: 1
+    resolution:
+      sentences:
+      - 'You didn''t gather the money for the troops. They understood the situation,
+        and the money was later used to solve a small food shortage. '
+      - 'However, the barbarians attacked with a considerable army and a lot of soldiers
+        died. '
+      - "Some casualties occured in other classes, as well as some exodus due to unsafety.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: -40
+    - socialClass: 1
+      changeValue: -120
+    - socialClass: 2
+      changeValue: -800
+    - socialClass: 3
+      changeValue: -40
+    - socialClass: 4
+      changeValue: -20
+    - socialClass: 5
+      changeValue: -20
+  - index: 2
+    resolution:
+      sentences:
+      - 'You got enough money to change some equipments, but not all of them. '
+      - 'The money kept was used to solve a small food shortage and the population
+        was satisfied. '
+      - 'Nonetheless, the barbarians attacked and some of the troops died along with
+        commoners. '
+      - "A small exodus occured due to unsafety.\r"
+    popChanges:
+    - socialClass: 1
+      changeValue: -60
+    - socialClass: 2
+      changeValue: -400
+  - index: 3
+    resolution:
+      sentences:
+      - 'You bought the equipment with some help. '
+      - 'You also saved some to solve a small food shortage that came soon after this. '
+      - "The barbarians invaded shortly after and our renewed guards defended the
+        kingdom with almost no casualties.\r"
+    popChanges:
+    - socialClass: 2
+      changeValue: 400
+  - index: 4
+    resolution:
+      sentences:
+      - 'You got help from others to renew the equipment. '
+      - 'Thus, you saved money to solve a small food shortage that came soon after
+        this and other problems. '
+      - 'The barbarians invaded shortly after and our renewed guards defended the
+        kingdom with almost no casualties. '
+      - "In fact, the population flourished in this mood of prosperity and safety.\r"
+    popChanges:
+    - socialClass: 0
+      changeValue: 40
+    - socialClass: 2
+      changeValue: 400
+    - socialClass: 3
+      changeValue: 40
+    - socialClass: 4
+      changeValue: 20
+    - socialClass: 5
+      changeValue: 20
