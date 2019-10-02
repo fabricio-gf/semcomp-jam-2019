@@ -53,8 +53,9 @@ public class GameEvent : ScriptableObject
         {
             foreach (PlayerAnswer ans in answers)
             {
+                Debug.Log("Player influence max: " + ans.player.influence.MaxValue);
                 ans.player.influence += Answer.AdaptedStatChanges(ans.answer.statChanges) / STATUS_CHANGE_SCALE;
-                World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges) / STATUS_CHANGE_SCALE;
+                World.Instance.groups += Answer.AdaptedStatChanges(ans.answer.popChanges) / World.Instance.popMax;
                 List<Player> players = new List<Player>(FindObjectsOfType<Player>());
                 foreach (Player p in players)
                 {

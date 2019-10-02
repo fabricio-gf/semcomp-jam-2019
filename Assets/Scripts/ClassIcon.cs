@@ -50,12 +50,12 @@ public class ClassIcon : MonoBehaviour
         if (!isPopulationGambiarra) // FIXME: Gambiarra sinistra
         {
             World.PopulationGroups influenceChange = (ownerPlayer.influence - ownerPlayer.EventStartInfluence);
-            valueChange = influenceChange.groups[(int)faction];
+            valueChange = influenceChange.GetGroupValueAt((int)faction);
         }
         else
         {
             World.PopulationGroups popChange = (World.Instance.groups);
-            valueChange = popChange.groups[(int)faction];
+            valueChange = popChange.GetGroupValueAt((int)faction);
         }
         
         if (valueChange > 0)
@@ -76,11 +76,11 @@ public class ClassIcon : MonoBehaviour
         float influence;
         if (!isPopulationGambiarra)
         {
-            influence = ownerPlayer.influence.groups[(int)faction];
+            influence = ownerPlayer.influence.GetGroupValueAt((int)faction);
         }
         else
         {
-            influence = World.Instance.groups.groups[(int)faction];
+            influence = World.Instance.groups.GetGroupValueAt((int)faction);
         }
 
         if (influence < changeIconThreshold)

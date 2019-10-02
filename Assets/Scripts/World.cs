@@ -19,61 +19,56 @@ public class World : MonoBehaviour
     public class PopulationGroups //TODO: extract class - too big to be here
     {
         //Constraints
-        public float MinValue { get; private set; }
-        public float MaxValue { get; private set; }
+        public float MinValue { get; private set; } = Mathf.Infinity;
+        public float MaxValue { get; private set; } = Mathf.NegativeInfinity;
         //Data
-        public List<float> groups
+        [SerializeField]
+        private List<float> groups
             = new List<float>((int)Faction.SIZE); // should use private set
         //Properties
         public float Merchants {
             get => groups[(int)Faction.MERCHANTS];
-            private set => groups[(int)Faction.MERCHANTS] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.MERCHANTS, value);
         }
         public float Nobility
         {
             get => groups[(int)Faction.NOBILITY];
-            private set => groups[(int)Faction.NOBILITY] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.NOBILITY, value);
         }
         public float Guard
         {
             get => groups[(int)Faction.GUARD];
-            private set => groups[(int)Faction.GUARD] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.GUARD, value);
         }
         public float Peasants
         {
             get => groups[(int)Faction.PEASANTS];
-            private set => groups[(int)Faction.PEASANTS] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.PEASANTS, value);
         }
         public float Alchemists
         {
             get => groups[(int)Faction.ALCHEMISTS];
-            private set => groups[(int)Faction.ALCHEMISTS] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.ALCHEMISTS, value);
         }
         public float Clerics
         {
             get => groups[(int)Faction.CLERICS];
-            private set => groups[(int)Faction.CLERICS] =
-                Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+            private set => SetGroupValueAt((int)Faction.CLERICS, value);
         }
         //Constructors
-        public PopulationGroups(float min = -Mathf.Infinity, float max = -Mathf.Infinity)
+        public PopulationGroups(float min = Mathf.NegativeInfinity, float max = Mathf.Infinity)
         {
             Initialize();
             MinValue = min;
             MaxValue = max;
         }
         //Constructors
-        public PopulationGroups(List<float> values, float min = -Mathf.Infinity, float max = -Mathf.Infinity)
+        public PopulationGroups(List<float> values, float min = Mathf.NegativeInfinity, float max = Mathf.Infinity)
         {
             MinValue = min;
             MaxValue = max;
             groups = new List<float>(values);
-            Initialize();
+            //Initialize();
         }
         public void Initialize()
         {
@@ -82,58 +77,76 @@ public class World : MonoBehaviour
                 groups.Add(0f);
             }
         }
+        //Getters & Setters
+        public void SetGroupValueAt(int index, float value)
+        {
+            if (index >= (int)Faction.SIZE)
+            {
+                return; // out of range
+            }
+            Debug.Log("Min: " + MinValue + " | Max: " + MaxValue + " | Value: " + value
+                + " | Mathf.Max(MinValue, value): " + Mathf.Max(MinValue, value)
+                + " | Mathf.Min(Mathf.Max(MinValue, value), MaxValue): "
+                + Mathf.Min(Mathf.Max(MinValue, value), MaxValue));
+            groups[index] = Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
+        }
+        public float GetGroupValueAt(int index)
+        {
+            return groups[index];
+        }
         //Operators
         public static PopulationGroups operator+ (PopulationGroups a, PopulationGroups b)
         {
-            PopulationGroups p = new PopulationGroups();
+            Debug.Log("a: " + a + " -|- a.max: " + a.MaxValue + " --||-- b: " + b + " -|- b.max: " + b.MaxValue);
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] + b.groups[i];
+                p.SetGroupValueAt(i, a.groups[i] + b.groups[i]);
             }
             return p;
         }
-        public static PopulationGroups operator -(PopulationGroups a, PopulationGroups b)
+        public static PopulationGroups operator- (PopulationGroups a, PopulationGroups b)
         {
-            PopulationGroups p = new PopulationGroups();
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] - b.groups[i];
+                p.SetGroupValueAt(i, a.groups[i] - b.groups[i]);
             }
             return p;
         }
         public static PopulationGroups operator* (PopulationGroups a, PopulationGroups b)
         {
-            PopulationGroups p = new PopulationGroups();
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] * b.groups[i];
+                p.SetGroupValueAt(i, a.groups[i] * b.groups[i]);
             }
             return p;
         }
         public static PopulationGroups operator *(PopulationGroups a, float b)
         {
-            PopulationGroups p = new PopulationGroups();
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] * b;
+                p.SetGroupValueAt(i, a.groups[i] * b);
             }
             return p;
         }
         public static PopulationGroups operator /(PopulationGroups a, PopulationGroups b)
         {
-            PopulationGroups p = new PopulationGroups();
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] / b.groups[i];
+                p.SetGroupValueAt(i, a.groups[i] / b.groups[i]);
             }
             return p;
         }
         public static PopulationGroups operator /(PopulationGroups a, float b)
         {
-            PopulationGroups p = new PopulationGroups();
+            PopulationGroups p = new PopulationGroups(a.MinValue, a.MaxValue);
             for (int i = 0; i < (int)Faction.SIZE; i++)
             {
-                p.groups[i] = a.groups[i] / b;
+                p.SetGroupValueAt(i, a.groups[i] / b);
             }
             return p;
         }
