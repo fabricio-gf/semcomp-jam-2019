@@ -1,0 +1,10 @@
+Quote-Answer;Class;Threshold
+"The time is up for feudalism! $We need a state were each man and woman can grow according to its merits, not by birth or mariage.", cried the merchants. $They bought the best weapons and mercenaries and started a war against the system. $Some words about illuminating something were spoken.;;
+Promisse to tax inheritances and sell some lands for the merchants.;-;-
+Lock yourself in the castle and wait for the situation to resolve itself.;-;-
+Join the merchants to fight against the other nobles. As long as they don't implement that democracy thing, it will be fine!;Merchant;0.9
+Summon the guards to try to stop the riot.;Guard;0.6
+The people will surely like this idea of killing nobles and getting rich. We should make them our allies.;Commoner;0.6
+-;Noble;0.6
+-;Alchemist;0.6
+If it is about making people give up on their money, the Pope is the right person to call!;Clergy;0.75

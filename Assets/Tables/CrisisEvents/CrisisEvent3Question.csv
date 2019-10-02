@@ -1,10 +1,10 @@
 Quote-Answer;Class;Threshold
-The alchemists demand their "rightful" place as the commanding class in society. They argue that being the most intelligent people in the kingdom, only they could do the right choices. Thanks to the offensives of the church, they are angry and armed with their deadliest inventions. What will you do?;;
-Reduce the influence of the church and promisse to have an alchemist as your next counselor.;-0;-0
-Lock yourself in the castle and wait for the situation to resolve itself.;-0;-0
--0;Merchant;240
-Call all the guards to aid the alchemists. Knowledge is the absolut power.;Guard;240
-Call for the commoners to help you fight the alchemists. Call them heretics. Say they were mocking the commoners as dumbs... Anything will do!;Commoner;310
--0;Noble;240
-Join the alchemists in their pursue of ultimate knowledge and wisdom. You must be the new philosopher king at all costs!;Alchemist;360
-Ask the pope to start an inquisition against the heretics. Burn them, torture them... Anything goes!;Clergy;240
+The alchemists demand their "rightful" place as the commanding class in society. $They argue that being the most intelligent people in the kingdom, only they could do the right choices. $Thanks to the offensives of the church, they are angry and armed with their deadliest inventions. $What will you do?;;
+Reduce the influence of the church and promisse to have an alchemist as your next counselor.;-;-
+Lock yourself in the castle and wait for the situation to resolve itself.;-;-
+-;Merchant;0.6
+Call all the guards to aid the alchemists. Knowledge is the absolut power.;Guard;0.6
+Call for the commoners to help you fight the alchemists. Call them heretics. Say they were mocking the commoners as dumbs... Anything will do!;Commoner;0.75
+-;Noble;0.6
+Join the alchemists in their pursue of ultimate knowledge and wisdom. You must be the new philosopher king at all costs!;Alchemist;0.9
+Ask the pope to start an inquisition against the heretics. Burn them, torture them... Anything goes!;Clergy;0.6

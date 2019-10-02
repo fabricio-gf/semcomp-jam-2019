@@ -1,9 +1,9 @@
 Result;Merchant Pop;Guard Pop;Commoner Pop;Noble Pop;Alchemists Pop;Clergy Pop;Answer
-1;0;0;0;-120;60;-60;The rebellion is successfull. Nothing could stop the weapons of the mystics. And <PlayerWin> is the new philosoper king. All hail the knowledgeable one!
-2;0;0;-800;0;-40;0;Even all the technology and wisdom was not enough to surpass the power of sheer numbers. But many commoners and alchemists died in this fight. What a loss!
-3;0;0;-400;0;-60;0;The commoners halted the rebellion. Many alchemists died and also some commoners. But peace was restored.
-4;0;0;0;0;-20;-20;The inquisiton called by the Poped helped stop the alchemists by fear. Some were burned alive and tortured as an example, but not without killing some clergymen first.
-5;0;0;0;-80;0;0;The guards' aid made the alchemists even more fearsome, killing some commoners and nobles and many clergymen before exhausting themselves and stopping. But you both remained safe.
-6;0;0;-400;0;-20;-40;The Pope's inquisition was able to slow down the alchemists. But the guards' assistance gave them courage enough to kill many clergymen and commoners before the fear of torture spoke louder.
-7;0;0;-800;0;-20;-60;After a lot of clergymen and commoners died, the alchemists stopped their bloodlust. But you are both safe. The promisse of changes worked out after all.
-8;-40;-60;-800;-40;-40;-60;Your act of cowardice caused the death of many in the kingdom. During the mob, not only clergyman, alchemists and commoners died fighting, but also merchants, guards and nobles were caught in the crossfire. And you call yourselves kings to be?
+1;0;0;0;-120;60;-60;The rebellion is successfull. Nothing could stop the weapons of the mystics. $And <PlayerWin> is the new philosoper king. All hail the knowledgeable one!
+2;0;0;-800;0;-40;0;Even all the technology and wisdom was not enough to surpass the power of sheer numbers. $But many commoners and alchemists died in this fight. What a loss!
+3;0;0;-400;0;-60;0;The commoners halted the rebellion. Many alchemists died and also some commoners. $But peace was restored.
+4;0;0;0;0;-20;-20;The inquisiton called by the Poped helped stop the alchemists by fear. $Some were burned alive and tortured as an example, but not without killing some clergymen first.
+5;0;0;0;-80;0;0;The guards' aid made the alchemists even more fearsome, killing some commoners and nobles and many clergymen before exhausting themselves and stopping. $But you both remained safe.
+6;0;0;-400;0;-20;-40;The Pope's inquisition was able to slow down the alchemists. $But the guards' assistance gave them courage enough to kill many clergymen and commoners before the fear of torture spoke louder.
+7;0;0;-800;0;-20;-60;After a lot of clergymen and commoners died, the alchemists stopped their bloodlust. $But you are both safe. The promisse of changes worked out after all.
+8;-40;-60;-800;-40;-40;-60;Your act of cowardice caused the death of many in the kingdom. $During the mob, not only clergyman, alchemists and commoners died fighting, but also merchants, guards and nobles were caught in the crossfire. $And you call yourselves kings to be?

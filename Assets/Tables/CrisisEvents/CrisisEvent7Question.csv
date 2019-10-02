@@ -1,0 +1,10 @@
+Quote-Answer;Class;Threshold
+The guards are tired of the petty skirmishes between the people of this land. $They aren't paid enough to risk their lives almost every day to stop some nobles killing some commoners or being killed by revolting commoners. $Neither to stop alchemists from blowing the church or the church from burning alchemists and merchants. $Nor stopping merchants from "accidentaly" killing priests and nobles with new "products" from other lands... $They want a firm ruler that can control all those little problems and focus on expanding the borders. $And they will fight everyone for this, if needed.;;
+Promisse to give harsher punishments to wrongdoers and start expansionist policies.;-;-
+Lock yourself in the castle and wait for the situation to resolve itself.;-;-
+Ask the merchants guild to help the guards and try to stay in their good side.;Merchant;0.6
+Side with the guards. You will be the one to bring new lands to the kingdom with an iron fist!;Guard;0.9
+-;Commoner;0.6
+Call the nobles to help defend the kingdom and stop this coup d`etat!;Noble;0.75
+The alchemists may have something to stop an army. Anything will do.;Alchemist;0.6
+-;Clergy;0.6

@@ -1,0 +1,10 @@
+Quote-Answer;Class;Threshold
+"We nobles must stand against the oppression of the poor". $"They are trying to take away our hard-earned privileges that our great-great-grandparents strived to conquer". $"We must defend our rights do live a life full of leisure and pleasures and no work". $"The commoners and minorities must know their place and obey!";;
+Promisse to give the nobles even more rights and lands.;-;-
+Lock yourself in the castle and wait for the situation to resolve itself.;-;-
+The merchants are rich enough to oppose the nobles with their own army of mercenaries, let's call them!;Merchant;0.75
+-;Guard;0.6
+The people must fight for their rights! Rally the commoners against this.;Commoner;0.6
+Join the nobles and make the people remember who they should respect and fear!;Noble;0.9
+-;Alchemist;0.6
+The Church always had a good relation with nobles, they'll help them!;Clergy;0.6

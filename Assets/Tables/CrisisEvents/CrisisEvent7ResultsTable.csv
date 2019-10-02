@@ -1,0 +1,9 @@
+P2\P1;Common1;Common2;Merchant;Guard;Commoner;Noble;Alchemist;Clergy
+Common1;7;7;5;1;0;3;4;0
+Common2;7;8;5;1;0;3;4;0
+Merchant;5;5;0;1;5;3;6;5
+Guard;1;1;1;0;1;2;1;1
+Commoner;0;0;5;1;0;3;4;0
+Noble;3;3;3;2;3;0;3;3
+Alchemist;4;4;6;1;4;3;0;4
+Clergy;0;0;5;1;0;3;4;0
