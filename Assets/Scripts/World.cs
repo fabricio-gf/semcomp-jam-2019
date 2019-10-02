@@ -84,15 +84,19 @@ public class World : MonoBehaviour
             {
                 return; // out of range
             }
-            Debug.Log("Min: " + MinValue + " | Max: " + MaxValue + " | Value: " + value
-                + " | Mathf.Max(MinValue, value): " + Mathf.Max(MinValue, value)
-                + " | Mathf.Min(Mathf.Max(MinValue, value), MaxValue): "
-                + Mathf.Min(Mathf.Max(MinValue, value), MaxValue));
+            //Debug.Log("Min: " + MinValue + " | Max: " + MaxValue + " | Value: " + value
+            //    + " | Mathf.Max(MinValue, value): " + Mathf.Max(MinValue, value)
+            //    + " | Mathf.Min(Mathf.Max(MinValue, value), MaxValue): "
+            //    + Mathf.Min(Mathf.Max(MinValue, value), MaxValue));
             groups[index] = Mathf.Min(Mathf.Max(MinValue, value), MaxValue);
         }
         public float GetGroupValueAt(int index)
         {
             return groups[index];
+        }
+        public List<float> GetCopyList()
+        {
+            return new List<float> (groups);
         }
         //Operators
         public static PopulationGroups operator+ (PopulationGroups a, PopulationGroups b)
@@ -189,6 +193,7 @@ public class World : MonoBehaviour
 
     [SerializeField]
     public PopulationGroups groups = new PopulationGroups(0.1f, 1f); // should use private set
+    public PopulationGroups EventStartGroups { get; private set; } = new PopulationGroups();
 
     public PopulationGroups popMax = new PopulationGroups();
 
@@ -209,12 +214,18 @@ public class World : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameFlow.Instance.OnEventStart += OnEventStart;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnEventStart(GameEvent e)
+    {
+        Debug.Log("Pop start: " + groups);
+        EventStartGroups = new PopulationGroups(groups.GetCopyList()) ;
     }
 }
