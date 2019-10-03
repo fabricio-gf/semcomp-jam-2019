@@ -66,7 +66,14 @@ public class CreateEvents : MonoBehaviour
 
         for(int j = 1; j < lines.Length; j++)
         {
+            if (string.IsNullOrEmpty(lines[j]))
+            {
+                print("Empty line");
+                break;
+            }
+
             string[] lineContent = lines[j].Split(';');
+
             statChanges.Clear();
             for (int i = 1; i < lineContent.Length; i++)
             {

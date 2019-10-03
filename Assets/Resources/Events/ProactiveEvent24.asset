@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a79d6ef1be428441888aa68c1ccdf6e, type: 3}
-  m_Name: ProactiveEvent4
+  m_Name: ProactiveEvent24
   m_EditorClassIdentifier: 
-  identifier: ProactiveEvent4
+  identifier: ProactiveEvent24
   type: 0
   question:
     sentences:
-    - "The nobles were arguing about who has the biggest moustache... Madam Evelyn
-      won, apparently.\r"
+    - 
   answers:
   - identifier: 0
     answerText: Raise taxes.

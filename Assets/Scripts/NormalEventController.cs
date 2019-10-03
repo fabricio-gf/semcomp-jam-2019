@@ -19,6 +19,9 @@ public class NormalEventController : MonoBehaviour
     public TextMeshProUGUI[] player1Texts;
     public TextMeshProUGUI[] player2Texts;
 
+    public TextMeshProUGUI[] gossipText;
+    public TextMeshProUGUI[] questionText;
+
     public Player player1;
     public Player player2;
 
@@ -125,6 +128,14 @@ public class NormalEventController : MonoBehaviour
 
     public void StartDialogue()
     {
+        if(gameEvent.type == GameEvent.EventType.PROACTIVE)
+        {
+            animator.SetTrigger("ShowProactiveText");
+        }
+        else
+        {
+            animator.SetTrigger("HideProactiveText");
+        }
         questionBox.StartDialogue(gameEvent.question);
 
         ToggleCanPressConfirm(true);

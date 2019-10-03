@@ -508,10 +508,3 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences: []
-  - identifier: 33
-    answerText: 
-    statChanges: []
-    rivalStatChanges: []
-    popChanges: []
-    resolution:
-      sentences: []

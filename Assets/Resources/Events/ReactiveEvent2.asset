@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 1
   question:
     sentences:
-    - You will throw a royal ball. Who will you invite as a guest of honor?
+    - "You will throw a royal ball. Who will you invite as a guest of honor?\r"
   answers:
   - identifier: 1
     answerText: 
