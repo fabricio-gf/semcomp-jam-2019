@@ -44,7 +44,10 @@ public class GameFlow : MonoBehaviour
 
     private void OnEnable()
     {
-        avaiableEvents = new List<GameEvent>(gameConfig.avaiableEvents);
+        foreach (GameEvent e in gameConfig.avaiableEvents)
+        {
+            avaiableEvents.Add (Instantiate(e));
+        }
     }
 
     private IEnumerator StartEventCoroutine(float startEventDelay)
