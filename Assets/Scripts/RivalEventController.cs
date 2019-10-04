@@ -147,9 +147,11 @@ public class RivalEventController : MonoBehaviour
     {
         StringBuilder sb;
 
-        for (int i = 0; i < resolutionDialogue.sentences.Length; i++)
+        Dialogue newResolutionDialogue = new Dialogue(resolutionDialogue.sentences);
+
+        for (int i = 0; i < newResolutionDialogue.sentences.Length; i++)
         {
-            sb = new StringBuilder(resolutionDialogue.sentences[i]);
+            sb = new StringBuilder(newResolutionDialogue.sentences[i]);
             if(playerWinName == "Charles")
             {
                 sb.Replace("<PlayerWin>", "Charles");
@@ -160,11 +162,11 @@ public class RivalEventController : MonoBehaviour
                 sb.Replace("<PlayerWin>", "Katrina");
                 sb.Replace("<PlayerLose>", "Charles");
             }
-            
-            resolutionDialogue.sentences[i] = sb.ToString();
+
+            newResolutionDialogue.sentences[i] = sb.ToString();
         }
         
-        resolutionBox.StartDialogue(resolutionDialogue);
+        resolutionBox.StartDialogue(newResolutionDialogue);
 
         ToggleCanPressConfirm(true);
     }
