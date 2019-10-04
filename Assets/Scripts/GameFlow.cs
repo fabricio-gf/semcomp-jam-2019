@@ -44,9 +44,9 @@ public class GameFlow : MonoBehaviour
 
     private void OnEnable()
     {
+        avaiableEvents.Clear();
         foreach (GameEvent e in gameConfig.avaiableEvents)
         {
-            avaiableEvents.Clear();
             avaiableEvents.Add (Instantiate(e));
         }
     }
