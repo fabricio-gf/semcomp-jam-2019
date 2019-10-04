@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   avaiableEvents:
-  - {fileID: 11400000, guid: 5dcff766618c3dd44a732a5ad9ea6062, type: 2}
+  - {fileID: 11400000, guid: a2d9bce8561483d4dbdcbdeb7c243d6d, type: 2}
   - {fileID: 11400000, guid: e2bfd3981833131499252ff757fb2f14, type: 2}
   - {fileID: 11400000, guid: c8664f0511e8f2f419493b9a21064a7d, type: 2}
   - {fileID: 11400000, guid: 323f42ab5b7f26e4fb60d95567968127, type: 2}
@@ -36,7 +36,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99e7c074439d6154f889360526636b06, type: 2}
   - {fileID: 11400000, guid: 77c2ae1f5ad52c84f83bd5934def93cc, type: 2}
   - {fileID: 11400000, guid: c9a0cb3d805c170499fbc1820ee569c9, type: 2}
-  - {fileID: 11400000, guid: a2d9bce8561483d4dbdcbdeb7c243d6d, type: 2}
+  - {fileID: 11400000, guid: 5dcff766618c3dd44a732a5ad9ea6062, type: 2}
   - {fileID: 11400000, guid: 2d22c6c00c7e7944b84597c4505f881a, type: 2}
   - {fileID: 11400000, guid: 75707dcc778e0ae48aa894e373d09a47, type: 2}
   - {fileID: 11400000, guid: 2580af7c37b62284ca54d59ed8047b86, type: 2}

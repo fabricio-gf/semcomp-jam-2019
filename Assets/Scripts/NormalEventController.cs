@@ -19,8 +19,9 @@ public class NormalEventController : MonoBehaviour
     public TextMeshProUGUI[] player1Texts;
     public TextMeshProUGUI[] player2Texts;
 
-    public TextMeshProUGUI[] gossipText;
-    public TextMeshProUGUI[] questionText;
+    [Space(20)]
+    public TextMeshProUGUI gossipText;
+    public TextMeshProUGUI questionText;
 
     public Player player1;
     public Player player2;
@@ -115,6 +116,12 @@ public class NormalEventController : MonoBehaviour
             return;
         }
 
+        if(gameEvent.type != GameEvent.EventType.PROACTIVE)
+        {
+            gossipText.gameObject.SetActive(false);
+            questionText.gameObject.SetActive(false);
+        }
+
         currentEvent = true;
         StartCoroutine(EventStartDelay());
     }
@@ -128,13 +135,13 @@ public class NormalEventController : MonoBehaviour
 
     public void StartDialogue()
     {
-        if(gameEvent.type == GameEvent.EventType.PROACTIVE)
+        if (gameEvent.type != GameEvent.EventType.PROACTIVE)
         {
-            animator.SetTrigger("ShowProactiveText");
+            animator.SetTrigger("HideProactiveText");
         }
         else
         {
-            animator.SetTrigger("HideProactiveText");
+            animator.SetTrigger("ShowProactiveText");
         }
         questionBox.StartDialogue(gameEvent.question);
 
@@ -144,6 +151,7 @@ public class NormalEventController : MonoBehaviour
     public void ShowButtons()
     {
         StartCoroutine(ToggleCanPressWithDelay(0.25f));
+        
         animator.SetTrigger("ShowButtons");
     }
 
@@ -159,6 +167,8 @@ public class NormalEventController : MonoBehaviour
 
         if (gameEvent.type == GameEvent.EventType.PROACTIVE)
         {
+            gossipText.gameObject.SetActive(false);
+            questionText.gameObject.SetActive(false);
             EndEvent();
             return;
         }
@@ -187,26 +197,47 @@ public class NormalEventController : MonoBehaviour
     {
         Dialogue firstDialogue = new Dialogue(resolutionDialogue1.sentences);
         Dialogue secondDialogue = new Dialogue(resolutionDialogue2.sentences);
-        for(int i = 0; i < resolutionDialogue1.sentences.Length; i++)
+        for(int i = 0; i < firstDialogue.sentences.Length; i++)
         {
             StringBuilder sb = new StringBuilder(firstDialogue.sentences[i]);
+            sb.Replace(secondName, firstName);
+            //sb.Replace("Charles", firstName);
             sb.Replace("<Player>", firstName);
             firstDialogue.sentences[i] = sb.ToString();
 
         }
-        for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
+
+        List<string> tempList = new List<string>();
+        tempList.AddRange(firstDialogue.sentences);
+
+        for (int i = 0; i < secondDialogue.sentences.Length; i++)
         {
             StringBuilder sb = new StringBuilder(secondDialogue.sentences[i]);
+            sb.Replace(firstName, secondName);
+            //sb.Replace("Charles", secondName);
             sb.Replace("<Player>", secondName);
             secondDialogue.sentences[i] = sb.ToString();
         }
 
-        List<string> tempList = new List<string>();
-        tempList.AddRange(firstDialogue.sentences);
+        
         tempList.AddRange(secondDialogue.sentences);
         Dialogue finalResolutionDialogue = new Dialogue(tempList.ToArray());
 
         resolutionBox.StartDialogue(finalResolutionDialogue);
+
+        for (int i = 0; i < resolutionDialogue1.sentences.Length; i++)
+        {
+            StringBuilder sb = new StringBuilder(resolutionDialogue1.sentences[i]);
+
+            sb.Replace(firstName, "<Player>");
+            resolutionDialogue1.sentences[i] = sb.ToString();
+        }
+        for (int i = 0; i < resolutionDialogue2.sentences.Length; i++)
+        {
+            StringBuilder sb = new StringBuilder(resolutionDialogue2.sentences[i]);
+            sb.Replace(secondName, "<Player>");
+            resolutionDialogue2.sentences[i] = sb.ToString();
+        }
 
         ToggleCanPressConfirm(true);
     }
@@ -223,6 +254,11 @@ public class NormalEventController : MonoBehaviour
 
     public void EventEnded()
     {
+        if (gameEvent.type != GameEvent.EventType.PROACTIVE)
+        {
+            gossipText.gameObject.SetActive(true);
+            questionText.gameObject.SetActive(true);
+        }
         resolutionBox.ClearTextBox();
         //resolutionBox2.ClearTextBox();
         GameFlow.Instance.FinishEvent();

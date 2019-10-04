@@ -4681,10 +4681,8 @@ MonoBehaviour:
   - {fileID: 2189145979470144140}
   - {fileID: 2189145979470144139}
   - {fileID: 2189145979470144138}
-  gossipText:
-  - {fileID: 7237546668228740822}
-  questionText:
-  - {fileID: 7237546668228740821}
+  gossipText: {fileID: 7237546668228740822}
+  questionText: {fileID: 7237546668228740821}
   player1: {fileID: 234854741}
   player2: {fileID: 1703344449}
   p1ConfirmKeyPressed: 0
@@ -11623,17 +11621,17 @@ PrefabInstance:
     - target: {fileID: 1007705047181708784, guid: 89180186d6bfdbb47bc99b047d31cda8,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 34
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 1007705047181708784, guid: 89180186d6bfdbb47bc99b047d31cda8,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1007705047181708784, guid: 89180186d6bfdbb47bc99b047d31cda8,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1007705047181708784, guid: 89180186d6bfdbb47bc99b047d31cda8,
         type: 3}
@@ -11718,7 +11716,7 @@ PrefabInstance:
     - target: {fileID: 5570281088644455095, guid: 89180186d6bfdbb47bc99b047d31cda8,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3657433088
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89180186d6bfdbb47bc99b047d31cda8, type: 3}
