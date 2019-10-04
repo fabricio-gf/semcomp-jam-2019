@@ -11,7 +11,7 @@ public class GameFlow : MonoBehaviour
 
     public GameConfig gameConfig;
 
-    public List<GameEvent> avaiableEvents;
+    public List<GameEvent> avaiableEvents = new List<GameEvent>();
 
     public delegate void EventStart(GameEvent gameEvent);
     public event EventStart OnEventStart;
@@ -46,6 +46,7 @@ public class GameFlow : MonoBehaviour
     {
         foreach (GameEvent e in gameConfig.avaiableEvents)
         {
+            avaiableEvents.Clear();
             avaiableEvents.Add (Instantiate(e));
         }
     }
