@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"The merchants were talking about a pyramid thing. Looked like e very profitable
-      business where you can earn without doing anything.\r\""
+      business where you can earn without doing anything.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

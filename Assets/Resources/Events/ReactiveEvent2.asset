@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 1
   question:
     sentences:
-    - "You will throw a royal ball. Who will you invite as a guest of honor?\r"
+    - You will throw a royal ball. Who will you invite as a guest of honor?
   answers:
   - identifier: 1
     answerText: 
@@ -40,8 +40,8 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> invited the merchant guild's chief for the ball as a guest of honor.
-        They had fun talking business and the prosperity of the kingdom. The nobles
+      - '<Player> invited the merchant guild''s chief for the ball as a guest of honor. '
+      - "They had fun talking business and the prosperity of the kingdom. The nobles
         didn't like the favoritism over a commoner, and the clergymen disapprove this
         heresy.\r"
   - identifier: 3
@@ -58,9 +58,10 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> invited the grand duke as a guest of honor. The nobles were pleased
-        by the maintenance of tradition. But the merchants don't feel very confortable
-        with these traditions, neither do the alchemists.\r"
+      - '<Player> invited the grand duke as a guest of honor. The nobles were pleased
+        by the maintenance of tradition. '
+      - "But the merchants don't feel very confortable with these traditions, neither
+        do the alchemists.\r"
   - identifier: 4
     answerText: The captain of the guard. The man who defends our kingdom should be
       given a night of rest.
@@ -75,10 +76,10 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> invited the captain of the guard for the ball as a guest of honor.
-        They had fun training swordplay instead of dancing. The nobles didn't like
-        the favoritism over a commoner, and the clergymen disapprove this display
-        of violence.\r"
+      - '<Player> invited the captain of the guard for the ball as a guest of honor.
+        They had fun training swordplay instead of dancing. '
+      - "The nobles didn't like the favoritism over a commoner, and the clergymen
+        disapprove this display of violence.\r"
   - identifier: 5
     answerText: Some random commoner. You know, we need some new faces in the castle.
     statChanges:
@@ -90,6 +91,6 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> invited some random commoner met at the pub as a guest of honor.
-        He had no manners of a noble and his clothes were clearly of a commoner. The
-        nobles were outraged by such indecency.\r"
+      - '<Player> invited some random commoner met at the pub as a guest of honor. '
+      - "He had no manners of a noble and his clothes were clearly of a commoner.
+        The nobles were outraged by such indecency.\r"

@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"Looks like there is a trend between nobles to collect toenails... Well, to
-      which his own.\"\r"
+      which their own.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

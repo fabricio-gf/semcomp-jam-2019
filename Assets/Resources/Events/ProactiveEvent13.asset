@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"The commoners have become addicted in a strange thing where they kick some
-      ball around. They call it soccer.\r\""
+      ball around. They call it soccer.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

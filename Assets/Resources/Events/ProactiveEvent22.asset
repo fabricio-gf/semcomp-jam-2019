@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"Last week we saw the Pope mumbling something about how a gypsy girl refused
-      to receive his blessign... it feels like deja vu.\r\""
+      to receive his blessign... it feels like deja vu.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

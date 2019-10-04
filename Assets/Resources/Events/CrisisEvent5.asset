@@ -55,7 +55,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 9
+      threshold: 0.9
   - identifier: 4
     answerText: Summon the guards to try to stop the riot.
     statChanges: []
@@ -65,7 +65,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 6
+      threshold: 0.6
   - identifier: 5
     answerText: The people will surely like this idea of killing nobles and getting
       rich. We should make them our allies.
@@ -76,7 +76,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 2
-      threshold: 6
+      threshold: 0.6
   - identifier: 8
     answerText: If it is about making people give up on their money, the Pope is the
       right person to call!
@@ -87,7 +87,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 75
+      threshold: 0.75
   crisisResolutions:
   - index: 1
     resolution:

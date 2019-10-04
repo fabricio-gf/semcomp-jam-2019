@@ -54,7 +54,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 6
+      threshold: 0.6
   - identifier: 6
     answerText: Call the nobles' help to reinforce the churches' army with their private
       guard.
@@ -65,7 +65,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 3
-      threshold: 6
+      threshold: 0.6
   - identifier: 7
     answerText: Ask for the alchemists' help. No matter what kind of strange and occult
       forces they use!
@@ -76,7 +76,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 75
+      threshold: 0.75
   - identifier: 8
     answerText: Join the clergyman in their pursue of faith and infinite devotion.
       You must be the new holy emperor chosen by God!
@@ -87,7 +87,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 9
+      threshold: 0.9
   crisisResolutions:
   - index: 1
     resolution:

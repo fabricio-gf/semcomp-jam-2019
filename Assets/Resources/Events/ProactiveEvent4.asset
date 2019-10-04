@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"The nobles were arguing about who has the biggest moustache... Madam Evelyn
-      won, apparently."'
+    - "\"The nobles were arguing about who has the biggest moustache... Madam Evelyn
+      won, apparently.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

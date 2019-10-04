@@ -41,7 +41,7 @@ MonoBehaviour:
       changeValue: 40
     resolution:
       sentences:
-      - '<PlayerWin> ran through the portal, that closed right behind him. '
+      - '<PlayerWin> ran through the portal, that closed right behind them. '
       - 'Inside was a hall full of treasures, guarded by a living skeleton. '
       - 'After slaying the skeleton, a new portal appeared. '
       - 'You start throwing everything valuable in it: magical items, gold, jewels
@@ -52,7 +52,7 @@ MonoBehaviour:
         guards and commoners spoke highly of your courage. '
       - 'However, the Pope condenmed you entering in such unholy places. '
       - 'Your legends spread and brought new guards and alchemists to the kingdom. '
-      - "As for <PlayerLose>, the guards were unhappy by your lack of courage.\r"
+      - "As for <PlayerLose>, the guards were unhappy by their lack of courage.\r"
   - identifier: 2
     answerText: '"Begone evil portal!" - Slash it with your sword.'
     statChanges:
@@ -77,5 +77,5 @@ MonoBehaviour:
         believe the lost opportunity to reveal hidden secrets of the world. '
       - 'But the Pope spoke highly of how you dispelled the evil spell. '
       - 'Some alchemists were so frustrated they left the kingdom. '
-      - 'As for <PlayerLose>, his lack of courage was badly received by the guards. '
-      - "The alchemists also blamed him for not saving the portal.\r"
+      - 'As for <PlayerLose>, their lack of courage was badly received by the guards. '
+      - "The alchemists also blamed them for not saving the portal.\r"

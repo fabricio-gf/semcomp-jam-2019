@@ -59,11 +59,12 @@ MonoBehaviour:
       changeValue: 40
     resolution:
       sentences:
-      - "<Player> adopted a rabbit. The fluffy and lucky little rodent gave hope to
-        the merchants from your kingdom. It also made some merchants from other kingdoms
-        seeking more luck to move in.\r"
+      - '<Player> adopted a rabbit. The fluffy and lucky little rodent gave hope to
+        the merchants from your kingdom. '
+      - "It also made some merchants from other kingdoms seeking more luck to move
+        in.\r"
   - identifier: 4
-    answerText: Get a Lion. Nothing more befitting of a king as the king of animals.
+    answerText: Get a Lion. Nothing more befitting of a ruler as the king of animals.
     statChanges:
     - socialClass: 3
       changeValue: 20

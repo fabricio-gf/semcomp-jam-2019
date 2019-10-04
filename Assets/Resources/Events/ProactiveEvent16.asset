@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"Some crazy guy started spreading the idea that the Earth was not flat, but
-      a globe. A globe! What a joke.\r\""
+      a globe. A globe! What a joke.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"Rumour has it some barbaric nation from the north has instaured a thing called
-      democracy. Imagine a kingdom without a king? Preposterous!"'
+    - "\"Rumour has it some barbaric nation from the north has instaured a thing called
+      democracy. Imagine a kingdom without a king? Preposterous!\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

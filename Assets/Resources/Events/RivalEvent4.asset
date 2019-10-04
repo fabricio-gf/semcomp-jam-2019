@@ -56,7 +56,7 @@ MonoBehaviour:
     resolution:
       sentences:
       - '<PlayerWin> promptly accepted the call for help, sending the messenger back
-        to his queen and calling the troops for an emergency march. '
+        to her queen and calling the troops for an emergency march. '
       - 'The guards followed your orders, but were not very happy with the idea of
         dying for another kingdom. '
       - The nobles also didn't like the idea of leaving their fields unguarded to
@@ -67,7 +67,7 @@ MonoBehaviour:
       - 'Many people from different classes of the other kingdom moved in to start
         a new life. Except for the nobles, which some decided to leave you. '
       - "As for <PlayerLose>, the merchants, commoners and clergymen dissaproved of
-        his lack of response in such a urgent and profitable matter.\r"
+        their lack of response in such a urgent and profitable matter.\r"
   - identifier: 2
     answerText: No! We must help our neighbors.
     statChanges:

@@ -9,10 +9,13 @@ public class ClassIcon : MonoBehaviour
     public bool isStatChange;
 
     [Range(0f,1f)]
-    public float changeIconThreshold = 0.4f;
+    public float changeIconLowerThreshold = 0.2f;
+    [Range(0f, 1f)]
+    public float changeIconUpperThreshold = 0.6f;
     public Sprite badIcon;
+    public Sprite mediumBadIcon;
     public Sprite mediumIcon;
-
+    public Sprite mediumGoodIcon;
     public Sprite goodIcon;
 
     //int currentIcon = 1;
@@ -87,20 +90,30 @@ public class ClassIcon : MonoBehaviour
             influence = World.Instance.groups.GetGroupValueAt((int)faction);
         }
 
-        if (influence < changeIconThreshold)
+        if (influence < changeIconLowerThreshold)
         {
             faceIcon.sprite = badIcon;
             //currentIcon = 0;
         }
-        else if (influence <= 1 - changeIconThreshold)
+        else if (influence <= (changeIconUpperThreshold - changeIconLowerThreshold))
+        {
+            faceIcon.sprite = mediumBadIcon;
+            //currentIcon = 1;
+        }
+        else if (influence <= changeIconUpperThreshold)
         {
             faceIcon.sprite = mediumIcon;
-            //currentIcon = 1;
+            //currentIcon = 2;
+        }
+        else if (influence <= (changeIconLowerThreshold + changeIconUpperThreshold))
+        {
+            faceIcon.sprite = mediumGoodIcon;
+            //currentIcon = 3;
         }
         else
         {
             faceIcon.sprite = goodIcon;
-            //currentIcon = 2;
+            //currentIcon = 4;
         }
     }
 

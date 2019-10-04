@@ -33,9 +33,10 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> invited the alchemists to the banquet. They showed a lot of experiments
-        that created funny lights and sounds. The nobles were entertained. The Clergymen
-        were angry because of this display of heresy.\r"
+      - '<Player> invited the alchemists to the banquet. They showed a lot of experiments
+        that created funny lights and sounds. '
+      - "The nobles were entertained. The Clergymen were angry because of this display
+        of heresy.\r"
   - identifier: 2
     answerText: Call the castle guards to the party, they deserve it.
     statChanges:
@@ -62,9 +63,9 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> gave the leftovers of the party to the commoners near the castle.
-        They were really pleased, as some of them didn't have enough to eat well for
-        days. But the nobles thinks these actions aren't befitting of royalty.\r"
+      - '<Player> gave the leftovers of the party to the commoners near the castle. '
+      - "They were really pleased, as some of them didn't have enough to eat well
+        for days. But the nobles thinks these actions aren't befitting of royalty.\r"
   - identifier: 4
     answerText: Call the pope to praise our dear Lord and give us his blessings.
     statChanges:
@@ -78,6 +79,6 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - "<Player> called the Pope to give blessings to everyone at the banquet. The
-        nobles liked to have a holy banquet. But the alchemists find your excess of
-        faith disturbing.\r"
+      - '<Player> called the Pope to give blessings to everyone at the banquet. '
+      - "The nobles liked to have a holy banquet. But the alchemists find your excess
+        of faith disturbing.\r"

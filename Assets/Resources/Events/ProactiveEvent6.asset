@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"The alchemists exploded something again in their tower... at least there were
-      no demons summoned this time."'
+    - "\"The alchemists exploded something again in their tower... at least there
+      were no demons summoned this time.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

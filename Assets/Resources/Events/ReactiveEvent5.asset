@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - A diplomat from an allied kingdom came to talk bussiness. What will you discuss
-      with him?
+      with her?
   answers:
   - identifier: 1
     answerText: Let's exchange technologies!

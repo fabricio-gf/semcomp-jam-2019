@@ -17,7 +17,7 @@ MonoBehaviour:
   question:
     sentences:
     - "\"The nobles were arguing about who has the biggest beard... Sir Williamson
-      won, apparently.\r\""
+      won, apparently.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

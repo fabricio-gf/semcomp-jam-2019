@@ -55,7 +55,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 6
+      threshold: 0.6
   - identifier: 4
     answerText: Call all the guards to smash the revolution!
     statChanges: []
@@ -65,7 +65,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 75
+      threshold: 0.75
   - identifier: 5
     answerText: Side with the Commoners to destroy the old system and use your influence
       to be their new leader!
@@ -76,7 +76,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 2
-      threshold: 9
+      threshold: 0.9
   - identifier: 8
     answerText: Prostrate yourself to the Pope and ask him to calm the people with
       his holy words.
@@ -87,7 +87,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 6
+      threshold: 0.6
   crisisResolutions:
   - index: 1
     resolution:

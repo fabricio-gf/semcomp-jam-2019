@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 1552ee22fa9d49741bf99d5b24c6dcfd
+guid: f90cb19e767e53944b6fcd041cfdcc3e
 TextureImporter:
   internalIDToNameTable:
+  - first:
+      213: -7155430266592261204
+    second: ruim 2_0
   - first:
       213: -7489048532029111325
     second: ruim 1_0
@@ -86,18 +89,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -127,7 +118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f796f8ef9820548a674405adb35884
+      spriteID: eb82733684cdce54faa8f264e42f5117
       internalID: -7489048532029111325
       vertices: []
       indices: 

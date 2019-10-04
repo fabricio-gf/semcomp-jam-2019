@@ -60,7 +60,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 6
+      threshold: 0.6
   - identifier: 4
     answerText: Side with the guards. You will be the one to bring new lands to the
       kingdom with an iron fist!
@@ -71,7 +71,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 9
+      threshold: 0.9
   - identifier: 6
     answerText: Call the nobles to help defend the kingdom and stop this coup d`etat!
     statChanges: []
@@ -81,7 +81,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 3
-      threshold: 75
+      threshold: 0.75
   - identifier: 7
     answerText: The alchemists may have something to stop an army. Anything will do.
     statChanges: []
@@ -91,7 +91,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 6
+      threshold: 0.6
   crisisResolutions:
   - index: 1
     resolution:

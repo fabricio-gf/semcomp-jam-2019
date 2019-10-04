@@ -53,7 +53,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 0
-      threshold: 6
+      threshold: 0.6
   - identifier: 4
     answerText: Negotiate a progressive change of equipment over time.
     statChanges: []
@@ -63,7 +63,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 6
+      threshold: 0.6
   - identifier: 6
     answerText: Task each noble to buy equipments for the guards of their lands.
     statChanges: []
@@ -73,7 +73,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 3
-      threshold: 6
+      threshold: 0.6
   - identifier: 7
     answerText: Ask the help of alchemists to fix and improve equipments.
     statChanges: []
@@ -83,7 +83,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 6
+      threshold: 0.6
   crisisResolutions:
   - index: 1
     resolution:

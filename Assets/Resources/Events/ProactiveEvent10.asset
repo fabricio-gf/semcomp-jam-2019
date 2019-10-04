@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"Looks like the less people came to the mass after the pope said that adultery
-      was a sin... It must be a coincidence."'
+    - "\"Looks like the less people came to the mass after the pope said that adultery
+      was a sin... It must be a coincidence.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

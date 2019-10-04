@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"The Pope couldn''t keep his eyes off Madam Evelyn in yesterday''s mass...
-      She must have had a holy aura or something."'
+    - "\"The Pope couldn't keep his eyes off Madam Evelyn in yesterday's mass... She
+      must have had a holy aura or something.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.

@@ -56,7 +56,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 1
-      threshold: 6
+      threshold: 0.6
   - identifier: 5
     answerText: Call for the commoners to help you fight the alchemists. Call them
       heretics. Say they were mocking the commoners as dumbs... Anything will do!
@@ -67,7 +67,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 2
-      threshold: 75
+      threshold: 0.75
   - identifier: 7
     answerText: Join the alchemists in their pursue of ultimate knowledge and wisdom.
       You must be the new philosopher king at all costs!
@@ -78,7 +78,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 4
-      threshold: 9
+      threshold: 0.9
   - identifier: 8
     answerText: Ask the pope to start an inquisition against the heretics. Burn them,
       torture them... Anything goes!
@@ -89,7 +89,7 @@ MonoBehaviour:
       sentences: []
     condition:
       socialClass: 5
-      threshold: 6
+      threshold: 0.6
   crisisResolutions:
   - index: 1
     resolution:

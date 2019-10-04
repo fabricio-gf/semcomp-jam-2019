@@ -1,5 +1,5 @@
 Quote-Answer;Merchant Infl;Guard Infl;Commoner Infl;Noble Infl;Alchemists Infl;Clergy Infl;Merchant Pop;Guard Pop;Commoner Pop;Noble Pop;Alchemists Pop;Clergy Pop;Answer
-A diplomat from an allied kingdom came to talk bussiness. What will you discuss with him?;-;-;-;-;-;-;-;-;-;-;-;-;-
+A diplomat from an allied kingdom came to talk bussiness. What will you discuss with her?;-;-;-;-;-;-;-;-;-;-;-;-;-
 Let's exchange technologies!;0;0;0;0;20;-5;0;0;0;0;20;0;<Player> discussed new technologies and how alchemists of both kingdoms could work together. $New alchemists came, and the class was very pleased. The pope didn't like it very much.
 Time is money. What can we trade?;20;0;0;0;0;-5;40;0;0;0;0;0;<Player> discussed new business ideas and how to bring profit to both kingdoms. $New merchants came, and the class was very pleased. The pope didn't like it very much.
 How can we improve the lives of the villagers?;0;0;20;-5;0;0;0;0;400;0;0;0;<Player> discussed new policies and ways to bring happiness to the commoners. $Life was better, birth-rate grew and death-rate fell. The class was very pleased. But the nobles thought it was a waste of time.

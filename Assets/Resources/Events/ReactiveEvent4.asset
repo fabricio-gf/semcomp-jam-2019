@@ -30,9 +30,9 @@ MonoBehaviour:
       changeValue: 60
     resolution:
       sentences:
-      - '<Player> displayed his new spear in every public event. The guards were really
-        pleased to have a ruler with such good taste. '
-      - "Even guards from other kingdoms enlisted in our guard.\r"
+      - '<Player> displayed the new spear in every public event. '
+      - "The guards were really pleased to have a ruler with such good taste. Even
+        guards from other kingdoms enlisted in our guard.\r"
   - identifier: 2
     answerText: 'The weapon that can kill and equally tend the fields: a scythe.'
     statChanges:
@@ -44,9 +44,9 @@ MonoBehaviour:
       changeValue: 400
     resolution:
       sentences:
-      - '<Player> displayed his new scythe everywhere. The commoners were in awe to
-        have such a relatable ruler. '
-      - "Commoners from other lands also moved in.\r"
+      - '<Player> displayed the new scythe everywhere. '
+      - "The commoners were in awe to have such a relatable ruler. Commoners from
+        other lands also moved in.\r"
   - identifier: 3
     answerText: A staff. I'll ask the alchemists later to get me a pretty stone that
       fits.
@@ -59,11 +59,11 @@ MonoBehaviour:
       changeValue: 20
     resolution:
       sentences:
-      - '<Player> quickly asked the alchemists to make a nice stone for his staff.
-        They were happy to give him a beautifully crafted garnet. '
-      - "New alchemists appeared from out of nowhere.\r"
+      - '<Player> quickly asked the alchemists to make a nice stone for the staff. '
+      - "They were happy to give it a beautifully crafted garnet. New alchemists appeared
+        from out of nowhere.\r"
   - identifier: 4
-    answerText: 'The only real weapon for a king: a mighty sword.'
+    answerText: 'The only real weapon for a ruler: a mighty sword.'
     statChanges:
     - socialClass: 3
       changeValue: 20
@@ -73,6 +73,6 @@ MonoBehaviour:
       changeValue: 40
     resolution:
       sentences:
-      - '<Player> displayed his new sword as a real noble. The nobles respected even
-        more your royal lineage. '
-      - "Even nobles from other kingdoms decided to serve such a radiant heir.\r"
+      - '<Player> displayed the new sword as a real noble. '
+      - "The nobles respected even more your royal lineage. Even nobles from other
+        kingdoms decided to serve such a radiant heir.\r"

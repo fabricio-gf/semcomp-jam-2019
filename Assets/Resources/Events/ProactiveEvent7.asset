@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - '"The alchemists summoned a demon in their tower. The clergy had to exorcize
-      it."'
+    - "\"The alchemists summoned a demon in their tower. The clergy had to exorcize
+      it.\"\r"
   answers:
   - identifier: 0
     answerText: Raise taxes.
