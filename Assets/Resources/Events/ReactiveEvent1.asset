@@ -79,6 +79,6 @@ MonoBehaviour:
     popChanges: []
     resolution:
       sentences:
-      - '<Player> called the Pope to give blessings to everyone at the banquet. '
+      - '<Katrina> called the Pope to give blessings to everyone at the banquet. '
       - "The nobles liked to have a holy banquet. But the alchemists find your excess
         of faith disturbing.\r"
