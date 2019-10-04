@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "The Pope couldn't keep his eyes off Sir Duncan in yesterday's mass... He must
-      have had a holy aura or something.\r"
+    - '"The Pope couldn''t keep his eyes off Sir Duncan in yesterday''s mass... He
+      must have had a holy aura or something."'
   answers:
   - identifier: 0
     answerText: Raise taxes.

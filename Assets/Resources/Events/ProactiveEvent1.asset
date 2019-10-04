@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "The jokes from the royal jester are getting pretty funny.\r"
+    - '"The jokes from the royal jester are getting pretty funny."'
   answers:
   - identifier: 0
     answerText: Raise taxes.

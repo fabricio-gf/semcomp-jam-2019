@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "Rumour has it that Sir Williamson killed a bear using his bare hands... By
-      strangling it with his beard.\r"
+    - "\"Rumour has it that Sir Williamson killed a bear using his bare hands... By
+      strangling it with his beard.\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.

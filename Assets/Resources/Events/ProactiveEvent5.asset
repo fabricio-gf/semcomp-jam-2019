@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "Some commoners were fighting over an old loaf of bread... such frugal disputes.\r"
+    - '"Some commoners were fighting over an old loaf of bread... such frugal disputes."'
   answers:
   - identifier: 0
     answerText: Raise taxes.

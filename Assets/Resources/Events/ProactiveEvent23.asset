@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "Some alchemists were talking about creating a huge transmutation circle around
-      the kingdom to create some stone... weird.\r"
+    - "\"Some alchemists were talking about creating a huge transmutation circle around
+      the kingdom to create some stone... weird.\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.

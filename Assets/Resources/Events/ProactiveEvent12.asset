@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "The merchants brought a new dye from a faraway land that was a huge success
-      amongst nobles. They told us the color is called bakairo.\r"
+    - "\"The merchants brought a new dye from a faraway land that was a huge success
+      amongst nobles. They told us the color is called bakairo.\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.

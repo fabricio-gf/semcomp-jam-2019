@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "That new spice the merchants brought from the East was really good. It was
-      worth trading it for a gold chest.\r"
+    - "\"That new spice the merchants brought from the East was really good. It was
+      worth trading it for a gold chest.\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.

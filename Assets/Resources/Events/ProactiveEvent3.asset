@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "The last royal jester was thrown to the sharks... We need a new one.\r"
+    - '"The last royal jester was thrown to the sharks... We need a new one."'
   answers:
   - identifier: 0
     answerText: Raise taxes.

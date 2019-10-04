@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "The daughter and the dog of some famous alchemist went missing... Some time
-      later a rumoru about a talking dog-like creature was spread.\r"
+    - "\"The daughter and the dog of some famous alchemist went missing... Some time
+      later a rumoru about a talking dog-like creature was spread.\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.

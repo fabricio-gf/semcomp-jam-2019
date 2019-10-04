@@ -16,9 +16,9 @@ MonoBehaviour:
   type: 0
   question:
     sentences:
-    - "Some crazy guy started spreading the idea that the Earth was not the center
+    - "\"Some crazy guy started spreading the idea that the Earth was not the center
       of the universe. Ha! How is it possible when we, the center of the universe,
-      live in it?\r"
+      live in it?\r\""
   answers:
   - identifier: 0
     answerText: Raise taxes.
